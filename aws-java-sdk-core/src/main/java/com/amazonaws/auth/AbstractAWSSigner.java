@@ -421,7 +421,11 @@ public abstract class AbstractAWSSigner implements Signer {
         if (credentials instanceof AWSSessionCredentials) {
             return new BasicSessionCredentials(accessKeyId, secretKey, token);
         }
-
+        /**
+         * do not sanitize AWSRemoteSigner credentials
+         */
+        if (credentials instanceof AWSRemoteSigner)
+        	return credentials;
         return new BasicAWSCredentials(accessKeyId, secretKey);
     }
 

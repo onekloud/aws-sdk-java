@@ -203,13 +203,22 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         final String stringToSign = createStringToSign(canonicalRequest,
                 signerParams);
-
-        final byte[] signingKey = deriveSigningKey(sanitizedCredentials,
+        
+        byte[] signingKey = null;
+        byte[] signature;
+        if (sanitizedCredentials instanceof AWSRemoteSigner) {
+        	  signature = ((AWSRemoteSigner)sanitizedCredentials).makeSigne(
+        			stringToSign,
+        			signerParams.getFormattedSigningDate(),
+        			signerParams.getRegionName(),
+        			signerParams.getServiceName(),
+        			AWS4_TERMINATOR);
+        } else {
+        	signingKey = deriveSigningKey(sanitizedCredentials,
                 signerParams);
-
-        final byte[] signature = computeSignature(stringToSign, signingKey,
+        	signature = computeSignature(stringToSign, signingKey,
                 signerParams);
-
+        }
         request.addHeader(
                 AUTHORIZATION,
                 buildAuthorizationHeader(request, signature,
