@@ -3,10 +3,10 @@ package com.amazonaws.auth;
 /**
  * See AWSSignerStatic
  * 
- * @author uriel
+ * @author Uriel Chemouni
  * 
  * @see AWSRemoteSignerStatic
- *
+ * @see ContainerRemoteCredentialsRemote
  */
 public interface AWSRemoteSigner {
 	/**

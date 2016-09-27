@@ -12,6 +12,10 @@ import com.amazonaws.AmazonClientException;
 /**
  * AWSRemoteSignerStatic is a code is provide as sample to help you to implement your remote signature Server.
  * It can be use directly but do not provide any additional security.
+ * 
+ * @see ContainerRemoteCredentialsRemote
+ * 
+ * @author Uriel Chemouni
  */
 public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	/**
@@ -41,13 +45,13 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	 */
 	public byte[] makeSigne(String singingString, String... data) {
 		if (data.length < 3) {
-			throw new RuntimeException("invalid usage");
+			throw new AmazonClientException("Invalid makeSigne usage, should take at least 3 parameters");
 		}
 		if (!"aws4_request".equals(data[data.length])) {
-			throw new RuntimeException("data should end with aws4_request");
+			throw new AmazonClientException("Invalid makeSigne usage, parameters should end with aws4_request");
 		}
 		if (!singingString.startsWith("AWS4-HMAC-SHA256")) {
-			throw new RuntimeException("singingString should start with AWS4-HMAC-SHA256");
+			throw new AmazonClientException("Invalid makeSigne usage, SingingString should start with AWS4-HMAC-SHA256");
 		}
 		byte[] kSecret = ("AWS4" + secret).getBytes(Charset.forName("UTF-8"));
 		for (String s : data) {
@@ -56,7 +60,8 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 		return kSecret;
 	}
 	/**
-	 * code duplicated from AbstractAWSSigner
+	 * can not acces to AbstractAWSSigner method, so this code is duplicated from AbstractAWSSigner
+	 * 
 	 */
 	public byte[] sign(String stringData, byte[] key, SigningAlgorithm algorithm) throws AmazonClientException {
 		try {
@@ -68,7 +73,7 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	}
 
 	/**
-	 * code duplicated from AbstractAWSSigner
+	 * can not acces to AbstractAWSSigner method, so this code is duplicated from AbstractAWSSigner
 	 */
 	protected byte[] sign(byte[] data, byte[] key, SigningAlgorithm algorithm) throws AmazonClientException {
 		try {
