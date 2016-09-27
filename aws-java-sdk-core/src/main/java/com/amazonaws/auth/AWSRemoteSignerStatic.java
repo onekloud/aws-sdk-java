@@ -13,7 +13,7 @@ import com.amazonaws.AmazonClientException;
  * AWSRemoteSignerStatic is a code is provide as sample to help you to implement your remote signature Server.
  * It can be use directly but do not provide any additional security.
  * 
- * @see ContainerRemoteCredentialsRemote
+ * @see ContainerRemoteCredentials
  * 
  * @author Uriel Chemouni
  */

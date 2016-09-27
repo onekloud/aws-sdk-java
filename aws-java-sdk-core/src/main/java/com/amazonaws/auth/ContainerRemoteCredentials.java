@@ -4,11 +4,8 @@ package com.amazonaws.auth;
  * Replace the BasicAWSCredentials
  * 
  * but implement AWSRemoteSigner that will be used remotely signe request
- * 
- * @author uriel
- *
  */
-public class ContainerRemoteCredentialsRemote implements AWSCredentials, AWSRemoteSigner {
+public class ContainerRemoteCredentials implements AWSCredentials, AWSRemoteSigner {
 	String AWSAccessKeyId;
 	AWSRemoteSigner remote;
 
@@ -16,7 +13,7 @@ public class ContainerRemoteCredentialsRemote implements AWSCredentials, AWSRemo
 	 * build the AWSCredentialsRemote with a real AWSAccessKeyId and a delegate
 	 * AWS signer caller
 	 */
-	public ContainerRemoteCredentialsRemote(String AWSAccessKeyId, AWSRemoteSigner remote) {
+	public ContainerRemoteCredentials(String AWSAccessKeyId, AWSRemoteSigner remote) {
 		this.AWSAccessKeyId = AWSAccessKeyId;
 		this.remote = remote;
 	}

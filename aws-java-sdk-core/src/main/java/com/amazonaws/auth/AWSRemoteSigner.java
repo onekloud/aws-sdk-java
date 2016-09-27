@@ -6,7 +6,7 @@ package com.amazonaws.auth;
  * @author Uriel Chemouni
  * 
  * @see AWSRemoteSignerStatic
- * @see ContainerRemoteCredentialsRemote
+ * @see ContainerRemoteCredentials
  */
 public interface AWSRemoteSigner {
 	/**
