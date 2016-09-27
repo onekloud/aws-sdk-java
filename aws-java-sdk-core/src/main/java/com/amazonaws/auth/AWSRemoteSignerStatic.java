@@ -14,8 +14,6 @@ import com.amazonaws.AmazonClientException;
  * It can be use directly but do not provide any additional security.
  * 
  * @see ContainerRemoteCredentials
- * 
- * @author Uriel Chemouni
  */
 public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	/**
@@ -43,24 +41,24 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	 *            like ["20160919", "us-east-1", "ec2", "aws4_request"]
 	 * @return data a byte[32] signature block
 	 */
-	public byte[] makeSigne(String singingString, String... data) {
-		if (data.length < 3) {
+	public byte[] makeSigne(String singingString, String... datas) {
+		if (datas.length < 4) {
 			throw new AmazonClientException("Invalid makeSigne usage, should take at least 3 parameters");
 		}
-		if (!"aws4_request".equals(data[data.length])) {
+		if (!"aws4_request".equals(datas[datas.length-1])) {
 			throw new AmazonClientException("Invalid makeSigne usage, parameters should end with aws4_request");
 		}
 		if (!singingString.startsWith("AWS4-HMAC-SHA256")) {
 			throw new AmazonClientException("Invalid makeSigne usage, SingingString should start with AWS4-HMAC-SHA256");
 		}
 		byte[] kSecret = ("AWS4" + secret).getBytes(Charset.forName("UTF-8"));
-		for (String s : data) {
-			kSecret = sign(s, kSecret, SigningAlgorithm.HmacSHA256);
+		for (String data : datas) {
+			kSecret = sign(data, kSecret, SigningAlgorithm.HmacSHA256);
 		}
-		return kSecret;
+		return sign(singingString, kSecret, SigningAlgorithm.HmacSHA256);
 	}
 	/**
-	 * can not acces to AbstractAWSSigner method, so this code is duplicated from AbstractAWSSigner
+	 * can not access to AbstractAWSSigner method, so this code is duplicated from AbstractAWSSigner
 	 * 
 	 */
 	public byte[] sign(String stringData, byte[] key, SigningAlgorithm algorithm) throws AmazonClientException {

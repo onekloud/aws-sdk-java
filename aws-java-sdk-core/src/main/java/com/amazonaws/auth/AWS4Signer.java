@@ -213,6 +213,15 @@ public class AWS4Signer extends AbstractAWSSigner implements
         			signerParams.getRegionName(),
         			signerParams.getServiceName(),
         			AWS4_TERMINATOR);
+			// DEBUG
+			// if (sanitizedCredentials.getAWSSecretKey() != null) {
+			// signingKey = deriveSigningKey(sanitizedCredentials,
+			// signerParams);
+			// System.out.println("signingKey:" + Arrays.toString(signingKey));
+			// byte[] signature2 = computeSignature(stringToSign, signingKey,
+			// signerParams);
+			// System.out.println("FINAL:" + Arrays.toString(signature2));
+			// }
         } else {
         	signingKey = deriveSigningKey(sanitizedCredentials,
                 signerParams);

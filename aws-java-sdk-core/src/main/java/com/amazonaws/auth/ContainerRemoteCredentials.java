@@ -8,7 +8,7 @@ package com.amazonaws.auth;
 public class ContainerRemoteCredentials implements AWSCredentials, AWSRemoteSigner {
 	String AWSAccessKeyId;
 	AWSRemoteSigner remote;
-
+	
 	/**
 	 * build the AWSCredentialsRemote with a real AWSAccessKeyId and a delegate
 	 * AWS signer caller
