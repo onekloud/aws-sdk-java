@@ -40,6 +40,15 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	 * @return data a byte[32] signature block
 	 */
 	public byte[] makeSigne(String singingString, String... data) {
+		if (data.length < 3) {
+			throw new RuntimeException("invalid usage");
+		}
+		if (!"aws4_request".equals(data[data.length])) {
+			throw new RuntimeException("data should end with aws4_request");
+		}
+		if (!singingString.startsWith("AWS4-HMAC-SHA256")) {
+			throw new RuntimeException("singingString should start with AWS4-HMAC-SHA256");
+		}
 		byte[] kSecret = ("AWS4" + secret).getBytes(Charset.forName("UTF-8"));
 		for (String s : data) {
 			kSecret = sign(s, kSecret, SigningAlgorithm.HmacSHA256);

@@ -4,6 +4,8 @@ package com.amazonaws.auth;
  * See AWSSignerStatic
  * 
  * @author uriel
+ * 
+ * @see AWSRemoteSignerStatic
  *
  */
 public interface AWSRemoteSigner {
