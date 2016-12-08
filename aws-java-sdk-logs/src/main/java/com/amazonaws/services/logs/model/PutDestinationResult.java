@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -19,14 +17,22 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutDestinationResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class PutDestinationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The destination.
+     * </p>
+     */
     private Destination destination;
 
     /**
+     * <p>
+     * The destination.
+     * </p>
+     * 
      * @param destination
+     *        The destination.
      */
 
     public void setDestination(Destination destination) {
@@ -34,7 +40,11 @@ public class PutDestinationResult extends
     }
 
     /**
-     * @return
+     * <p>
+     * The destination.
+     * </p>
+     * 
+     * @return The destination.
      */
 
     public Destination getDestination() {
@@ -42,9 +52,13 @@ public class PutDestinationResult extends
     }
 
     /**
+     * <p>
+     * The destination.
+     * </p>
+     * 
      * @param destination
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutDestinationResult withDestination(Destination destination) {
@@ -53,8 +67,7 @@ public class PutDestinationResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -82,8 +95,7 @@ public class PutDestinationResult extends
         PutDestinationResult other = (PutDestinationResult) obj;
         if (other.getDestination() == null ^ this.getDestination() == null)
             return false;
-        if (other.getDestination() != null
-                && other.getDestination().equals(this.getDestination()) == false)
+        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
         return true;
     }
@@ -93,9 +105,7 @@ public class PutDestinationResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         return hashCode;
     }
 
@@ -104,9 +114,7 @@ public class PutDestinationResult extends
         try {
             return (PutDestinationResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

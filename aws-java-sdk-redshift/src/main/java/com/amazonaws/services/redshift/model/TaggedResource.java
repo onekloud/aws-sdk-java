@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -31,33 +29,66 @@ public class TaggedResource implements Serializable, Cloneable {
     private Tag tag;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) with which the tag is associated. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     private String resourceName;
     /**
      * <p>
-     * The type of resource with which the tag is associated. Valid resource
-     * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
+     * The type of resource with which the tag is associated. Valid resource types are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * For more information about Amazon Redshift resource types and
-     * constructing ARNs, go to <a href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the
-     * Amazon Redshift Cluster Management Guide.
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
+     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      */
     private String resourceType;
@@ -94,8 +125,7 @@ public class TaggedResource implements Serializable, Cloneable {
      * 
      * @param tag
      *        The tag for the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TaggedResource withTag(Tag tag) {
@@ -105,13 +135,12 @@ public class TaggedResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) with which the tag is associated. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      * 
      * @param resourceName
-     *        The Amazon Resource Name (ARN) with which the tag is associated.
-     *        For example,
+     *        The Amazon Resource Name (ARN) with which the tag is associated. For example,
      *        <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      */
 
@@ -121,12 +150,11 @@ public class TaggedResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) with which the tag is associated. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) with which the tag is associated.
-     *         For example,
+     * @return The Amazon Resource Name (ARN) with which the tag is associated. For example,
      *         <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      */
 
@@ -136,16 +164,14 @@ public class TaggedResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) with which the tag is associated. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * The Amazon Resource Name (ARN) with which the tag is associated. For example,
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      * 
      * @param resourceName
-     *        The Amazon Resource Name (ARN) with which the tag is associated.
-     *        For example,
+     *        The Amazon Resource Name (ARN) with which the tag is associated. For example,
      *        <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TaggedResource withResourceName(String resourceName) {
@@ -155,49 +181,114 @@ public class TaggedResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource with which the tag is associated. Valid resource
-     * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
+     * The type of resource with which the tag is associated. Valid resource types are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * For more information about Amazon Redshift resource types and
-     * constructing ARNs, go to <a href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the
-     * Amazon Redshift Cluster Management Guide.
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
+     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource with which the tag is associated. Valid
-     *        resource types are:
+     *        The type of resource with which the tag is associated. Valid resource types are: </p>
      *        <ul>
-     *        <li>Cluster</li>
-     *        <li>CIDR/IP</li>
-     *        <li>EC2 security group</li>
-     *        <li>Snapshot</li>
-     *        <li>Cluster security group</li>
-     *        <li>Subnet group</li>
-     *        <li>HSM connection</li>
-     *        <li>HSM certificate</li>
-     *        <li>Parameter group</li>
-     *        </ul>
-     *        </p>
+     *        <li>
      *        <p>
-     *        For more information about Amazon Redshift resource types and
-     *        constructing ARNs, go to <a href=
-     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     *        >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in
-     *        the Amazon Redshift Cluster Management Guide.
+     *        Cluster
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CIDR/IP
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cluster security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subnet group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM connection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parameter group
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an
+     *        Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      */
 
     public void setResourceType(String resourceType) {
@@ -206,48 +297,113 @@ public class TaggedResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource with which the tag is associated. Valid resource
-     * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
+     * The type of resource with which the tag is associated. Valid resource types are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * For more information about Amazon Redshift resource types and
-     * constructing ARNs, go to <a href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the
-     * Amazon Redshift Cluster Management Guide.
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
+     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
-     * @return The type of resource with which the tag is associated. Valid
-     *         resource types are:
+     * @return The type of resource with which the tag is associated. Valid resource types are: </p>
      *         <ul>
-     *         <li>Cluster</li>
-     *         <li>CIDR/IP</li>
-     *         <li>EC2 security group</li>
-     *         <li>Snapshot</li>
-     *         <li>Cluster security group</li>
-     *         <li>Subnet group</li>
-     *         <li>HSM connection</li>
-     *         <li>HSM certificate</li>
-     *         <li>Parameter group</li>
-     *         </ul>
-     *         </p>
+     *         <li>
      *         <p>
-     *         For more information about Amazon Redshift resource types and
-     *         constructing ARNs, go to <a href=
-     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     *         >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a>
-     *         in the Amazon Redshift Cluster Management Guide.
+     *         Cluster
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CIDR/IP
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EC2 security group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Snapshot
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cluster security group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Subnet group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HSM connection
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HSM certificate
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Parameter group
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an
+     *         Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      */
 
     public String getResourceType() {
@@ -256,51 +412,115 @@ public class TaggedResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource with which the tag is associated. Valid resource
-     * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
+     * The type of resource with which the tag is associated. Valid resource types are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * For more information about Amazon Redshift resource types and
-     * constructing ARNs, go to <a href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the
-     * Amazon Redshift Cluster Management Guide.
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
+     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource with which the tag is associated. Valid
-     *        resource types are:
+     *        The type of resource with which the tag is associated. Valid resource types are: </p>
      *        <ul>
-     *        <li>Cluster</li>
-     *        <li>CIDR/IP</li>
-     *        <li>EC2 security group</li>
-     *        <li>Snapshot</li>
-     *        <li>Cluster security group</li>
-     *        <li>Subnet group</li>
-     *        <li>HSM connection</li>
-     *        <li>HSM certificate</li>
-     *        <li>Parameter group</li>
-     *        </ul>
-     *        </p>
+     *        <li>
      *        <p>
-     *        For more information about Amazon Redshift resource types and
-     *        constructing ARNs, go to <a href=
-     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html"
-     *        >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in
-     *        the Amazon Redshift Cluster Management Guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Cluster
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CIDR/IP
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cluster security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subnet group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM connection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parameter group
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about Amazon Redshift resource types and constructing ARNs, go to <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an
+     *        Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TaggedResource withResourceType(String resourceType) {
@@ -309,8 +529,7 @@ public class TaggedResource implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -342,18 +561,15 @@ public class TaggedResource implements Serializable, Cloneable {
         TaggedResource other = (TaggedResource) obj;
         if (other.getTag() == null ^ this.getTag() == null)
             return false;
-        if (other.getTag() != null
-                && other.getTag().equals(this.getTag()) == false)
+        if (other.getTag() != null && other.getTag().equals(this.getTag()) == false)
             return false;
         if (other.getResourceName() == null ^ this.getResourceName() == null)
             return false;
-        if (other.getResourceName() != null
-                && other.getResourceName().equals(this.getResourceName()) == false)
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         return true;
     }
@@ -363,16 +579,9 @@ public class TaggedResource implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTag() == null) ? 0 : getTag().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceName() == null) ? 0 : getResourceName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTag() == null) ? 0 : getTag().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 
@@ -381,9 +590,7 @@ public class TaggedResource implements Serializable, Cloneable {
         try {
             return (TaggedResource) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

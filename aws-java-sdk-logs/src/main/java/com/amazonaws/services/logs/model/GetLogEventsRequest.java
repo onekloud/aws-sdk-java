@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,67 +18,68 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the log group to query.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * The name of the log stream to query.
+     * The name of the log stream.
      * </p>
      */
     private String logStreamName;
-
+    /**
+     * <p>
+     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * </p>
+     */
     private Long startTime;
-
+    /**
+     * <p>
+     * The end of the time range. Events with a timestamp later than this time are not included.
+     * </p>
+     */
     private Long endTime;
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the
-     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
-     * the response of the previous <code>GetLogEvents</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of log events returned in the response. If you don't
-     * specify a value, the request would return as many log events as can fit
-     * in a response size of 1MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
+     * fit in a response size of 1MB, up to 10,000 log events.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * If set to true, the earliest log events would be returned first. The
-     * default is false (the latest log events are returned first).
+     * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
+     * are returned first. The default value is false.
      * </p>
      */
     private Boolean startFromHead;
 
     /**
-     * Default constructor for GetLogEventsRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for GetLogEventsRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public GetLogEventsRequest() {
     }
 
     /**
-     * Constructs a new GetLogEventsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new GetLogEventsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group to query.
+     *        The name of the log group.
      * @param logStreamName
-     *        The name of the log stream to query.
+     *        The name of the log stream.
      */
     public GetLogEventsRequest(String logGroupName, String logStreamName) {
         setLogGroupName(logGroupName);
@@ -89,11 +88,11 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to query.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to query.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -102,10 +101,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to query.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group to query.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -114,13 +113,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to query.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to query.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withLogGroupName(String logGroupName) {
@@ -130,11 +128,11 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log stream to query.
+     * The name of the log stream.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the log stream to query.
+     *        The name of the log stream.
      */
 
     public void setLogStreamName(String logStreamName) {
@@ -143,10 +141,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log stream to query.
+     * The name of the log stream.
      * </p>
      * 
-     * @return The name of the log stream to query.
+     * @return The name of the log stream.
      */
 
     public String getLogStreamName() {
@@ -155,13 +153,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log stream to query.
+     * The name of the log stream.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the log stream to query.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withLogStreamName(String logStreamName) {
@@ -170,7 +167,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * </p>
+     * 
      * @param startTime
+     *        The start of the time range. Events with a timestamp earlier than this time are not included.
      */
 
     public void setStartTime(Long startTime) {
@@ -178,7 +180,11 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * </p>
+     * 
+     * @return The start of the time range. Events with a timestamp earlier than this time are not included.
      */
 
     public Long getStartTime() {
@@ -186,9 +192,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * </p>
+     * 
      * @param startTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The start of the time range. Events with a timestamp earlier than this time are not included.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withStartTime(Long startTime) {
@@ -197,7 +207,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The end of the time range. Events with a timestamp later than this time are not included.
+     * </p>
+     * 
      * @param endTime
+     *        The end of the time range. Events with a timestamp later than this time are not included.
      */
 
     public void setEndTime(Long endTime) {
@@ -205,7 +220,11 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The end of the time range. Events with a timestamp later than this time are not included.
+     * </p>
+     * 
+     * @return The end of the time range. Events with a timestamp later than this time are not included.
      */
 
     public Long getEndTime() {
@@ -213,9 +232,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The end of the time range. Events with a timestamp later than this time are not included.
+     * </p>
+     * 
      * @param endTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The end of the time range. Events with a timestamp later than this time are not included.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withEndTime(Long endTime) {
@@ -225,18 +248,11 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the
-     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
-     * the response of the previous <code>GetLogEvents</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the
-     *        <code>nextForwardToken</code> or <code>nextBackwardToken</code>
-     *        fields in the response of the previous <code>GetLogEvents</code>
-     *        request.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -245,17 +261,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the
-     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
-     * the response of the previous <code>GetLogEvents</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return A string token used for pagination that points to the next page
-     *         of results. It must be a value obtained from the
-     *         <code>nextForwardToken</code> or <code>nextBackwardToken</code>
-     *         fields in the response of the previous <code>GetLogEvents</code>
-     *         request.
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -264,20 +273,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the
-     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
-     * the response of the previous <code>GetLogEvents</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the
-     *        <code>nextForwardToken</code> or <code>nextBackwardToken</code>
-     *        fields in the response of the previous <code>GetLogEvents</code>
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withNextToken(String nextToken) {
@@ -287,14 +288,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of log events returned in the response. If you don't
-     * specify a value, the request would return as many log events as can fit
-     * in a response size of 1MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
+     * fit in a response size of 1MB, up to 10,000 log events.
      * </p>
      * 
      * @param limit
-     *        The maximum number of log events returned in the response. If you
-     *        don't specify a value, the request would return as many log events
+     *        The maximum number of log events returned. If you don't specify a value, the maximum is as many log events
      *        as can fit in a response size of 1MB, up to 10,000 log events.
      */
 
@@ -304,15 +303,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of log events returned in the response. If you don't
-     * specify a value, the request would return as many log events as can fit
-     * in a response size of 1MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
+     * fit in a response size of 1MB, up to 10,000 log events.
      * </p>
      * 
-     * @return The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as many log
-     *         events as can fit in a response size of 1MB, up to 10,000 log
-     *         events.
+     * @return The maximum number of log events returned. If you don't specify a value, the maximum is as many log
+     *         events as can fit in a response size of 1MB, up to 10,000 log events.
      */
 
     public Integer getLimit() {
@@ -321,17 +317,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of log events returned in the response. If you don't
-     * specify a value, the request would return as many log events as can fit
-     * in a response size of 1MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
+     * fit in a response size of 1MB, up to 10,000 log events.
      * </p>
      * 
      * @param limit
-     *        The maximum number of log events returned in the response. If you
-     *        don't specify a value, the request would return as many log events
+     *        The maximum number of log events returned. If you don't specify a value, the maximum is as many log events
      *        as can fit in a response size of 1MB, up to 10,000 log events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withLimit(Integer limit) {
@@ -341,13 +334,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, the earliest log events would be returned first. The
-     * default is false (the latest log events are returned first).
+     * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
+     * are returned first. The default value is false.
      * </p>
      * 
      * @param startFromHead
-     *        If set to true, the earliest log events would be returned first.
-     *        The default is false (the latest log events are returned first).
+     *        If the value is true, the earliest log events are returned first. If the value is false, the latest log
+     *        events are returned first. The default value is false.
      */
 
     public void setStartFromHead(Boolean startFromHead) {
@@ -356,12 +349,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, the earliest log events would be returned first. The
-     * default is false (the latest log events are returned first).
+     * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
+     * are returned first. The default value is false.
      * </p>
      * 
-     * @return If set to true, the earliest log events would be returned first.
-     *         The default is false (the latest log events are returned first).
+     * @return If the value is true, the earliest log events are returned first. If the value is false, the latest log
+     *         events are returned first. The default value is false.
      */
 
     public Boolean getStartFromHead() {
@@ -370,15 +363,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, the earliest log events would be returned first. The
-     * default is false (the latest log events are returned first).
+     * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
+     * are returned first. The default value is false.
      * </p>
      * 
      * @param startFromHead
-     *        If set to true, the earliest log events would be returned first.
-     *        The default is false (the latest log events are returned first).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value is true, the earliest log events are returned first. If the value is false, the latest log
+     *        events are returned first. The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withStartFromHead(Boolean startFromHead) {
@@ -388,12 +380,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, the earliest log events would be returned first. The
-     * default is false (the latest log events are returned first).
+     * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
+     * are returned first. The default value is false.
      * </p>
      * 
-     * @return If set to true, the earliest log events would be returned first.
-     *         The default is false (the latest log events are returned first).
+     * @return If the value is true, the earliest log events are returned first. If the value is false, the latest log
+     *         events are returned first. The default value is false.
      */
 
     public Boolean isStartFromHead() {
@@ -401,8 +393,7 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -442,38 +433,31 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
         GetLogEventsRequest other = (GetLogEventsRequest) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
         if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
             return false;
-        if (other.getLogStreamName() != null
-                && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getEndTime() != null
-                && other.getEndTime().equals(this.getEndTime()) == false)
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getStartFromHead() == null ^ this.getStartFromHead() == null)
             return false;
-        if (other.getStartFromHead() != null
-                && other.getStartFromHead().equals(this.getStartFromHead()) == false)
+        if (other.getStartFromHead() != null && other.getStartFromHead().equals(this.getStartFromHead()) == false)
             return false;
         return true;
     }
@@ -483,26 +467,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogStreamName() == null) ? 0 : getLogStreamName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartFromHead() == null) ? 0 : getStartFromHead()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getStartFromHead() == null) ? 0 : getStartFromHead().hashCode());
         return hashCode;
     }
 

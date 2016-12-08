@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
  * Contains the parameters for RunInstances.
  * </p>
  */
-public class RunInstancesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<RunInstancesRequest> {
+public class RunInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RunInstancesRequest> {
 
     /**
      * <p>
@@ -35,54 +32,46 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private String imageId;
     /**
      * <p>
-     * The minimum number of instances to launch. If you specify a minimum that
-     * is more instances than Amazon EC2 can launch in the target Availability
-     * Zone, Amazon EC2 launches no instances.
+     * The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can
+     * launch in the target Availability Zone, Amazon EC2 launches no instances.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 General FAQ.
      * </p>
      */
     private Integer minCount;
     /**
      * <p>
-     * The maximum number of instances to launch. If you specify more instances
-     * than Amazon EC2 can launch in the target Availability Zone, Amazon EC2
-     * launches the largest possible number of instances above
-     * <code>MinCount</code>.
+     * The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target
+     * Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      */
     private Integer maxCount;
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
-     * If you do not specify a key pair, you can't connect to the instance
-     * unless you choose an AMI that is configured to allow users another way to
-     * log in.
+     * If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured
+     * to allow users another way to log in.
      * </p>
      * </important>
      */
     private String keyName;
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a
-     * nondefault VPC, you must use security group IDs instead.
+     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * IDs instead.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -91,8 +80,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>.
+     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -101,24 +89,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * The user data to make available to the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
-     * href=
+     * The user data to make available to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
+     * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
-     * line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      */
     private String userData;
     /**
      * <p>
-     * The instance type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
@@ -137,10 +121,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      */
@@ -151,10 +134,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      */
@@ -165,11 +147,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for
-     * block-device mapping results in an error. This is because only blank
-     * volumes can be encrypted on start, and these are not created from a
-     * snapshot. If a snapshot is the basis for the volume, it contains data by
-     * definition and its encryption status cannot be changed using this action.
+     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
+     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
+     * using this action.
      * </p>
      * </important>
      */
@@ -188,15 +169,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private String subnetId;
     /**
      * <p>
-     * If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
-     * If you set this parameter to <code>true</code> and then later want to be
-     * able to terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
-     * you can terminate the instance by running the shutdown command from the
-     * instance.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -205,9 +181,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private Boolean disableApiTermination;
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * <p>
      * Default: <code>stop</code>
@@ -216,27 +191,37 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * [EC2-VPC] The primary IP address. You must specify a value from the IP
-     * address range of the subnet.
+     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
-     * Only one private IP address can be designated as primary. Therefore, you
-     * can't specify this parameter if <code>PrivateIpAddresses.n.Primary</code>
-     * is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP
-     * address.
-     * </p>
-     * <p>
-     * Default: We select an IP address from the IP address range of the subnet.
+     * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network interface specification. You
+     * cannot specify this option if you're launching more than one instance in the request.
      * </p>
      */
     private String privateIpAddress;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency
-     * of the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
+     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> ipv6Addresses;
+    /**
+     * <p>
+     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
+     * </p>
+     */
+    private Integer ipv6AddressCount;
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * <p>
      * Constraints: Maximum 64 ASCII characters
@@ -263,11 +248,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private IamInstanceProfileSpecification iamInstanceProfile;
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -276,48 +259,38 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private Boolean ebsOptimized;
 
     /**
-     * Default constructor for RunInstancesRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public RunInstancesRequest() {
     }
 
     /**
-     * Constructs a new RunInstancesRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new RunInstancesRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling
-     *        <a>DescribeImages</a>.
+     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
      * @param minCount
-     *        The minimum number of instances to launch. If you specify a
-     *        minimum that is more instances than Amazon EC2 can launch in the
-     *        target Availability Zone, Amazon EC2 launches no instances.</p>
+     *        The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2
+     *        can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
      *        <p>
-     *        Constraints: Between 1 and the maximum number you're allowed for
-     *        the specified instance type. For more information about the
-     *        default limits, and how to request an increase, see <a href=
-     *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        General FAQ.
+     *        Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *        information about the default limits, and how to request an increase, see <a
+     *        href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I
+     *        run in Amazon EC2</a> in the Amazon EC2 General FAQ.
      * @param maxCount
-     *        The maximum number of instances to launch. If you specify more
-     *        instances than Amazon EC2 can launch in the target Availability
-     *        Zone, Amazon EC2 launches the largest possible number of instances
-     *        above <code>MinCount</code>.
+     *        The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the
+     *        target Availability Zone, Amazon EC2 launches the largest possible number of instances above
+     *        <code>MinCount</code>.
      *        </p>
      *        <p>
-     *        Constraints: Between 1 and the maximum number you're allowed for
-     *        the specified instance type. For more information about the
-     *        default limits, and how to request an increase, see <a href=
-     *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        FAQ.
+     *        Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *        information about the default limits, and how to request an increase, see <a
+     *        href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I
+     *        run in Amazon EC2</a> in the Amazon EC2 FAQ.
      */
-    public RunInstancesRequest(String imageId, Integer minCount,
-            Integer maxCount) {
+    public RunInstancesRequest(String imageId, Integer minCount, Integer maxCount) {
         setImageId(imageId);
         setMinCount(minCount);
         setMaxCount(maxCount);
@@ -329,8 +302,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling
-     *        <a>DescribeImages</a>.
+     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
      */
 
     public void setImageId(String imageId) {
@@ -342,8 +314,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
      * </p>
      * 
-     * @return The ID of the AMI, which you can get by calling
-     *         <a>DescribeImages</a>.
+     * @return The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
      */
 
     public String getImageId() {
@@ -356,10 +327,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling
-     *        <a>DescribeImages</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withImageId(String imageId) {
@@ -369,30 +338,24 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The minimum number of instances to launch. If you specify a minimum that
-     * is more instances than Amazon EC2 can launch in the target Availability
-     * Zone, Amazon EC2 launches no instances.
+     * The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can
+     * launch in the target Availability Zone, Amazon EC2 launches no instances.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 General FAQ.
      * </p>
      * 
      * @param minCount
-     *        The minimum number of instances to launch. If you specify a
-     *        minimum that is more instances than Amazon EC2 can launch in the
-     *        target Availability Zone, Amazon EC2 launches no instances.</p>
+     *        The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2
+     *        can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
      *        <p>
-     *        Constraints: Between 1 and the maximum number you're allowed for
-     *        the specified instance type. For more information about the
-     *        default limits, and how to request an increase, see <a href=
-     *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        General FAQ.
+     *        Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *        information about the default limits, and how to request an increase, see <a
+     *        href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I
+     *        run in Amazon EC2</a> in the Amazon EC2 General FAQ.
      */
 
     public void setMinCount(Integer minCount) {
@@ -401,29 +364,23 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The minimum number of instances to launch. If you specify a minimum that
-     * is more instances than Amazon EC2 can launch in the target Availability
-     * Zone, Amazon EC2 launches no instances.
+     * The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can
+     * launch in the target Availability Zone, Amazon EC2 launches no instances.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 General FAQ.
      * </p>
      * 
-     * @return The minimum number of instances to launch. If you specify a
-     *         minimum that is more instances than Amazon EC2 can launch in the
-     *         target Availability Zone, Amazon EC2 launches no instances.</p>
+     * @return The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon
+     *         EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
      *         <p>
-     *         Constraints: Between 1 and the maximum number you're allowed for
-     *         the specified instance type. For more information about the
-     *         default limits, and how to request an increase, see <a href=
-     *         "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *         >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *         General FAQ.
+     *         Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *         information about the default limits, and how to request an increase, see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can
+     *         I run in Amazon EC2</a> in the Amazon EC2 General FAQ.
      */
 
     public Integer getMinCount() {
@@ -432,32 +389,25 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The minimum number of instances to launch. If you specify a minimum that
-     * is more instances than Amazon EC2 can launch in the target Availability
-     * Zone, Amazon EC2 launches no instances.
+     * The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can
+     * launch in the target Availability Zone, Amazon EC2 launches no instances.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 General FAQ.
      * </p>
      * 
      * @param minCount
-     *        The minimum number of instances to launch. If you specify a
-     *        minimum that is more instances than Amazon EC2 can launch in the
-     *        target Availability Zone, Amazon EC2 launches no instances.</p>
+     *        The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2
+     *        can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
      *        <p>
-     *        Constraints: Between 1 and the maximum number you're allowed for
-     *        the specified instance type. For more information about the
-     *        default limits, and how to request an increase, see <a href=
-     *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        General FAQ.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *        information about the default limits, and how to request an increase, see <a
+     *        href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I
+     *        run in Amazon EC2</a> in the Amazon EC2 General FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withMinCount(Integer minCount) {
@@ -467,31 +417,25 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of instances to launch. If you specify more instances
-     * than Amazon EC2 can launch in the target Availability Zone, Amazon EC2
-     * launches the largest possible number of instances above
-     * <code>MinCount</code>.
+     * The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target
+     * Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      * 
      * @param maxCount
-     *        The maximum number of instances to launch. If you specify more
-     *        instances than Amazon EC2 can launch in the target Availability
-     *        Zone, Amazon EC2 launches the largest possible number of instances
-     *        above <code>MinCount</code>.</p>
+     *        The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the
+     *        target Availability Zone, Amazon EC2 launches the largest possible number of instances above
+     *        <code>MinCount</code>.</p>
      *        <p>
-     *        Constraints: Between 1 and the maximum number you're allowed for
-     *        the specified instance type. For more information about the
-     *        default limits, and how to request an increase, see <a href=
-     *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        FAQ.
+     *        Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *        information about the default limits, and how to request an increase, see <a
+     *        href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I
+     *        run in Amazon EC2</a> in the Amazon EC2 FAQ.
      */
 
     public void setMaxCount(Integer maxCount) {
@@ -500,30 +444,24 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of instances to launch. If you specify more instances
-     * than Amazon EC2 can launch in the target Availability Zone, Amazon EC2
-     * launches the largest possible number of instances above
-     * <code>MinCount</code>.
+     * The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target
+     * Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      * 
-     * @return The maximum number of instances to launch. If you specify more
-     *         instances than Amazon EC2 can launch in the target Availability
-     *         Zone, Amazon EC2 launches the largest possible number of
-     *         instances above <code>MinCount</code>.</p>
+     * @return The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in
+     *         the target Availability Zone, Amazon EC2 launches the largest possible number of instances above
+     *         <code>MinCount</code>.</p>
      *         <p>
-     *         Constraints: Between 1 and the maximum number you're allowed for
-     *         the specified instance type. For more information about the
-     *         default limits, and how to request an increase, see <a href=
-     *         "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *         >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *         FAQ.
+     *         Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *         information about the default limits, and how to request an increase, see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can
+     *         I run in Amazon EC2</a> in the Amazon EC2 FAQ.
      */
 
     public Integer getMaxCount() {
@@ -532,33 +470,26 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of instances to launch. If you specify more instances
-     * than Amazon EC2 can launch in the target Availability Zone, Amazon EC2
-     * launches the largest possible number of instances above
-     * <code>MinCount</code>.
+     * The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target
+     * Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>.
      * </p>
      * <p>
-     * Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits,
-     * and how to request an increase, see <a href=
-     * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
+     * Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in
+     * Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      * 
      * @param maxCount
-     *        The maximum number of instances to launch. If you specify more
-     *        instances than Amazon EC2 can launch in the target Availability
-     *        Zone, Amazon EC2 launches the largest possible number of instances
-     *        above <code>MinCount</code>.</p>
+     *        The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the
+     *        target Availability Zone, Amazon EC2 launches the largest possible number of instances above
+     *        <code>MinCount</code>.</p>
      *        <p>
-     *        Constraints: Between 1 and the maximum number you're allowed for
-     *        the specified instance type. For more information about the
-     *        default limits, and how to request an increase, see <a href=
-     *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        FAQ.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more
+     *        information about the default limits, and how to request an increase, see <a
+     *        href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I
+     *        run in Amazon EC2</a> in the Amazon EC2 FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withMaxCount(Integer maxCount) {
@@ -568,24 +499,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
-     * If you do not specify a key pair, you can't connect to the instance
-     * unless you choose an AMI that is configured to allow users another way to
-     * log in.
+     * If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured
+     * to allow users another way to log in.
      * </p>
      * </important>
      * 
      * @param keyName
-     *        The name of the key pair. You can create a key pair using
-     *        <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important>
+     *        The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
+     *        <a>ImportKeyPair</a>.</p> <important>
      *        <p>
-     *        If you do not specify a key pair, you can't connect to the
-     *        instance unless you choose an AMI that is configured to allow
-     *        users another way to log in.
+     *        If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is
+     *        configured to allow users another way to log in.
      *        </p>
      */
 
@@ -595,23 +523,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
-     * If you do not specify a key pair, you can't connect to the instance
-     * unless you choose an AMI that is configured to allow users another way to
-     * log in.
+     * If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured
+     * to allow users another way to log in.
      * </p>
      * </important>
      * 
-     * @return The name of the key pair. You can create a key pair using
-     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important>
+     * @return The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
+     *         <a>ImportKeyPair</a>.</p> <important>
      *         <p>
-     *         If you do not specify a key pair, you can't connect to the
-     *         instance unless you choose an AMI that is configured to allow
-     *         users another way to log in.
+     *         If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is
+     *         configured to allow users another way to log in.
      *         </p>
      */
 
@@ -621,27 +546,23 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
-     * If you do not specify a key pair, you can't connect to the instance
-     * unless you choose an AMI that is configured to allow users another way to
-     * log in.
+     * If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured
+     * to allow users another way to log in.
      * </p>
      * </important>
      * 
      * @param keyName
-     *        The name of the key pair. You can create a key pair using
-     *        <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important>
+     *        The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
+     *        <a>ImportKeyPair</a>.</p> <important>
      *        <p>
-     *        If you do not specify a key pair, you can't connect to the
-     *        instance unless you choose an AMI that is configured to allow
-     *        users another way to log in.
+     *        If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is
+     *        configured to allow users another way to log in.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withKeyName(String keyName) {
@@ -651,15 +572,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a
-     * nondefault VPC, you must use security group IDs instead.
+     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * IDs instead.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] One or more security group names. For
-     *         a nondefault VPC, you must use security group IDs instead.</p>
+     * @return [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *         group IDs instead.</p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
      */
@@ -673,16 +594,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a
-     * nondefault VPC, you must use security group IDs instead.
+     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * IDs instead.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] One or more security group names. For a
-     *        nondefault VPC, you must use security group IDs instead.</p>
+     *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *        group IDs instead.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      */
@@ -693,38 +614,34 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(securityGroups);
     }
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a
-     * nondefault VPC, you must use security group IDs instead.
+     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * IDs instead.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] One or more security group names. For a
-     *        nondefault VPC, you must use security group IDs instead.</p>
+     *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *        group IDs instead.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -734,39 +651,35 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a
-     * nondefault VPC, you must use security group IDs instead.
+     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * IDs instead.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] One or more security group names. For a
-     *        nondefault VPC, you must use security group IDs instead.</p>
+     *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *        group IDs instead.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public RunInstancesRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>.
+     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
-     * @return One or more security group IDs. You can create a security group
-     *         using <a>CreateSecurityGroup</a>.</p>
+     * @return One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
      */
@@ -780,59 +693,50 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>.
+     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroupIds
-     *        One or more security group IDs. You can create a security group
-     *        using <a>CreateSecurityGroup</a>.</p>
+     *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      */
 
-    public void setSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
             return;
         }
 
-        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroupIds);
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds);
     }
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>.
+     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or
-     * {@link #withSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param securityGroupIds
-     *        One or more security group IDs. You can create a security group
-     *        using <a>CreateSecurityGroup</a>.</p>
+     *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
         if (this.securityGroupIds == null) {
-            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroupIds.length));
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds.length));
         }
         for (String ele : securityGroupIds) {
             this.securityGroupIds.add(ele);
@@ -842,52 +746,41 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>.
+     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroupIds
-     *        One or more security group IDs. You can create a security group
-     *        using <a>CreateSecurityGroup</a>.</p>
+     *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public RunInstancesRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
         return this;
     }
 
     /**
      * <p>
-     * The user data to make available to the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
-     * href=
+     * The user data to make available to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
+     * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
-     * line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     *        >Running Commands on Your Linux Instance at Launch</a> (Linux) and
-     *        <a href=
+     *        The user data to make available to the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
+     *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or
-     *        command line tool, Base64-encoding is performed for you, and you
-     *        can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is
+     *        performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -896,27 +789,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user data to make available to the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
-     * href=
+     * The user data to make available to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
+     * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
-     * line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
-     * @return The user data to make available to the instance. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     *         >Running Commands on Your Linux Instance at Launch</a> (Linux)
-     *         and <a href=
+     * @return The user data to make available to the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
+     *         Instance at Launch</a> (Linux) and <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *         >Adding User Data</a> (Windows). If you are using an AWS SDK or
-     *         command line tool, Base64-encoding is performed for you, and you
-     *         can load the text from a file. Otherwise, you must provide
-     *         Base64-encoded text.
+     *         >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is
+     *         performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded
+     *         text.
      */
 
     public String getUserData() {
@@ -925,30 +812,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user data to make available to the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
-     * href=
+     * The user data to make available to the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
+     * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
-     * line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
-     *        >Running Commands on Your Linux Instance at Launch</a> (Linux) and
-     *        <a href=
+     *        The user data to make available to the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
+     *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or
-     *        command line tool, Base64-encoding is performed for you, and you
-     *        can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is
+     *        performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withUserData(String userData) {
@@ -958,20 +837,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.</p>
+     *        The instance type. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
      * @see InstanceType
@@ -983,19 +860,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
      * </p>
      * 
-     * @return The instance type. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *         >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.</p>
+     * @return The instance type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Default: <code>m1.small</code>
      * @see InstanceType
@@ -1007,24 +882,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.</p>
+     *        The instance type. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -1035,20 +907,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.</p>
+     *        The instance type. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
      * @see InstanceType
@@ -1060,24 +930,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The instance type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>m1.small</code>
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.</p>
+     *        The instance type. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -1118,8 +985,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @param placement
      *        The placement for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withPlacement(Placement placement) {
@@ -1133,21 +999,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      * 
      * @param kernelId
      *        The ID of the kernel.</p> <important>
      *        <p>
-     *        We recommend that you use PV-GRUB instead of kernels and RAM
-     *        disks. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     *        > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
      */
 
@@ -1161,20 +1024,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      * 
      * @return The ID of the kernel.</p> <important>
      *         <p>
-     *         We recommend that you use PV-GRUB instead of kernels and RAM
-     *         disks. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     *         > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     *         We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      *         </p>
      */
 
@@ -1188,24 +1048,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      * 
      * @param kernelId
      *        The ID of the kernel.</p> <important>
      *        <p>
-     *        We recommend that you use PV-GRUB instead of kernels and RAM
-     *        disks. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     *        > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withKernelId(String kernelId) {
@@ -1219,21 +1075,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      * 
      * @param ramdiskId
      *        The ID of the RAM disk.</p> <important>
      *        <p>
-     *        We recommend that you use PV-GRUB instead of kernels and RAM
-     *        disks. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     *        > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
      */
 
@@ -1247,20 +1100,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      * 
      * @return The ID of the RAM disk.</p> <important>
      *         <p>
-     *         We recommend that you use PV-GRUB instead of kernels and RAM
-     *         disks. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     *         > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     *         We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      *         </p>
      */
 
@@ -1274,24 +1124,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     * > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * </important>
      * 
      * @param ramdiskId
      *        The ID of the RAM disk.</p> <important>
      *        <p>
-     *        We recommend that you use PV-GRUB instead of kernels and RAM
-     *        disks. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"
-     *        > PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withRamdiskId(String ramdiskId) {
@@ -1305,22 +1151,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for
-     * block-device mapping results in an error. This is because only blank
-     * volumes can be encrypted on start, and these are not created from a
-     * snapshot. If a snapshot is the basis for the volume, it contains data by
-     * definition and its encryption status cannot be changed using this action.
+     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
+     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
+     * using this action.
      * </p>
      * </important>
      * 
      * @return The block device mapping.</p> <important>
      *         <p>
-     *         Supplying both a snapshot ID and an encryption value as arguments
-     *         for block-device mapping results in an error. This is because
-     *         only blank volumes can be encrypted on start, and these are not
-     *         created from a snapshot. If a snapshot is the basis for the
-     *         volume, it contains data by definition and its encryption status
-     *         cannot be changed using this action.
+     *         Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
+     *         error. This is because only blank volumes can be encrypted on start, and these are not created from a
+     *         snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
+     *         status cannot be changed using this action.
      *         </p>
      */
 
@@ -1337,35 +1180,30 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for
-     * block-device mapping results in an error. This is because only blank
-     * volumes can be encrypted on start, and these are not created from a
-     * snapshot. If a snapshot is the basis for the volume, it contains data by
-     * definition and its encryption status cannot be changed using this action.
+     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
+     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
+     * using this action.
      * </p>
      * </important>
      * 
      * @param blockDeviceMappings
      *        The block device mapping.</p> <important>
      *        <p>
-     *        Supplying both a snapshot ID and an encryption value as arguments
-     *        for block-device mapping results in an error. This is because only
-     *        blank volumes can be encrypted on start, and these are not created
-     *        from a snapshot. If a snapshot is the basis for the volume, it
-     *        contains data by definition and its encryption status cannot be
-     *        changed using this action.
+     *        Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
+     *        error. This is because only blank volumes can be encrypted on start, and these are not created from a
+     *        snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
+     *        status cannot be changed using this action.
      *        </p>
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -1374,39 +1212,32 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for
-     * block-device mapping results in an error. This is because only blank
-     * volumes can be encrypted on start, and these are not created from a
-     * snapshot. If a snapshot is the basis for the volume, it contains data by
-     * definition and its encryption status cannot be changed using this action.
+     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
+     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
+     * using this action.
      * </p>
      * </important>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        The block device mapping.</p> <important>
      *        <p>
-     *        Supplying both a snapshot ID and an encryption value as arguments
-     *        for block-device mapping results in an error. This is because only
-     *        blank volumes can be encrypted on start, and these are not created
-     *        from a snapshot. If a snapshot is the basis for the volume, it
-     *        contains data by definition and its encryption status cannot be
-     *        changed using this action.
+     *        Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
+     *        error. This is because only blank volumes can be encrypted on start, and these are not created from a
+     *        snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
+     *        status cannot be changed using this action.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public RunInstancesRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -1420,30 +1251,25 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <important>
      * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for
-     * block-device mapping results in an error. This is because only blank
-     * volumes can be encrypted on start, and these are not created from a
-     * snapshot. If a snapshot is the basis for the volume, it contains data by
-     * definition and its encryption status cannot be changed using this action.
+     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
+     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
+     * using this action.
      * </p>
      * </important>
      * 
      * @param blockDeviceMappings
      *        The block device mapping.</p> <important>
      *        <p>
-     *        Supplying both a snapshot ID and an encryption value as arguments
-     *        for block-device mapping results in an error. This is because only
-     *        blank volumes can be encrypted on start, and these are not created
-     *        from a snapshot. If a snapshot is the basis for the volume, it
-     *        contains data by definition and its encryption status cannot be
-     *        changed using this action.
+     *        Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
+     *        error. This is because only blank volumes can be encrypted on start, and these are not created from a
+     *        snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
+     *        status cannot be changed using this action.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public RunInstancesRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -1480,8 +1306,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @param monitoring
      *        The monitoring for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withMonitoring(Boolean monitoring) {
@@ -1533,8 +1358,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet to launch the instance into.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withSubnetId(String subnetId) {
@@ -1544,31 +1368,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
-     * If you set this parameter to <code>true</code> and then later want to be
-     * able to terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
-     * you can terminate the instance by running the shutdown command from the
-     * instance.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param disableApiTermination
-     *        If you set this parameter to <code>true</code>, you can't
-     *        terminate the instance using the Amazon EC2 console, CLI, or API;
-     *        otherwise, you can. If you set this parameter to <code>true</code>
-     *        and then later want to be able to terminate the instance, you must
-     *        first change the value of the <code>disableApiTermination</code>
-     *        attribute to <code>false</code> using
-     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     *        <code>InstanceInitiatedShutdownBehavior</code> to
-     *        <code>terminate</code>, you can terminate the instance by running
-     *        the shutdown command from the instance.</p>
+     *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *        console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code>
+     *        to <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *        instance.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -1579,31 +1393,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
-     * If you set this parameter to <code>true</code> and then later want to be
-     * able to terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
-     * you can terminate the instance by running the shutdown command from the
-     * instance.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return If you set this parameter to <code>true</code>, you can't
-     *         terminate the instance using the Amazon EC2 console, CLI, or API;
-     *         otherwise, you can. If you set this parameter to
-     *         <code>true</code> and then later want to be able to terminate the
-     *         instance, you must first change the value of the
-     *         <code>disableApiTermination</code> attribute to
-     *         <code>false</code> using <a>ModifyInstanceAttribute</a>.
-     *         Alternatively, if you set
-     *         <code>InstanceInitiatedShutdownBehavior</code> to
-     *         <code>terminate</code>, you can terminate the instance by running
-     *         the shutdown command from the instance.</p>
+     * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *         console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch,
+     *         use <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     *         <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance
+     *         by running the shutdown command from the instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1614,70 +1417,47 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
-     * If you set this parameter to <code>true</code> and then later want to be
-     * able to terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
-     * you can terminate the instance by running the shutdown command from the
-     * instance.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param disableApiTermination
-     *        If you set this parameter to <code>true</code>, you can't
-     *        terminate the instance using the Amazon EC2 console, CLI, or API;
-     *        otherwise, you can. If you set this parameter to <code>true</code>
-     *        and then later want to be able to terminate the instance, you must
-     *        first change the value of the <code>disableApiTermination</code>
-     *        attribute to <code>false</code> using
-     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     *        <code>InstanceInitiatedShutdownBehavior</code> to
-     *        <code>terminate</code>, you can terminate the instance by running
-     *        the shutdown command from the instance.</p>
+     *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *        console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code>
+     *        to <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *        instance.</p>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withDisableApiTermination(
-            Boolean disableApiTermination) {
+    public RunInstancesRequest withDisableApiTermination(Boolean disableApiTermination) {
         setDisableApiTermination(disableApiTermination);
         return this;
     }
 
     /**
      * <p>
-     * If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
-     * If you set this parameter to <code>true</code> and then later want to be
-     * able to terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
-     * you can terminate the instance by running the shutdown command from the
-     * instance.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return If you set this parameter to <code>true</code>, you can't
-     *         terminate the instance using the Amazon EC2 console, CLI, or API;
-     *         otherwise, you can. If you set this parameter to
-     *         <code>true</code> and then later want to be able to terminate the
-     *         instance, you must first change the value of the
-     *         <code>disableApiTermination</code> attribute to
-     *         <code>false</code> using <a>ModifyInstanceAttribute</a>.
-     *         Alternatively, if you set
-     *         <code>InstanceInitiatedShutdownBehavior</code> to
-     *         <code>terminate</code>, you can terminate the instance by running
-     *         the shutdown command from the instance.</p>
+     * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *         console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch,
+     *         use <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     *         <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance
+     *         by running the shutdown command from the instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1688,41 +1468,36 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * <p>
      * Default: <code>stop</code>
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).</p>
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).</p>
      *        <p>
      *        Default: <code>stop</code>
      * @see ShutdownBehavior
      */
 
-    public void setInstanceInitiatedShutdownBehavior(
-            String instanceInitiatedShutdownBehavior) {
+    public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * <p>
      * Default: <code>stop</code>
      * </p>
      * 
-     * @return Indicates whether an instance stops or terminates when you
-     *         initiate shutdown from the instance (using the operating system
-     *         command for system shutdown).</p>
+     * @return Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *         operating system command for system shutdown).</p>
      *         <p>
      *         Default: <code>stop</code>
      * @see ShutdownBehavior
@@ -1734,113 +1509,88 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * <p>
      * Default: <code>stop</code>
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).</p>
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).</p>
      *        <p>
      *        Default: <code>stop</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShutdownBehavior
      */
 
-    public RunInstancesRequest withInstanceInitiatedShutdownBehavior(
-            String instanceInitiatedShutdownBehavior) {
+    public RunInstancesRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * <p>
      * Default: <code>stop</code>
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).</p>
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).</p>
      *        <p>
      *        Default: <code>stop</code>
      * @see ShutdownBehavior
      */
 
-    public void setInstanceInitiatedShutdownBehavior(
-            ShutdownBehavior instanceInitiatedShutdownBehavior) {
-        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior
-                .toString();
+    public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * <p>
      * Default: <code>stop</code>
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).</p>
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).</p>
      *        <p>
      *        Default: <code>stop</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShutdownBehavior
      */
 
-    public RunInstancesRequest withInstanceInitiatedShutdownBehavior(
-            ShutdownBehavior instanceInitiatedShutdownBehavior) {
+    public RunInstancesRequest withInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
         return this;
     }
 
     /**
      * <p>
-     * [EC2-VPC] The primary IP address. You must specify a value from the IP
-     * address range of the subnet.
+     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
-     * Only one private IP address can be designated as primary. Therefore, you
-     * can't specify this parameter if <code>PrivateIpAddresses.n.Primary</code>
-     * is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP
-     * address.
-     * </p>
-     * <p>
-     * Default: We select an IP address from the IP address range of the subnet.
+     * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network interface specification. You
+     * cannot specify this option if you're launching more than one instance in the request.
      * </p>
      * 
      * @param privateIpAddress
-     *        [EC2-VPC] The primary IP address. You must specify a value from
-     *        the IP address range of the subnet.</p>
+     *        [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
+     *        subnet.</p>
      *        <p>
-     *        Only one private IP address can be designated as primary.
-     *        Therefore, you can't specify this parameter if
-     *        <code>PrivateIpAddresses.n.Primary</code> is set to
-     *        <code>true</code> and
-     *        <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP
-     *        address.
-     *        </p>
-     *        <p>
-     *        Default: We select an IP address from the IP address range of the
-     *        subnet.
+     *        Only one private IP address can be designated as primary. You can't specify this option if you've
+     *        specified the option to designate a private IP address as the primary IP address in a network interface
+     *        specification. You cannot specify this option if you're launching more than one instance in the request.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -1849,33 +1599,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-VPC] The primary IP address. You must specify a value from the IP
-     * address range of the subnet.
+     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
-     * Only one private IP address can be designated as primary. Therefore, you
-     * can't specify this parameter if <code>PrivateIpAddresses.n.Primary</code>
-     * is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP
-     * address.
-     * </p>
-     * <p>
-     * Default: We select an IP address from the IP address range of the subnet.
+     * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network interface specification. You
+     * cannot specify this option if you're launching more than one instance in the request.
      * </p>
      * 
-     * @return [EC2-VPC] The primary IP address. You must specify a value from
-     *         the IP address range of the subnet.</p>
+     * @return [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
+     *         subnet.</p>
      *         <p>
-     *         Only one private IP address can be designated as primary.
-     *         Therefore, you can't specify this parameter if
-     *         <code>PrivateIpAddresses.n.Primary</code> is set to
-     *         <code>true</code> and
-     *         <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an
-     *         IP address.
-     *         </p>
-     *         <p>
-     *         Default: We select an IP address from the IP address range of the
-     *         subnet.
+     *         Only one private IP address can be designated as primary. You can't specify this option if you've
+     *         specified the option to designate a private IP address as the primary IP address in a network interface
+     *         specification. You cannot specify this option if you're launching more than one instance in the request.
      */
 
     public String getPrivateIpAddress() {
@@ -1884,36 +1621,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-VPC] The primary IP address. You must specify a value from the IP
-     * address range of the subnet.
+     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
-     * Only one private IP address can be designated as primary. Therefore, you
-     * can't specify this parameter if <code>PrivateIpAddresses.n.Primary</code>
-     * is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP
-     * address.
-     * </p>
-     * <p>
-     * Default: We select an IP address from the IP address range of the subnet.
+     * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network interface specification. You
+     * cannot specify this option if you're launching more than one instance in the request.
      * </p>
      * 
      * @param privateIpAddress
-     *        [EC2-VPC] The primary IP address. You must specify a value from
-     *        the IP address range of the subnet.</p>
+     *        [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
+     *        subnet.</p>
      *        <p>
-     *        Only one private IP address can be designated as primary.
-     *        Therefore, you can't specify this parameter if
-     *        <code>PrivateIpAddresses.n.Primary</code> is set to
-     *        <code>true</code> and
-     *        <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP
-     *        address.
-     *        </p>
-     *        <p>
-     *        Default: We select an IP address from the IP address range of the
-     *        subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Only one private IP address can be designated as primary. You can't specify this option if you've
+     *        specified the option to designate a private IP address as the primary IP address in a network interface
+     *        specification. You cannot specify this option if you're launching more than one instance in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withPrivateIpAddress(String privateIpAddress) {
@@ -1923,20 +1646,170 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency
-     * of the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
+     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * </p>
+     * 
+     * @return [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
+     *         network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
+     *         the same request. You cannot specify this option if you've specified a minimum number of instances to
+     *         launch.
+     */
+
+    public java.util.List<InstanceIpv6Address> getIpv6Addresses() {
+        if (ipv6Addresses == null) {
+            ipv6Addresses = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>();
+        }
+        return ipv6Addresses;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
+     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
+     *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
+     *        the same request. You cannot specify this option if you've specified a minimum number of instances to
+     *        launch.
+     */
+
+    public void setIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
+        if (ipv6Addresses == null) {
+            this.ipv6Addresses = null;
+            return;
+        }
+
+        this.ipv6Addresses = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>(ipv6Addresses);
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
+     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
+     *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
+     *        the same request. You cannot specify this option if you've specified a minimum number of instances to
+     *        launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withIpv6Addresses(InstanceIpv6Address... ipv6Addresses) {
+        if (this.ipv6Addresses == null) {
+            setIpv6Addresses(new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>(ipv6Addresses.length));
+        }
+        for (InstanceIpv6Address ele : ipv6Addresses) {
+            this.ipv6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
+     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
+     *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
+     *        the same request. You cannot specify this option if you've specified a minimum number of instances to
+     *        launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
+        setIpv6Addresses(ipv6Addresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
+     * </p>
+     * 
+     * @param ipv6AddressCount
+     *        [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
+     *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
+     *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
+     *        number of instances to launch.
+     */
+
+    public void setIpv6AddressCount(Integer ipv6AddressCount) {
+        this.ipv6AddressCount = ipv6AddressCount;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
+     * </p>
+     * 
+     * @return [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
+     *         the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
+     *         specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
+     *         number of instances to launch.
+     */
+
+    public Integer getIpv6AddressCount() {
+        return this.ipv6AddressCount;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
+     * </p>
+     * 
+     * @param ipv6AddressCount
+     *        [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
+     *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
+     *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
+     *        number of instances to launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withIpv6AddressCount(Integer ipv6AddressCount) {
+        setIpv6AddressCount(ipv6AddressCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * <p>
      * Constraints: Maximum 64 ASCII characters
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.</p>
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.</p>
      *        <p>
      *        Constraints: Maximum 64 ASCII characters
      */
@@ -1947,19 +1820,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency
-     * of the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * <p>
      * Constraints: Maximum 64 ASCII characters
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *         >Ensuring Idempotency</a>.</p>
+     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.</p>
      *         <p>
      *         Constraints: Maximum 64 ASCII characters
      */
@@ -1970,24 +1842,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency
-     * of the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * <p>
      * Constraints: Maximum 64 ASCII characters
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.</p>
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.</p>
      *        <p>
      *        Constraints: Maximum 64 ASCII characters
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withClientToken(String clientToken) {
@@ -2027,8 +1897,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @param additionalInfo
      *        Reserved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withAdditionalInfo(String additionalInfo) {
@@ -2060,15 +1929,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        One or more network interfaces.
      */
 
-    public void setNetworkInterfaces(
-            java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
             return;
         }
 
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(
-                networkInterfaces);
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
     }
 
     /**
@@ -2076,23 +1943,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * One or more network interfaces.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
-     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withNetworkInterfaces(
-            InstanceNetworkInterfaceSpecification... networkInterfaces) {
+    public RunInstancesRequest withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(
-                    networkInterfaces.length));
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
         }
         for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
             this.networkInterfaces.add(ele);
@@ -2107,12 +1970,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withNetworkInterfaces(
-            java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+    public RunInstancesRequest withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
         return this;
     }
@@ -2126,8 +1987,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        The IAM instance profile.
      */
 
-    public void setIamInstanceProfile(
-            IamInstanceProfileSpecification iamInstanceProfile) {
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
 
@@ -2150,35 +2010,29 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @param iamInstanceProfile
      *        The IAM instance profile.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunInstancesRequest withIamInstanceProfile(
-            IamInstanceProfileSpecification iamInstanceProfile) {
+    public RunInstancesRequest withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS-optimized
-     *        instance.</p>
+     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an
+     *        EBS-optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -2189,22 +2043,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance.</p>
+     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *         to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *         optimization isn't available with all instance types. Additional usage charges apply when using an
+     *         EBS-optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -2215,27 +2065,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS-optimized
-     *        instance.</p>
+     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an
+     *        EBS-optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunInstancesRequest withEbsOptimized(Boolean ebsOptimized) {
@@ -2245,22 +2090,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance.</p>
+     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *         to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *         optimization isn't available with all instance types. Additional usage charges apply when using an
+     *         EBS-optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -2270,21 +2111,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<RunInstancesRequest> getDryRunRequest() {
-        Request<RunInstancesRequest> request = new RunInstancesRequestMarshaller()
-                .marshall(this);
+        Request<RunInstancesRequest> request = new RunInstancesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -2323,13 +2161,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
         if (getSubnetId() != null)
             sb.append("SubnetId: " + getSubnetId() + ",");
         if (getDisableApiTermination() != null)
-            sb.append("DisableApiTermination: " + getDisableApiTermination()
-                    + ",");
+            sb.append("DisableApiTermination: " + getDisableApiTermination() + ",");
         if (getInstanceInitiatedShutdownBehavior() != null)
-            sb.append("InstanceInitiatedShutdownBehavior: "
-                    + getInstanceInitiatedShutdownBehavior() + ",");
+            sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getIpv6Addresses() != null)
+            sb.append("Ipv6Addresses: " + getIpv6Addresses() + ",");
+        if (getIpv6AddressCount() != null)
+            sb.append("Ipv6AddressCount: " + getIpv6AddressCount() + ",");
         if (getClientToken() != null)
             sb.append("ClientToken: " + getClientToken() + ",");
         if (getAdditionalInfo() != null)
@@ -2356,129 +2196,100 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
         RunInstancesRequest other = (RunInstancesRequest) obj;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getMinCount() == null ^ this.getMinCount() == null)
             return false;
-        if (other.getMinCount() != null
-                && other.getMinCount().equals(this.getMinCount()) == false)
+        if (other.getMinCount() != null && other.getMinCount().equals(this.getMinCount()) == false)
             return false;
         if (other.getMaxCount() == null ^ this.getMaxCount() == null)
             return false;
-        if (other.getMaxCount() != null
-                && other.getMaxCount().equals(this.getMaxCount()) == false)
+        if (other.getMaxCount() != null && other.getMaxCount().equals(this.getMaxCount()) == false)
             return false;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
-        if (other.getSecurityGroupIds() == null
-                ^ this.getSecurityGroupIds() == null)
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
             return false;
-        if (other.getSecurityGroupIds() != null
-                && other.getSecurityGroupIds().equals(
-                        this.getSecurityGroupIds()) == false)
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getPlacement() == null ^ this.getPlacement() == null)
             return false;
-        if (other.getPlacement() != null
-                && other.getPlacement().equals(this.getPlacement()) == false)
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getMonitoring() == null ^ this.getMonitoring() == null)
             return false;
-        if (other.getMonitoring() != null
-                && other.getMonitoring().equals(this.getMonitoring()) == false)
+        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getDisableApiTermination() == null
-                ^ this.getDisableApiTermination() == null)
+        if (other.getDisableApiTermination() == null ^ this.getDisableApiTermination() == null)
             return false;
-        if (other.getDisableApiTermination() != null
-                && other.getDisableApiTermination().equals(
-                        this.getDisableApiTermination()) == false)
+        if (other.getDisableApiTermination() != null && other.getDisableApiTermination().equals(this.getDisableApiTermination()) == false)
             return false;
-        if (other.getInstanceInitiatedShutdownBehavior() == null
-                ^ this.getInstanceInitiatedShutdownBehavior() == null)
+        if (other.getInstanceInitiatedShutdownBehavior() == null ^ this.getInstanceInitiatedShutdownBehavior() == null)
             return false;
         if (other.getInstanceInitiatedShutdownBehavior() != null
-                && other.getInstanceInitiatedShutdownBehavior().equals(
-                        this.getInstanceInitiatedShutdownBehavior()) == false)
+                && other.getInstanceInitiatedShutdownBehavior().equals(this.getInstanceInitiatedShutdownBehavior()) == false)
             return false;
-        if (other.getPrivateIpAddress() == null
-                ^ this.getPrivateIpAddress() == null)
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
             return false;
-        if (other.getPrivateIpAddress() != null
-                && other.getPrivateIpAddress().equals(
-                        this.getPrivateIpAddress()) == false)
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
+            return false;
+        if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
+            return false;
+        if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
+        if (other.getIpv6AddressCount() == null ^ this.getIpv6AddressCount() == null)
+            return false;
+        if (other.getIpv6AddressCount() != null && other.getIpv6AddressCount().equals(this.getIpv6AddressCount()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getAdditionalInfo() == null
-                ^ this.getAdditionalInfo() == null)
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null)
             return false;
-        if (other.getAdditionalInfo() != null
-                && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
             return false;
-        if (other.getNetworkInterfaces() == null
-                ^ this.getNetworkInterfaces() == null)
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
             return false;
-        if (other.getNetworkInterfaces() != null
-                && other.getNetworkInterfaces().equals(
-                        this.getNetworkInterfaces()) == false)
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
-        if (other.getIamInstanceProfile() == null
-                ^ this.getIamInstanceProfile() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getIamInstanceProfile() != null
-                && other.getIamInstanceProfile().equals(
-                        this.getIamInstanceProfile()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
         return true;
     }
@@ -2488,73 +2299,30 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMinCount() == null) ? 0 : getMinCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxCount() == null) ? 0 : getMaxCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode
-                + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDisableApiTermination() == null) ? 0
-                        : getDisableApiTermination().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceInitiatedShutdownBehavior() == null) ? 0
-                        : getInstanceInitiatedShutdownBehavior().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaces() == null) ? 0
-                        : getNetworkInterfaces().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIamInstanceProfile() == null) ? 0
-                        : getIamInstanceProfile().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getMinCount() == null) ? 0 : getMinCount().hashCode());
+        hashCode = prime * hashCode + ((getMaxCount() == null) ? 0 : getMaxCount().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getDisableApiTermination() == null) ? 0 : getDisableApiTermination().hashCode());
+        hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getIpv6AddressCount() == null) ? 0 : getIpv6AddressCount().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         return hashCode;
     }
 

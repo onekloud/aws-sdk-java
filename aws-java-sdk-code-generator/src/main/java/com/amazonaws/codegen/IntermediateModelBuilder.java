@@ -21,7 +21,12 @@ import com.amazonaws.codegen.internal.TypeUtils;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.*;
+import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.MemberModel;
+import com.amazonaws.codegen.model.intermediate.OperationModel;
+import com.amazonaws.codegen.model.intermediate.ServiceExamples;
+import com.amazonaws.codegen.model.intermediate.ShapeModel;
+import com.amazonaws.codegen.model.intermediate.WaiterDefinitionModel;
 import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Waiters;
@@ -83,6 +88,12 @@ public class IntermediateModelBuilder {
     }
 
     public IntermediateModel build() throws IOException{
+        // Note: This needs to come before any pre/post processing of the
+        // models, as the transformer must have access to the original shapes,
+        // before any customizations have been applied (which modifies them).
+        System.out.println("Applying customizations to examples...");
+        new ExamplesCustomizer(service, customConfig).applyCustomizationsToExamples(examples);
+        System.out.println("Examples customized.");
 
         CodegenCustomizationProcessor customization = DefaultCustomizationProcessor
                 .getProcessorFor(customConfig);
@@ -114,7 +125,7 @@ public class IntermediateModelBuilder {
 
         Map<String, ShapeModel> trimmedShapes = removeUnusedShapes(fullModel);
 
-        System.out.println(shapes.size() + " shapes remained after removing unused shapes.");
+        System.out.println(trimmedShapes.size() + " shapes remained after removing unused shapes.");
 
         IntermediateModel trimmedModel = new IntermediateModel(fullModel.getMetadata(),
                                                                fullModel.getOperations(),

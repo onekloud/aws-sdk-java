@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeClusterVersionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeClusterVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,26 +31,35 @@ public class DescribeClusterVersionsRequest extends
     private String clusterVersion;
     /**
      * <p>
-     * The name of a specific cluster parameter group family to return details
-     * for.
+     * The name of a specific cluster parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String clusterParameterGroupFamily;
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -66,13 +71,10 @@ public class DescribeClusterVersionsRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a <a>DescribeClusterVersions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can
-     * retrieve the next set of response records by providing the returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      */
     private String marker;
@@ -86,7 +88,7 @@ public class DescribeClusterVersionsRequest extends
      * </p>
      * 
      * @param clusterVersion
-     *        The specific cluster version to return. </p>
+     *        The specific cluster version to return.</p>
      *        <p>
      *        Example: <code>1.0</code>
      */
@@ -103,7 +105,7 @@ public class DescribeClusterVersionsRequest extends
      * Example: <code>1.0</code>
      * </p>
      * 
-     * @return The specific cluster version to return. </p>
+     * @return The specific cluster version to return.</p>
      *         <p>
      *         Example: <code>1.0</code>
      */
@@ -121,73 +123,114 @@ public class DescribeClusterVersionsRequest extends
      * </p>
      * 
      * @param clusterVersion
-     *        The specific cluster version to return. </p>
+     *        The specific cluster version to return.</p>
      *        <p>
      *        Example: <code>1.0</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterVersionsRequest withClusterVersion(
-            String clusterVersion) {
+    public DescribeClusterVersionsRequest withClusterVersion(String clusterVersion) {
         setClusterVersion(clusterVersion);
         return this;
     }
 
     /**
      * <p>
-     * The name of a specific cluster parameter group family to return details
-     * for.
+     * The name of a specific cluster parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterParameterGroupFamily
-     *        The name of a specific cluster parameter group family to return
-     *        details for. </p>
+     *        The name of a specific cluster parameter group family to return details for.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
-    public void setClusterParameterGroupFamily(
-            String clusterParameterGroupFamily) {
+    public void setClusterParameterGroupFamily(String clusterParameterGroupFamily) {
         this.clusterParameterGroupFamily = clusterParameterGroupFamily;
     }
 
     /**
      * <p>
-     * The name of a specific cluster parameter group family to return details
-     * for.
+     * The name of a specific cluster parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of a specific cluster parameter group family to return
-     *         details for. </p>
+     * @return The name of a specific cluster parameter group family to return details for.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getClusterParameterGroupFamily() {
@@ -196,45 +239,63 @@ public class DescribeClusterVersionsRequest extends
 
     /**
      * <p>
-     * The name of a specific cluster parameter group family to return details
-     * for.
+     * The name of a specific cluster parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterParameterGroupFamily
-     *        The name of a specific cluster parameter group family to return
-     *        details for. </p>
+     *        The name of a specific cluster parameter group family to return details for.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterVersionsRequest withClusterParameterGroupFamily(
-            String clusterParameterGroupFamily) {
+    public DescribeClusterVersionsRequest withClusterParameterGroupFamily(String clusterParameterGroupFamily) {
         setClusterParameterGroupFamily(clusterParameterGroupFamily);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -244,12 +305,10 @@ public class DescribeClusterVersionsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
@@ -263,11 +322,9 @@ public class DescribeClusterVersionsRequest extends
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -276,11 +333,9 @@ public class DescribeClusterVersionsRequest extends
      * Constraints: minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of response records to return in each call. If
-     *         the number of remaining response records exceeds the specified
-     *         <code>MaxRecords</code> value, a value is returned in a
-     *         <code>marker</code> field of the response. You can retrieve the
-     *         next set of records by retrying the command with the returned
+     * @return The maximum number of response records to return in each call. If the number of remaining response
+     *         records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code>
+     *         field of the response. You can retrieve the next set of records by retrying the command with the returned
      *         marker value. </p>
      *         <p>
      *         Default: <code>100</code>
@@ -295,11 +350,9 @@ public class DescribeClusterVersionsRequest extends
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -309,19 +362,16 @@ public class DescribeClusterVersionsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
      *        <p>
      *        Constraints: minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterVersionsRequest withMaxRecords(Integer maxRecords) {
@@ -331,24 +381,18 @@ public class DescribeClusterVersionsRequest extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a <a>DescribeClusterVersions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can
-     * retrieve the next set of response records by providing the returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <a>DescribeClusterVersions</a> request exceed the value specified
-     *        in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request.
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>,
+     *        AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     *        response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
+     *        the request.
      */
 
     public void setMarker(String marker) {
@@ -357,23 +401,17 @@ public class DescribeClusterVersionsRequest extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a <a>DescribeClusterVersions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can
-     * retrieve the next set of response records by providing the returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
-     * @return An optional parameter that specifies the starting point to return
-     *         a set of response records. When the results of a
-     *         <a>DescribeClusterVersions</a> request exceed the value specified
-     *         in <code>MaxRecords</code>, AWS returns a value in the
-     *         <code>Marker</code> field of the response. You can retrieve the
-     *         next set of response records by providing the returned marker
-     *         value in the <code>Marker</code> parameter and retrying the
-     *         request.
+     * @return An optional parameter that specifies the starting point to return a set of response records. When the
+     *         results of a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>
+     *         , AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     *         response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
+     *         the request.
      */
 
     public String getMarker() {
@@ -382,26 +420,19 @@ public class DescribeClusterVersionsRequest extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a <a>DescribeClusterVersions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can
-     * retrieve the next set of response records by providing the returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <a>DescribeClusterVersions</a> request exceed the value specified
-     *        in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>,
+     *        AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     *        response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
+     *        the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterVersionsRequest withMarker(String marker) {
@@ -410,8 +441,7 @@ public class DescribeClusterVersionsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -424,8 +454,7 @@ public class DescribeClusterVersionsRequest extends
         if (getClusterVersion() != null)
             sb.append("ClusterVersion: " + getClusterVersion() + ",");
         if (getClusterParameterGroupFamily() != null)
-            sb.append("ClusterParameterGroupFamily: "
-                    + getClusterParameterGroupFamily() + ",");
+            sb.append("ClusterParameterGroupFamily: " + getClusterParameterGroupFamily() + ",");
         if (getMaxRecords() != null)
             sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null)
@@ -444,28 +473,21 @@ public class DescribeClusterVersionsRequest extends
         if (obj instanceof DescribeClusterVersionsRequest == false)
             return false;
         DescribeClusterVersionsRequest other = (DescribeClusterVersionsRequest) obj;
-        if (other.getClusterVersion() == null
-                ^ this.getClusterVersion() == null)
+        if (other.getClusterVersion() == null ^ this.getClusterVersion() == null)
             return false;
-        if (other.getClusterVersion() != null
-                && other.getClusterVersion().equals(this.getClusterVersion()) == false)
+        if (other.getClusterVersion() != null && other.getClusterVersion().equals(this.getClusterVersion()) == false)
             return false;
-        if (other.getClusterParameterGroupFamily() == null
-                ^ this.getClusterParameterGroupFamily() == null)
+        if (other.getClusterParameterGroupFamily() == null ^ this.getClusterParameterGroupFamily() == null)
             return false;
-        if (other.getClusterParameterGroupFamily() != null
-                && other.getClusterParameterGroupFamily().equals(
-                        this.getClusterParameterGroupFamily()) == false)
+        if (other.getClusterParameterGroupFamily() != null && other.getClusterParameterGroupFamily().equals(this.getClusterParameterGroupFamily()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -475,18 +497,10 @@ public class DescribeClusterVersionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterVersion() == null) ? 0 : getClusterVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterParameterGroupFamily() == null) ? 0
-                        : getClusterParameterGroupFamily().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode());
+        hashCode = prime * hashCode + ((getClusterParameterGroupFamily() == null) ? 0 : getClusterParameterGroupFamily().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

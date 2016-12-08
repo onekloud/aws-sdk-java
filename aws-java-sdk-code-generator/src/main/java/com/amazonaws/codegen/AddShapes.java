@@ -22,11 +22,11 @@ import com.amazonaws.codegen.model.intermediate.ListModel;
 import com.amazonaws.codegen.model.intermediate.MapModel;
 import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.ParameterHttpMapping;
-import com.amazonaws.codegen.model.intermediate.ParameterHttpMapping.Location;
 import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.VariableModel;
+import com.amazonaws.codegen.model.service.Location;
 import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
@@ -92,6 +92,7 @@ abstract class AddShapes {
         boolean hasStatusCodeMember = false;
         boolean hasPayloadMember = false;
         boolean hasStreamingMember = false;
+        boolean hasUriMember = false;
 
         final Map<String, Member> members = shape.getMembers();
 
@@ -117,6 +118,8 @@ abstract class AddShapes {
                     if (memberModel.getHttp().getIsStreaming()) {
                         hasStreamingMember = true;
                     }
+                } else if (memberModel.getHttp().getLocation() == Location.URI) {
+                    hasUriMember = true;
                 }
 
                 shapeModel.addMember(memberModel);
@@ -125,7 +128,8 @@ abstract class AddShapes {
             shapeModel.withHasHeaderMember(hasHeaderMember)
                     .withHasStatusCodeMember(hasStatusCodeMember)
                     .withHasPayloadMember(hasPayloadMember)
-                    .withHasStreamingMember(hasStreamingMember);
+                    .withHasStreamingMember(hasStreamingMember)
+                    .withHasUriMember(hasUriMember);
         }
 
         final List<String> enumValues = shape.getEnumValues();

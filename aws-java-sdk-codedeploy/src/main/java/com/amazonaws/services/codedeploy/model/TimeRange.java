@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -27,14 +25,22 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the start time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the start time open-ended.
+     * </p>
+     * </note>
      */
     private java.util.Date start;
     /**
      * <p>
      * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the end time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the end time open-ended.
+     * </p>
+     * </note>
      */
     private java.util.Date end;
 
@@ -42,11 +48,17 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the start time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the start time open-ended.
+     * </p>
+     * </note>
      * 
      * @param start
-     *        The start time of the time range.</p> <note>Specify null to leave
-     *        the start time open-ended.
+     *        The start time of the time range.</p> <note>
+     *        <p>
+     *        Specify null to leave the start time open-ended.
+     *        </p>
      */
 
     public void setStart(java.util.Date start) {
@@ -57,10 +69,16 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the start time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the start time open-ended.
+     * </p>
+     * </note>
      * 
-     * @return The start time of the time range.</p> <note>Specify null to leave
-     *         the start time open-ended.
+     * @return The start time of the time range.</p> <note>
+     *         <p>
+     *         Specify null to leave the start time open-ended.
+     *         </p>
      */
 
     public java.util.Date getStart() {
@@ -71,13 +89,18 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the start time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the start time open-ended.
+     * </p>
+     * </note>
      * 
      * @param start
-     *        The start time of the time range.</p> <note>Specify null to leave
-     *        the start time open-ended.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The start time of the time range.</p> <note>
+     *        <p>
+     *        Specify null to leave the start time open-ended.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TimeRange withStart(java.util.Date start) {
@@ -89,11 +112,17 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the end time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the end time open-ended.
+     * </p>
+     * </note>
      * 
      * @param end
-     *        The end time of the time range.</p> <note>Specify null to leave
-     *        the end time open-ended.
+     *        The end time of the time range.</p> <note>
+     *        <p>
+     *        Specify null to leave the end time open-ended.
+     *        </p>
      */
 
     public void setEnd(java.util.Date end) {
@@ -104,10 +133,16 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the end time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the end time open-ended.
+     * </p>
+     * </note>
      * 
-     * @return The end time of the time range.</p> <note>Specify null to leave
-     *         the end time open-ended.
+     * @return The end time of the time range.</p> <note>
+     *         <p>
+     *         Specify null to leave the end time open-ended.
+     *         </p>
      */
 
     public java.util.Date getEnd() {
@@ -118,13 +153,18 @@ public class TimeRange implements Serializable, Cloneable {
      * <p>
      * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the end time open-ended.</note>
+     * <note>
+     * <p>
+     * Specify null to leave the end time open-ended.
+     * </p>
+     * </note>
      * 
      * @param end
-     *        The end time of the time range.</p> <note>Specify null to leave
-     *        the end time open-ended.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The end time of the time range.</p> <note>
+     *        <p>
+     *        Specify null to leave the end time open-ended.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TimeRange withEnd(java.util.Date end) {
@@ -133,8 +173,7 @@ public class TimeRange implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -164,13 +203,11 @@ public class TimeRange implements Serializable, Cloneable {
         TimeRange other = (TimeRange) obj;
         if (other.getStart() == null ^ this.getStart() == null)
             return false;
-        if (other.getStart() != null
-                && other.getStart().equals(this.getStart()) == false)
+        if (other.getStart() != null && other.getStart().equals(this.getStart()) == false)
             return false;
         if (other.getEnd() == null ^ this.getEnd() == null)
             return false;
-        if (other.getEnd() != null
-                && other.getEnd().equals(this.getEnd()) == false)
+        if (other.getEnd() != null && other.getEnd().equals(this.getEnd()) == false)
             return false;
         return true;
     }
@@ -180,10 +217,8 @@ public class TimeRange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStart() == null) ? 0 : getStart().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnd() == null) ? 0 : getEnd().hashCode());
+        hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
+        hashCode = prime * hashCode + ((getEnd() == null) ? 0 : getEnd().hashCode());
         return hashCode;
     }
 
@@ -192,9 +227,7 @@ public class TimeRange implements Serializable, Cloneable {
         try {
             return (TimeRange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * A complex type that describes function metadata.
  * </p>
  */
-public class UpdateFunctionCodeResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -42,16 +38,15 @@ public class UpdateFunctionCodeResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      */
     private String runtime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      */
     private String role;
@@ -75,17 +70,14 @@ public class UpdateFunctionCodeResult extends
     private String description;
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      */
     private Integer memorySize;
@@ -113,6 +105,25 @@ public class UpdateFunctionCodeResult extends
      * </p>
      */
     private VpcConfigResponse vpcConfig;
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     */
+    private DeadLetterConfig deadLetterConfig;
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     */
+    private EnvironmentResponse environment;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     */
+    private String kMSKeyArn;
 
     /**
      * <p>
@@ -146,8 +157,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param functionName
      *        The name of the function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withFunctionName(String functionName) {
@@ -187,8 +197,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param functionArn
      *        The Amazon Resource Name (ARN) assigned to the function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withFunctionArn(String functionArn) {
@@ -201,15 +210,15 @@ public class UpdateFunctionCodeResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
      * @see Runtime
      */
 
@@ -222,14 +231,14 @@ public class UpdateFunctionCodeResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @return The runtime environment for the Lambda function.</p>
      *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *         use earlier runtime (v0.10.42), set the value to "nodejs".
+     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *         value to "nodejs".
      * @see Runtime
      */
 
@@ -242,17 +251,16 @@ public class UpdateFunctionCodeResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
 
@@ -266,15 +274,15 @@ public class UpdateFunctionCodeResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
      * @see Runtime
      */
 
@@ -287,17 +295,16 @@ public class UpdateFunctionCodeResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
 
@@ -308,15 +315,13 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      * 
      * @param role
-     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
-     *        when it executes your function to access any other Amazon Web
-     *        Services (AWS) resources.
+     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
+     *        access any other Amazon Web Services (AWS) resources.
      */
 
     public void setRole(String role) {
@@ -325,14 +330,12 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Lambda
-     *         assumes when it executes your function to access any other Amazon
-     *         Web Services (AWS) resources.
+     * @return The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
+     *         access any other Amazon Web Services (AWS) resources.
      */
 
     public String getRole() {
@@ -341,17 +344,14 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      * 
      * @param role
-     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
-     *        when it executes your function to access any other Amazon Web
-     *        Services (AWS) resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
+     *        access any other Amazon Web Services (AWS) resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withRole(String role) {
@@ -391,8 +391,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param handler
      *        The function Lambda calls to begin executing your function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withHandler(String handler) {
@@ -432,8 +431,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param codeSize
      *        The size, in bytes, of the function .zip file you uploaded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withCodeSize(Long codeSize) {
@@ -473,8 +471,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param description
      *        The user-provided description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withDescription(String description) {
@@ -484,17 +481,14 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the
-     *        function. Because the execution time has cost implications, we
-     *        recommend you set this value based on your expected execution
-     *        time. The default is 3 seconds.
+     *        The function execution time at which Lambda should terminate the function. Because the execution time has
+     *        cost implications, we recommend you set this value based on your expected execution time. The default is 3
+     *        seconds.
      */
 
     public void setTimeout(Integer timeout) {
@@ -503,16 +497,13 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      * 
-     * @return The function execution time at which Lambda should terminate the
-     *         function. Because the execution time has cost implications, we
-     *         recommend you set this value based on your expected execution
-     *         time. The default is 3 seconds.
+     * @return The function execution time at which Lambda should terminate the function. Because the execution time has
+     *         cost implications, we recommend you set this value based on your expected execution time. The default is
+     *         3 seconds.
      */
 
     public Integer getTimeout() {
@@ -521,19 +512,15 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the
-     *        function. Because the execution time has cost implications, we
-     *        recommend you set this value based on your expected execution
-     *        time. The default is 3 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The function execution time at which Lambda should terminate the function. Because the execution time has
+     *        cost implications, we recommend you set this value based on your expected execution time. The default is 3
+     *        seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withTimeout(Integer timeout) {
@@ -543,13 +530,11 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      * 
      * @param memorySize
-     *        The memory size, in MB, you configured for the function. Must be a
-     *        multiple of 64 MB.
+     *        The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -558,12 +543,10 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      * 
-     * @return The memory size, in MB, you configured for the function. Must be
-     *         a multiple of 64 MB.
+     * @return The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      */
 
     public Integer getMemorySize() {
@@ -572,15 +555,12 @@ public class UpdateFunctionCodeResult extends
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      * 
      * @param memorySize
-     *        The memory size, in MB, you configured for the function. Must be a
-     *        multiple of 64 MB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withMemorySize(Integer memorySize) {
@@ -620,8 +600,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param lastModified
      *        The time stamp of the last time you updated the function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withLastModified(String lastModified) {
@@ -661,8 +640,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param codeSha256
      *        It is the SHA256 hash of your function deployment package.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withCodeSha256(String codeSha256) {
@@ -702,8 +680,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param version
      *        The version of the Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withVersion(String version) {
@@ -743,8 +720,7 @@ public class UpdateFunctionCodeResult extends
      * 
      * @param vpcConfig
      *        VPC configuration associated with your Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFunctionCodeResult withVpcConfig(VpcConfigResponse vpcConfig) {
@@ -753,8 +729,136 @@ public class UpdateFunctionCodeResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     */
+
+    public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        this.deadLetterConfig = deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
+     *         SNS topic.
+     */
+
+    public DeadLetterConfig getDeadLetterConfig() {
+        return this.deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        setDeadLetterConfig(deadLetterConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @param environment
+     *        The parent object that contains your environment's configuration settings.
+     */
+
+    public void setEnvironment(EnvironmentResponse environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @return The parent object that contains your environment's configuration settings.
+     */
+
+    public EnvironmentResponse getEnvironment() {
+        return this.environment;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @param environment
+     *        The parent object that contains your environment's configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withEnvironment(EnvironmentResponse environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        empty, it means you are using the AWS Lambda default service key.
+     */
+
+    public void setKMSKeyArn(String kMSKeyArn) {
+        this.kMSKeyArn = kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *         empty, it means you are using the AWS Lambda default service key.
+     */
+
+    public String getKMSKeyArn() {
+        return this.kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        empty, it means you are using the AWS Lambda default service key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withKMSKeyArn(String kMSKeyArn) {
+        setKMSKeyArn(kMSKeyArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -789,7 +893,13 @@ public class UpdateFunctionCodeResult extends
         if (getVersion() != null)
             sb.append("Version: " + getVersion() + ",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig());
+            sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getDeadLetterConfig() != null)
+            sb.append("DeadLetterConfig: " + getDeadLetterConfig() + ",");
+        if (getEnvironment() != null)
+            sb.append("Environment: " + getEnvironment() + ",");
+        if (getKMSKeyArn() != null)
+            sb.append("KMSKeyArn: " + getKMSKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -806,68 +916,67 @@ public class UpdateFunctionCodeResult extends
         UpdateFunctionCodeResult other = (UpdateFunctionCodeResult) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getFunctionArn() == null ^ this.getFunctionArn() == null)
             return false;
-        if (other.getFunctionArn() != null
-                && other.getFunctionArn().equals(this.getFunctionArn()) == false)
+        if (other.getFunctionArn() != null && other.getFunctionArn().equals(this.getFunctionArn()) == false)
             return false;
         if (other.getRuntime() == null ^ this.getRuntime() == null)
             return false;
-        if (other.getRuntime() != null
-                && other.getRuntime().equals(this.getRuntime()) == false)
+        if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
             return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
-        if (other.getRole() != null
-                && other.getRole().equals(this.getRole()) == false)
+        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
             return false;
         if (other.getHandler() == null ^ this.getHandler() == null)
             return false;
-        if (other.getHandler() != null
-                && other.getHandler().equals(this.getHandler()) == false)
+        if (other.getHandler() != null && other.getHandler().equals(this.getHandler()) == false)
             return false;
         if (other.getCodeSize() == null ^ this.getCodeSize() == null)
             return false;
-        if (other.getCodeSize() != null
-                && other.getCodeSize().equals(this.getCodeSize()) == false)
+        if (other.getCodeSize() != null && other.getCodeSize().equals(this.getCodeSize()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTimeout() == null ^ this.getTimeout() == null)
             return false;
-        if (other.getTimeout() != null
-                && other.getTimeout().equals(this.getTimeout()) == false)
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
         if (other.getMemorySize() == null ^ this.getMemorySize() == null)
             return false;
-        if (other.getMemorySize() != null
-                && other.getMemorySize().equals(this.getMemorySize()) == false)
+        if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false)
             return false;
         if (other.getLastModified() == null ^ this.getLastModified() == null)
             return false;
-        if (other.getLastModified() != null
-                && other.getLastModified().equals(this.getLastModified()) == false)
+        if (other.getLastModified() != null && other.getLastModified().equals(this.getLastModified()) == false)
             return false;
         if (other.getCodeSha256() == null ^ this.getCodeSha256() == null)
             return false;
-        if (other.getCodeSha256() != null
-                && other.getCodeSha256().equals(this.getCodeSha256()) == false)
+        if (other.getCodeSha256() != null && other.getCodeSha256().equals(this.getCodeSha256()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
             return false;
-        if (other.getVpcConfig() != null
-                && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
+            return false;
+        if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
+            return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getKMSKeyArn() == null ^ this.getKMSKeyArn() == null)
+            return false;
+        if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
         return true;
     }
@@ -877,38 +986,22 @@ public class UpdateFunctionCodeResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
-        hashCode = prime * hashCode
-                + ((getRole() == null) ? 0 : getRole().hashCode());
-        hashCode = prime * hashCode
-                + ((getHandler() == null) ? 0 : getHandler().hashCode());
-        hashCode = prime * hashCode
-                + ((getCodeSize() == null) ? 0 : getCodeSize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
-        hashCode = prime * hashCode
-                + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModified() == null) ? 0 : getLastModified()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
+        hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
+        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getHandler() == null) ? 0 : getHandler().hashCode());
+        hashCode = prime * hashCode + ((getCodeSize() == null) ? 0 : getCodeSize().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
+        hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
+        hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         return hashCode;
     }
 
@@ -917,9 +1010,7 @@ public class UpdateFunctionCodeResult extends
         try {
             return (UpdateFunctionCodeResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
 
@@ -18,29 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Describes the inputs for PutMetricData.
- * </p>
+ * 
  */
-public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that
-     * begin with "AWS/" are reserved for other Amazon Web Services products
-     * that send metrics to Amazon CloudWatch.
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.
      * </p>
-     * </note>
      */
     private String namespace;
     /**
      * <p>
-     * A list of data describing the metric.
+     * The data for the metric.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricDatum> metricData;
@@ -49,21 +41,16 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that
-     * begin with "AWS/" are reserved for other Amazon Web Services products
-     * that send metrics to Amazon CloudWatch.
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.
      * </p>
-     * </note>
      * 
      * @param namespace
-     *        The namespace for the metric data.</p> <note>
+     *        The namespace for the metric data.</p>
      *        <p>
-     *        You cannot specify a namespace that begins with "AWS/". Namespaces
-     *        that begin with "AWS/" are reserved for other Amazon Web Services
-     *        products that send metrics to Amazon CloudWatch.
-     *        </p>
+     *        You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for
+     *        use by Amazon Web Services products.
      */
 
     public void setNamespace(String namespace) {
@@ -74,20 +61,15 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that
-     * begin with "AWS/" are reserved for other Amazon Web Services products
-     * that send metrics to Amazon CloudWatch.
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.
      * </p>
-     * </note>
      * 
-     * @return The namespace for the metric data.</p> <note>
+     * @return The namespace for the metric data.</p>
      *         <p>
-     *         You cannot specify a namespace that begins with "AWS/".
-     *         Namespaces that begin with "AWS/" are reserved for other Amazon
-     *         Web Services products that send metrics to Amazon CloudWatch.
-     *         </p>
+     *         You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved
+     *         for use by Amazon Web Services products.
      */
 
     public String getNamespace() {
@@ -98,23 +80,17 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that
-     * begin with "AWS/" are reserved for other Amazon Web Services products
-     * that send metrics to Amazon CloudWatch.
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.
      * </p>
-     * </note>
      * 
      * @param namespace
-     *        The namespace for the metric data.</p> <note>
+     *        The namespace for the metric data.</p>
      *        <p>
-     *        You cannot specify a namespace that begins with "AWS/". Namespaces
-     *        that begin with "AWS/" are reserved for other Amazon Web Services
-     *        products that send metrics to Amazon CloudWatch.
-     *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for
+     *        use by Amazon Web Services products.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMetricDataRequest withNamespace(String namespace) {
@@ -124,10 +100,10 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of data describing the metric.
+     * The data for the metric.
      * </p>
      * 
-     * @return A list of data describing the metric.
+     * @return The data for the metric.
      */
 
     public java.util.List<MetricDatum> getMetricData() {
@@ -139,11 +115,11 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of data describing the metric.
+     * The data for the metric.
      * </p>
      * 
      * @param metricData
-     *        A list of data describing the metric.
+     *        The data for the metric.
      */
 
     public void setMetricData(java.util.Collection<MetricDatum> metricData) {
@@ -152,31 +128,27 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.metricData = new com.amazonaws.internal.SdkInternalList<MetricDatum>(
-                metricData);
+        this.metricData = new com.amazonaws.internal.SdkInternalList<MetricDatum>(metricData);
     }
 
     /**
      * <p>
-     * A list of data describing the metric.
+     * The data for the metric.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMetricData(java.util.Collection)} or
-     * {@link #withMetricData(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetricData(java.util.Collection)} or {@link #withMetricData(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param metricData
-     *        A list of data describing the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data for the metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMetricDataRequest withMetricData(MetricDatum... metricData) {
         if (this.metricData == null) {
-            setMetricData(new com.amazonaws.internal.SdkInternalList<MetricDatum>(
-                    metricData.length));
+            setMetricData(new com.amazonaws.internal.SdkInternalList<MetricDatum>(metricData.length));
         }
         for (MetricDatum ele : metricData) {
             this.metricData.add(ele);
@@ -186,24 +158,21 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of data describing the metric.
+     * The data for the metric.
      * </p>
      * 
      * @param metricData
-     *        A list of data describing the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data for the metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutMetricDataRequest withMetricData(
-            java.util.Collection<MetricDatum> metricData) {
+    public PutMetricDataRequest withMetricData(java.util.Collection<MetricDatum> metricData) {
         setMetricData(metricData);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -233,13 +202,11 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
         PutMetricDataRequest other = (PutMetricDataRequest) obj;
         if (other.getNamespace() == null ^ this.getNamespace() == null)
             return false;
-        if (other.getNamespace() != null
-                && other.getNamespace().equals(this.getNamespace()) == false)
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
             return false;
         if (other.getMetricData() == null ^ this.getMetricData() == null)
             return false;
-        if (other.getMetricData() != null
-                && other.getMetricData().equals(this.getMetricData()) == false)
+        if (other.getMetricData() != null && other.getMetricData().equals(this.getMetricData()) == false)
             return false;
         return true;
     }
@@ -249,10 +216,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
-        hashCode = prime * hashCode
-                + ((getMetricData() == null) ? 0 : getMetricData().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getMetricData() == null) ? 0 : getMetricData().hashCode());
         return hashCode;
     }
 

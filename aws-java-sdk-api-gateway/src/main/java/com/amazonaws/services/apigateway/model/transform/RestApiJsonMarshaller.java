@@ -1,23 +1,21 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.List;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
@@ -37,8 +35,7 @@ public class RestApiJsonMarshaller {
     public void marshall(RestApi restApi, StructuredJsonGenerator jsonGenerator) {
 
         if (restApi == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -48,16 +45,16 @@ public class RestApiJsonMarshaller {
                 jsonGenerator.writeFieldName("id").writeValue(restApi.getId());
             }
             if (restApi.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(
-                        restApi.getName());
+                jsonGenerator.writeFieldName("name").writeValue(restApi.getName());
             }
             if (restApi.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(
-                        restApi.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(restApi.getDescription());
             }
             if (restApi.getCreatedDate() != null) {
-                jsonGenerator.writeFieldName("createdDate").writeValue(
-                        restApi.getCreatedDate());
+                jsonGenerator.writeFieldName("createdDate").writeValue(restApi.getCreatedDate());
+            }
+            if (restApi.getVersion() != null) {
+                jsonGenerator.writeFieldName("version").writeValue(restApi.getVersion());
             }
 
             java.util.List<String> warningsList = restApi.getWarnings();
@@ -72,10 +69,21 @@ public class RestApiJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
+            java.util.List<String> binaryMediaTypesList = restApi.getBinaryMediaTypes();
+            if (binaryMediaTypesList != null) {
+                jsonGenerator.writeFieldName("binaryMediaTypes");
+                jsonGenerator.writeStartArray();
+                for (String binaryMediaTypesListValue : binaryMediaTypesList) {
+                    if (binaryMediaTypesListValue != null) {
+                        jsonGenerator.writeValue(binaryMediaTypesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

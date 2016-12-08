@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
@@ -27,7 +25,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -43,23 +41,19 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeElasticsearchDomainConfigRequest Marshaller
  */
-public class DescribeElasticsearchDomainConfigRequestMarshaller
-        implements
+public class DescribeElasticsearchDomainConfigRequestMarshaller implements
         Marshaller<Request<DescribeElasticsearchDomainConfigRequest>, DescribeElasticsearchDomainConfigRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeElasticsearchDomainConfigRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeElasticsearchDomainConfigRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeElasticsearchDomainConfigRequest> marshall(
-            DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest) {
+    public Request<DescribeElasticsearchDomainConfigRequest> marshall(DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest) {
 
         if (describeElasticsearchDomainConfigRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeElasticsearchDomainConfigRequest> request = new DefaultRequest<DescribeElasticsearchDomainConfigRequest>(
@@ -69,15 +63,10 @@ public class DescribeElasticsearchDomainConfigRequestMarshaller
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{DomainName}",
-                        (describeElasticsearchDomainConfigRequest
-                                .getDomainName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(describeElasticsearchDomainConfigRequest
-                                                .getDomainName()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{DomainName}",
+                (describeElasticsearchDomainConfigRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeElasticsearchDomainConfigRequest.getDomainName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

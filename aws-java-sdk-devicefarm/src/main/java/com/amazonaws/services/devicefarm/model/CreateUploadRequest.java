@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the create upload operation.
  * </p>
  */
-public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,7 +30,10 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
     private String projectArn;
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      */
     private String name;
@@ -72,8 +72,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -83,14 +82,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -130,8 +127,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>Note</b> If you call <code>CreateUpload</code> with
-     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.
      * </p>
      */
@@ -175,8 +171,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param projectArn
      *        The ARN of the project for the upload.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUploadRequest withProjectArn(String projectArn) {
@@ -186,12 +181,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      * 
      * @param name
-     *        The upload's file name. The name should not contain the '/'
-     *        character.
+     *        The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file
+     *        name needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs
+     *        to end with the <code>.apk</code> extension. For all others, the file name must end with the
+     *        <code>.zip</code> file extension.
      */
 
     public void setName(String name) {
@@ -200,11 +200,16 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      * 
-     * @return The upload's file name. The name should not contain the '/'
-     *         character.
+     * @return The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file
+     *         name needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs
+     *         to end with the <code>.apk</code> extension. For all others, the file name must end with the
+     *         <code>.zip</code> file extension.
      */
 
     public String getName() {
@@ -213,14 +218,18 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      * 
      * @param name
-     *        The upload's file name. The name should not contain the '/'
-     *        character.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file
+     *        name needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs
+     *        to end with the <code>.apk</code> extension. For all others, the file name must end with the
+     *        <code>.zip</code> file extension.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUploadRequest withName(String name) {
@@ -263,8 +272,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -274,14 +282,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -321,8 +327,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>Note</b> If you call <code>CreateUpload</code> with
-     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.
      * </p>
      * 
@@ -354,14 +359,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     *        upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -371,20 +374,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
-     *        upload.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -419,9 +419,8 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Note</b> If you call <code>CreateUpload</code> with
-     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <code>ArgumentException</code> error.
+     *        <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm
+     *        throws an <code>ArgumentException</code> error.
      * @see UploadType
      */
 
@@ -464,8 +463,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -475,14 +473,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -522,8 +518,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>Note</b> If you call <code>CreateUpload</code> with
-     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.
      * </p>
      * 
@@ -554,14 +549,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     *         upload.
+     *         APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *         package upload.
+     *         APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *         </p>
      *         </li>
      *         <li>
@@ -571,20 +564,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
-     *         package upload.
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *         package upload.
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
-     *         upload.
+     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *         </p>
      *         </li>
      *         <li>
@@ -619,9 +609,8 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>Note</b> If you call <code>CreateUpload</code> with
-     *         <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *         <code>ArgumentException</code> error.
+     *         <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm
+     *         throws an <code>ArgumentException</code> error.
      * @see UploadType
      */
 
@@ -664,8 +653,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -675,14 +663,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -722,8 +708,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>Note</b> If you call <code>CreateUpload</code> with
-     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.
      * </p>
      * 
@@ -755,14 +740,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     *        upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -772,20 +755,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
-     *        upload.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -820,11 +800,9 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Note</b> If you call <code>CreateUpload</code> with
-     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <code>ArgumentException</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm
+     *        throws an <code>ArgumentException</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UploadType
      */
 
@@ -868,8 +846,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -879,14 +856,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -926,8 +901,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>Note</b> If you call <code>CreateUpload</code> with
-     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.
      * </p>
      * 
@@ -959,14 +933,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     *        upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -976,20 +948,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
-     *        upload.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1024,9 +993,8 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Note</b> If you call <code>CreateUpload</code> with
-     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <code>ArgumentException</code> error.
+     *        <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm
+     *        throws an <code>ArgumentException</code> error.
      * @see UploadType
      */
 
@@ -1069,8 +1037,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -1080,14 +1047,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      * </p>
      * </li>
      * <li>
@@ -1127,8 +1092,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>Note</b> If you call <code>CreateUpload</code> with
-     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.
      * </p>
      * 
@@ -1160,14 +1124,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     *        upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1177,20 +1139,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
-     *        package upload.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
-     *        upload.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1225,11 +1184,9 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Note</b> If you call <code>CreateUpload</code> with
-     *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <code>ArgumentException</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm
+     *        throws an <code>ArgumentException</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UploadType
      */
 
@@ -1244,8 +1201,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param contentType
-     *        The upload's content type (for example,
-     *        "application/octet-stream").
+     *        The upload's content type (for example, "application/octet-stream").
      */
 
     public void setContentType(String contentType) {
@@ -1257,8 +1213,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * The upload's content type (for example, "application/octet-stream").
      * </p>
      * 
-     * @return The upload's content type (for example,
-     *         "application/octet-stream").
+     * @return The upload's content type (for example, "application/octet-stream").
      */
 
     public String getContentType() {
@@ -1271,10 +1226,8 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param contentType
-     *        The upload's content type (for example,
-     *        "application/octet-stream").
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The upload's content type (for example, "application/octet-stream").
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUploadRequest withContentType(String contentType) {
@@ -1283,8 +1236,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1318,23 +1270,19 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
         CreateUploadRequest other = (CreateUploadRequest) obj;
         if (other.getProjectArn() == null ^ this.getProjectArn() == null)
             return false;
-        if (other.getProjectArn() != null
-                && other.getProjectArn().equals(this.getProjectArn()) == false)
+        if (other.getProjectArn() != null && other.getProjectArn().equals(this.getProjectArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getContentType() == null ^ this.getContentType() == null)
             return false;
-        if (other.getContentType() != null
-                && other.getContentType().equals(this.getContentType()) == false)
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
             return false;
         return true;
     }
@@ -1344,15 +1292,10 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         return hashCode;
     }
 

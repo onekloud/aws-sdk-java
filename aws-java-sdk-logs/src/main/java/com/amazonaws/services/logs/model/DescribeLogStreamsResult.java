@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -19,16 +17,23 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLogStreamsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeLogStreamsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The log streams.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<LogStream> logStreams;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The log streams.
+     * </p>
+     * 
+     * @return The log streams.
      */
 
     public java.util.List<LogStream> getLogStreams() {
@@ -39,7 +44,12 @@ public class DescribeLogStreamsResult extends
     }
 
     /**
+     * <p>
+     * The log streams.
+     * </p>
+     * 
      * @param logStreams
+     *        The log streams.
      */
 
     public void setLogStreams(java.util.Collection<LogStream> logStreams) {
@@ -48,27 +58,27 @@ public class DescribeLogStreamsResult extends
             return;
         }
 
-        this.logStreams = new com.amazonaws.internal.SdkInternalList<LogStream>(
-                logStreams);
+        this.logStreams = new com.amazonaws.internal.SdkInternalList<LogStream>(logStreams);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLogStreams(java.util.Collection)} or
-     * {@link #withLogStreams(java.util.Collection)} if you want to override the
-     * existing values.
+     * The log streams.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogStreams(java.util.Collection)} or {@link #withLogStreams(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param logStreams
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The log streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsResult withLogStreams(LogStream... logStreams) {
         if (this.logStreams == null) {
-            setLogStreams(new com.amazonaws.internal.SdkInternalList<LogStream>(
-                    logStreams.length));
+            setLogStreams(new com.amazonaws.internal.SdkInternalList<LogStream>(logStreams.length));
         }
         for (LogStream ele : logStreams) {
             this.logStreams.add(ele);
@@ -77,13 +87,16 @@ public class DescribeLogStreamsResult extends
     }
 
     /**
+     * <p>
+     * The log streams.
+     * </p>
+     * 
      * @param logStreams
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The log streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLogStreamsResult withLogStreams(
-            java.util.Collection<LogStream> logStreams) {
+    public DescribeLogStreamsResult withLogStreams(java.util.Collection<LogStream> logStreams) {
         setLogStreams(logStreams);
         return this;
     }
@@ -106,8 +119,7 @@ public class DescribeLogStreamsResult extends
 
     /**
      * @param nextToken
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsResult withNextToken(String nextToken) {
@@ -116,8 +128,7 @@ public class DescribeLogStreamsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -147,13 +158,11 @@ public class DescribeLogStreamsResult extends
         DescribeLogStreamsResult other = (DescribeLogStreamsResult) obj;
         if (other.getLogStreams() == null ^ this.getLogStreams() == null)
             return false;
-        if (other.getLogStreams() != null
-                && other.getLogStreams().equals(this.getLogStreams()) == false)
+        if (other.getLogStreams() != null && other.getLogStreams().equals(this.getLogStreams()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -163,10 +172,8 @@ public class DescribeLogStreamsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLogStreams() == null) ? 0 : getLogStreams().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLogStreams() == null) ? 0 : getLogStreams().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -175,9 +182,7 @@ public class DescribeLogStreamsResult extends
         try {
             return (DescribeLogStreamsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

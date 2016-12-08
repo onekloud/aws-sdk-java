@@ -41,10 +41,9 @@ public class JavaCodeFormatter {
     static {
         DEFAULT_FORMATTER_OPTIONS = DefaultCodeFormatterConstants.getEclipseDefaultSettings();
 
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_6);
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM,
-                JavaCore.VERSION_1_6);
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_6);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
         DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_TAB_CHAR,
                 JavaCore.SPACE);
         DEFAULT_FORMATTER_OPTIONS.put(
@@ -63,14 +62,16 @@ public class JavaCodeFormatter {
         // Formats custom file headers if provided
         DEFAULT_FORMATTER_OPTIONS
                 .put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_FORMAT_HEADER,
-                     DefaultCodeFormatterConstants.TRUE);
+                        DefaultCodeFormatterConstants.TRUE);
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_LINE_SPLIT, "160");
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_LINE_LENGTH, "120");
     }
 
     /**
      * Creates a JavaCodeFormatter using the default formatter options.
      */
     public JavaCodeFormatter() {
-        this(new HashMap<String, Object>());
+        this(new HashMap<>());
     }
 
     /**
@@ -80,17 +81,13 @@ public class JavaCodeFormatter {
      * @param overrideOptions user provided options to apply on top of defaults
      */
     public JavaCodeFormatter(final Map<String, Object> overrideOptions) {
-        Map formatterOptions = new HashMap<String, Object>(DEFAULT_FORMATTER_OPTIONS);
+        Map formatterOptions = new HashMap<>(DEFAULT_FORMATTER_OPTIONS);
         if (overrideOptions != null) {
             formatterOptions.putAll(overrideOptions);
         }
 
         this.codeFormatter = ToolFactory.createCodeFormatter(formatterOptions,
                 ToolFactory.M_FORMAT_EXISTING);
-        if (codeFormatter == null) {
-            throw new RuntimeException(
-                    "Unable to create code formatter to format the generated code.");
-        }
     }
 
     public String format(String contents) {

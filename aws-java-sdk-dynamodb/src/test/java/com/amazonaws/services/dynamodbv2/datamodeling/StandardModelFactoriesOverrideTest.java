@@ -21,16 +21,17 @@ import java.lang.reflect.Method;
 public class StandardModelFactoriesOverrideTest extends StandardModelFactoriesV2Test {
 
     private final DynamoDBMapperConfig config = new DynamoDBMapperConfig.Builder()
+        .withTypeConverterFactory(DynamoDBMapperConfig.DEFAULT.getTypeConverterFactory())
         .withConversionSchema(ConversionSchemas.v2Builder("V2Override").build())
         .build();
 
-    private final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
-    private final DynamoDBMapperModelFactory models = factory.getModelFactory(config);
+    private final DynamoDBMapperModelFactory factory = StandardModelFactories.of(S3Link.Factory.of(null));
+    private final DynamoDBMapperModelFactory.TableFactory models = factory.getTableFactory(config);
 
     @Override
     protected <T> AttributeValue convert(Class<T> clazz, Method getter, Object value) {
-        final StandardAnnotationMaps.FieldMap<T,Object> map = StandardAnnotationMaps.of(clazz, getter);
-        return models.getTableModel(clazz).field(map.attributeName()).convert(value);
+        final StandardAnnotationMaps.FieldMap<Object> map = StandardAnnotationMaps.of(getter, null);
+        return models.getTable(clazz).field(map.attributeName()).convert(value);
     }
 
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -18,39 +16,35 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents summary information about the health of an instance. For more
- * information, see <a href=
- * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
- * >Health Colors and Statuses</a>.
+ * Represents summary information about the health of an instance. For more information, see <a
+ * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+ * Statuses</a>.
  * </p>
  */
 public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
-     * data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
      * </p>
      */
     private Integer noData;
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
-     * insufficient amount of data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an
+     * instance.
      * </p>
      */
     private Integer unknown;
     /**
      * <p>
-     * <b>Grey.</b> An operation is in progress on an instance within the
-     * command timeout.
+     * <b>Grey.</b> An operation is in progress on an instance within the command timeout.
      * </p>
      */
     private Integer pending;
     /**
      * <p>
-     * <b>Green.</b> An instance is passing health checks and the health agent
-     * is not reporting any problems.
+     * <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
      * </p>
      */
     private Integer ok;
@@ -62,34 +56,33 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
     private Integer info;
     /**
      * <p>
-     * <b>Yellow.</b> The health agent is reporting a moderate number of request
-     * failures or other issues for an instance or environment.
+     * <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     * instance or environment.
      * </p>
      */
     private Integer warning;
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or
+     * environment.
      * </p>
      */
     private Integer degraded;
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a very high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance
+     * or environment.
      * </p>
      */
     private Integer severe;
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
-     * data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
      * </p>
      * 
      * @param noData
-     *        Grey.
+     *        <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
      */
 
     public void setNoData(Integer noData) {
@@ -98,11 +91,10 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
-     * data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
      * </p>
      * 
-     * @return Grey.
+     * @return <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
      */
 
     public Integer getNoData() {
@@ -111,14 +103,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
-     * data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
      * </p>
      * 
      * @param noData
-     *        Grey.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withNoData(Integer noData) {
@@ -128,12 +118,13 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
-     * insufficient amount of data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an
+     * instance.
      * </p>
      * 
      * @param unknown
-     *        Grey.
+     *        <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an
+     *        instance.
      */
 
     public void setUnknown(Integer unknown) {
@@ -142,11 +133,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
-     * insufficient amount of data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an
+     * instance.
      * </p>
      * 
-     * @return Grey.
+     * @return <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on
+     *         an instance.
      */
 
     public Integer getUnknown() {
@@ -155,14 +147,14 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
-     * insufficient amount of data on an instance.
+     * <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an
+     * instance.
      * </p>
      * 
      * @param unknown
-     *        Grey.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withUnknown(Integer unknown) {
@@ -172,12 +164,11 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> An operation is in progress on an instance within the
-     * command timeout.
+     * <b>Grey.</b> An operation is in progress on an instance within the command timeout.
      * </p>
      * 
      * @param pending
-     *        Grey.
+     *        <b>Grey.</b> An operation is in progress on an instance within the command timeout.
      */
 
     public void setPending(Integer pending) {
@@ -186,11 +177,10 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> An operation is in progress on an instance within the
-     * command timeout.
+     * <b>Grey.</b> An operation is in progress on an instance within the command timeout.
      * </p>
      * 
-     * @return Grey.
+     * @return <b>Grey.</b> An operation is in progress on an instance within the command timeout.
      */
 
     public Integer getPending() {
@@ -199,14 +189,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Grey.</b> An operation is in progress on an instance within the
-     * command timeout.
+     * <b>Grey.</b> An operation is in progress on an instance within the command timeout.
      * </p>
      * 
      * @param pending
-     *        Grey.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Grey.</b> An operation is in progress on an instance within the command timeout.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withPending(Integer pending) {
@@ -216,12 +204,11 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Green.</b> An instance is passing health checks and the health agent
-     * is not reporting any problems.
+     * <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
      * </p>
      * 
      * @param ok
-     *        Green.
+     *        <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
      */
 
     public void setOk(Integer ok) {
@@ -230,11 +217,10 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Green.</b> An instance is passing health checks and the health agent
-     * is not reporting any problems.
+     * <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
      * </p>
      * 
-     * @return Green.
+     * @return <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
      */
 
     public Integer getOk() {
@@ -243,14 +229,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Green.</b> An instance is passing health checks and the health agent
-     * is not reporting any problems.
+     * <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
      * </p>
      * 
      * @param ok
-     *        Green.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withOk(Integer ok) {
@@ -264,7 +248,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param info
-     *        Green.
+     *        <b>Green.</b> An operation is in progress on an instance.
      */
 
     public void setInfo(Integer info) {
@@ -276,7 +260,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * <b>Green.</b> An operation is in progress on an instance.
      * </p>
      * 
-     * @return Green.
+     * @return <b>Green.</b> An operation is in progress on an instance.
      */
 
     public Integer getInfo() {
@@ -289,9 +273,8 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param info
-     *        Green.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Green.</b> An operation is in progress on an instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withInfo(Integer info) {
@@ -301,12 +284,13 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Yellow.</b> The health agent is reporting a moderate number of request
-     * failures or other issues for an instance or environment.
+     * <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     * instance or environment.
      * </p>
      * 
      * @param warning
-     *        Yellow.
+     *        <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     *        instance or environment.
      */
 
     public void setWarning(Integer warning) {
@@ -315,11 +299,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Yellow.</b> The health agent is reporting a moderate number of request
-     * failures or other issues for an instance or environment.
+     * <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     * instance or environment.
      * </p>
      * 
-     * @return Yellow.
+     * @return <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     *         instance or environment.
      */
 
     public Integer getWarning() {
@@ -328,14 +313,14 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Yellow.</b> The health agent is reporting a moderate number of request
-     * failures or other issues for an instance or environment.
+     * <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     * instance or environment.
      * </p>
      * 
      * @param warning
-     *        Yellow.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an
+     *        instance or environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withWarning(Integer warning) {
@@ -345,12 +330,13 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or
+     * environment.
      * </p>
      * 
      * @param degraded
-     *        Red.
+     *        <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an
+     *        instance or environment.
      */
 
     public void setDegraded(Integer degraded) {
@@ -359,11 +345,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or
+     * environment.
      * </p>
      * 
-     * @return Red.
+     * @return <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an
+     *         instance or environment.
      */
 
     public Integer getDegraded() {
@@ -372,14 +359,14 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or
+     * environment.
      * </p>
      * 
      * @param degraded
-     *        Red.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an
+     *        instance or environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withDegraded(Integer degraded) {
@@ -389,12 +376,13 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a very high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance
+     * or environment.
      * </p>
      * 
      * @param severe
-     *        Red.
+     *        <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an
+     *        instance or environment.
      */
 
     public void setSevere(Integer severe) {
@@ -403,11 +391,12 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a very high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance
+     * or environment.
      * </p>
      * 
-     * @return Red.
+     * @return <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an
+     *         instance or environment.
      */
 
     public Integer getSevere() {
@@ -416,14 +405,14 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Red.</b> The health agent is reporting a very high number of request
-     * failures or other issues for an instance or environment.
+     * <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance
+     * or environment.
      * </p>
      * 
      * @param severe
-     *        Red.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an
+     *        instance or environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceHealthSummary withSevere(Integer severe) {
@@ -432,8 +421,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -475,43 +463,35 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
         InstanceHealthSummary other = (InstanceHealthSummary) obj;
         if (other.getNoData() == null ^ this.getNoData() == null)
             return false;
-        if (other.getNoData() != null
-                && other.getNoData().equals(this.getNoData()) == false)
+        if (other.getNoData() != null && other.getNoData().equals(this.getNoData()) == false)
             return false;
         if (other.getUnknown() == null ^ this.getUnknown() == null)
             return false;
-        if (other.getUnknown() != null
-                && other.getUnknown().equals(this.getUnknown()) == false)
+        if (other.getUnknown() != null && other.getUnknown().equals(this.getUnknown()) == false)
             return false;
         if (other.getPending() == null ^ this.getPending() == null)
             return false;
-        if (other.getPending() != null
-                && other.getPending().equals(this.getPending()) == false)
+        if (other.getPending() != null && other.getPending().equals(this.getPending()) == false)
             return false;
         if (other.getOk() == null ^ this.getOk() == null)
             return false;
-        if (other.getOk() != null
-                && other.getOk().equals(this.getOk()) == false)
+        if (other.getOk() != null && other.getOk().equals(this.getOk()) == false)
             return false;
         if (other.getInfo() == null ^ this.getInfo() == null)
             return false;
-        if (other.getInfo() != null
-                && other.getInfo().equals(this.getInfo()) == false)
+        if (other.getInfo() != null && other.getInfo().equals(this.getInfo()) == false)
             return false;
         if (other.getWarning() == null ^ this.getWarning() == null)
             return false;
-        if (other.getWarning() != null
-                && other.getWarning().equals(this.getWarning()) == false)
+        if (other.getWarning() != null && other.getWarning().equals(this.getWarning()) == false)
             return false;
         if (other.getDegraded() == null ^ this.getDegraded() == null)
             return false;
-        if (other.getDegraded() != null
-                && other.getDegraded().equals(this.getDegraded()) == false)
+        if (other.getDegraded() != null && other.getDegraded().equals(this.getDegraded()) == false)
             return false;
         if (other.getSevere() == null ^ this.getSevere() == null)
             return false;
-        if (other.getSevere() != null
-                && other.getSevere().equals(this.getSevere()) == false)
+        if (other.getSevere() != null && other.getSevere().equals(this.getSevere()) == false)
             return false;
         return true;
     }
@@ -521,22 +501,14 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNoData() == null) ? 0 : getNoData().hashCode());
-        hashCode = prime * hashCode
-                + ((getUnknown() == null) ? 0 : getUnknown().hashCode());
-        hashCode = prime * hashCode
-                + ((getPending() == null) ? 0 : getPending().hashCode());
-        hashCode = prime * hashCode
-                + ((getOk() == null) ? 0 : getOk().hashCode());
-        hashCode = prime * hashCode
-                + ((getInfo() == null) ? 0 : getInfo().hashCode());
-        hashCode = prime * hashCode
-                + ((getWarning() == null) ? 0 : getWarning().hashCode());
-        hashCode = prime * hashCode
-                + ((getDegraded() == null) ? 0 : getDegraded().hashCode());
-        hashCode = prime * hashCode
-                + ((getSevere() == null) ? 0 : getSevere().hashCode());
+        hashCode = prime * hashCode + ((getNoData() == null) ? 0 : getNoData().hashCode());
+        hashCode = prime * hashCode + ((getUnknown() == null) ? 0 : getUnknown().hashCode());
+        hashCode = prime * hashCode + ((getPending() == null) ? 0 : getPending().hashCode());
+        hashCode = prime * hashCode + ((getOk() == null) ? 0 : getOk().hashCode());
+        hashCode = prime * hashCode + ((getInfo() == null) ? 0 : getInfo().hashCode());
+        hashCode = prime * hashCode + ((getWarning() == null) ? 0 : getWarning().hashCode());
+        hashCode = prime * hashCode + ((getDegraded() == null) ? 0 : getDegraded().hashCode());
+        hashCode = prime * hashCode + ((getSevere() == null) ? 0 : getSevere().hashCode());
         return hashCode;
     }
 
@@ -545,9 +517,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
         try {
             return (InstanceHealthSummary) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

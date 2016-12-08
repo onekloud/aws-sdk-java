@@ -6,7 +6,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
- * Interface for accessing ${metadata.serviceName} asynchronously. Each
+ * Client for accessing ${metadata.serviceName} asynchronously. Each
  * asynchronous method will return a Java Future object representing the
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can
  * be used to receive notification when an asynchronous operation completes.
@@ -42,7 +42,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public ${metadata.asyncClient}() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -68,7 +68,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public ${metadata.asyncClient}(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(),
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(),
                 clientConfiguration,
                 java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }

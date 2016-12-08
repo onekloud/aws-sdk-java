@@ -12,6 +12,9 @@
         "location" : "/macros/syncclientclass/common/ClientMethodForOperation.ftl",
         "importAsNamespace" : "ClientMethodForOperation"
       }, {
+        "location" : "/macros/syncclientclass/rest/ClientMethodParametersValidation.ftl",
+        "importAsNamespace" : "ClientMethodParametersValidation"
+      }, {
         "location" : "/macros/syncclientclass/awsquery/ClientInvokeMethodErrorResponseHandlerCreation.ftl",
         "importAsNamespace" : "ClientInvokeMethodErrorResponseHandlerCreation"
       }, {
@@ -113,7 +116,10 @@
         }, {
           "location" : "/macros/marshaller/common/IdempotencyTokenMacro.ftl",
           "importAsNamespace" : "IdempotencyTokenMacro"
-        }
+        }, {
+         "location": "/macros/marshaller/common/DefaultRequestCreation.ftl",
+         "importAsNamespace": "DefaultRequestCreation"
+       }
     ]
   },
   "modelUnmarshaller": {

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -19,39 +17,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input parameters for the <i>ListAllowedNodeTypeModifications</i> action.
+ * The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.
  * </p>
  */
-public class ListAllowedNodeTypeModificationsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node
-     * instanced type. ElastiCache uses the cluster id to identify the current
-     * node type of this cluster and from that to to create a list of node types
-     * you can scale up to.
+     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      */
     private String cacheClusterId;
     /**
      * <p>
-     * The name of the replication group want to scale up to a larger node type.
-     * ElastiCache uses the replication group id to identify the current node
-     * type being used by this replication group, and from that to create a list
-     * of node types you can scale up to.
+     * The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group
+     * id to identify the current node type being used by this replication group, and from that to create a list of node
+     * types you can scale up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      */
@@ -59,26 +51,23 @@ public class ListAllowedNodeTypeModificationsRequest extends
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node
-     * instanced type. ElastiCache uses the cluster id to identify the current
-     * node type of this cluster and from that to to create a list of node types
-     * you can scale up to.
+     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @param cacheClusterId
-     *        The name of the cache cluster you want to scale up to a larger
-     *        node instanced type. ElastiCache uses the cluster id to identify
-     *        the current node type of this cluster and from that to to create a
-     *        list of node types you can scale up to.</p> <important>
+     *        The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
+     *        cluster id to identify the current node type of this cluster and from that to create a list of node types
+     *        you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or
-     *        the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
      */
 
@@ -88,25 +77,22 @@ public class ListAllowedNodeTypeModificationsRequest extends
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node
-     * instanced type. ElastiCache uses the cluster id to identify the current
-     * node type of this cluster and from that to to create a list of node types
-     * you can scale up to.
+     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
-     * @return The name of the cache cluster you want to scale up to a larger
-     *         node instanced type. ElastiCache uses the cluster id to identify
-     *         the current node type of this cluster and from that to to create
-     *         a list of node types you can scale up to.</p> <important>
+     * @return The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
+     *         cluster id to identify the current node type of this cluster and from that to create a list of node types
+     *         you can scale up to.</p> <important>
      *         <p>
-     *         You must provide a value for either the <i>CacheClusterId</i> or
-     *         the <i>ReplicationGroupId</i>.
+     *         You must provide a value for either the <code>CacheClusterId</code> or the
+     *         <code>ReplicationGroupId</code>.
      *         </p>
      */
 
@@ -116,60 +102,51 @@ public class ListAllowedNodeTypeModificationsRequest extends
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node
-     * instanced type. ElastiCache uses the cluster id to identify the current
-     * node type of this cluster and from that to to create a list of node types
-     * you can scale up to.
+     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @param cacheClusterId
-     *        The name of the cache cluster you want to scale up to a larger
-     *        node instanced type. ElastiCache uses the cluster id to identify
-     *        the current node type of this cluster and from that to to create a
-     *        list of node types you can scale up to.</p> <important>
+     *        The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
+     *        cluster id to identify the current node type of this cluster and from that to create a list of node types
+     *        you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or
-     *        the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAllowedNodeTypeModificationsRequest withCacheClusterId(
-            String cacheClusterId) {
+    public ListAllowedNodeTypeModificationsRequest withCacheClusterId(String cacheClusterId) {
         setCacheClusterId(cacheClusterId);
         return this;
     }
 
     /**
      * <p>
-     * The name of the replication group want to scale up to a larger node type.
-     * ElastiCache uses the replication group id to identify the current node
-     * type being used by this replication group, and from that to create a list
-     * of node types you can scale up to.
+     * The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group
+     * id to identify the current node type being used by this replication group, and from that to create a list of node
+     * types you can scale up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @param replicationGroupId
-     *        The name of the replication group want to scale up to a larger
-     *        node type. ElastiCache uses the replication group id to identify
-     *        the current node type being used by this replication group, and
-     *        from that to create a list of node types you can scale up to.</p>
-     *        <important>
+     *        The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication
+     *        group id to identify the current node type being used by this replication group, and from that to create a
+     *        list of node types you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or
-     *        the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
      */
 
@@ -179,26 +156,22 @@ public class ListAllowedNodeTypeModificationsRequest extends
 
     /**
      * <p>
-     * The name of the replication group want to scale up to a larger node type.
-     * ElastiCache uses the replication group id to identify the current node
-     * type being used by this replication group, and from that to create a list
-     * of node types you can scale up to.
+     * The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group
+     * id to identify the current node type being used by this replication group, and from that to create a list of node
+     * types you can scale up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
-     * @return The name of the replication group want to scale up to a larger
-     *         node type. ElastiCache uses the replication group id to identify
-     *         the current node type being used by this replication group, and
-     *         from that to create a list of node types you can scale up to.</p>
-     *         <important>
+     * @return The name of the replication group want to scale up to a larger node type. ElastiCache uses the
+     *         replication group id to identify the current node type being used by this replication group, and from
+     *         that to create a list of node types you can scale up to.</p> <important>
      *         <p>
-     *         You must provide a value for either the <i>CacheClusterId</i> or
-     *         the <i>ReplicationGroupId</i>.
+     *         You must provide a value for either the <code>CacheClusterId</code> or the
+     *         <code>ReplicationGroupId</code>.
      *         </p>
      */
 
@@ -208,41 +181,34 @@ public class ListAllowedNodeTypeModificationsRequest extends
 
     /**
      * <p>
-     * The name of the replication group want to scale up to a larger node type.
-     * ElastiCache uses the replication group id to identify the current node
-     * type being used by this replication group, and from that to create a list
-     * of node types you can scale up to.
+     * The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group
+     * id to identify the current node type being used by this replication group, and from that to create a list of node
+     * types you can scale up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the
-     * <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @param replicationGroupId
-     *        The name of the replication group want to scale up to a larger
-     *        node type. ElastiCache uses the replication group id to identify
-     *        the current node type being used by this replication group, and
-     *        from that to create a list of node types you can scale up to.</p>
-     *        <important>
+     *        The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication
+     *        group id to identify the current node type being used by this replication group, and from that to create a
+     *        list of node types you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or
-     *        the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAllowedNodeTypeModificationsRequest withReplicationGroupId(
-            String replicationGroupId) {
+    public ListAllowedNodeTypeModificationsRequest withReplicationGroupId(String replicationGroupId) {
         setReplicationGroupId(replicationGroupId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -270,18 +236,13 @@ public class ListAllowedNodeTypeModificationsRequest extends
         if (obj instanceof ListAllowedNodeTypeModificationsRequest == false)
             return false;
         ListAllowedNodeTypeModificationsRequest other = (ListAllowedNodeTypeModificationsRequest) obj;
-        if (other.getCacheClusterId() == null
-                ^ this.getCacheClusterId() == null)
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
             return false;
-        if (other.getCacheClusterId() != null
-                && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
             return false;
-        if (other.getReplicationGroupId() == null
-                ^ this.getReplicationGroupId() == null)
+        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null)
             return false;
-        if (other.getReplicationGroupId() != null
-                && other.getReplicationGroupId().equals(
-                        this.getReplicationGroupId()) == false)
+        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false)
             return false;
         return true;
     }
@@ -291,14 +252,8 @@ public class ListAllowedNodeTypeModificationsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterId() == null) ? 0 : getCacheClusterId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationGroupId() == null) ? 0
-                        : getReplicationGroupId().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
+        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -31,16 +29,15 @@ public class Build implements Serializable, Cloneable {
     private String buildId;
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be
-     * unique to a build. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.
+     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
+     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String version;
@@ -52,36 +49,43 @@ public class Build implements Serializable, Cloneable {
      * Possible build statuses include the following:
      * </p>
      * <ul>
-     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * status. When a build is successfully created, the build status is set to
-     * this value.</li>
-     * <li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li>
-     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
-     * fleets for this build.</li>
+     * <li>
+     * <p>
+     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * builds that are in this status. When a build is successfully created, the build status is set to this value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
     /**
      * <p>
-     * File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.
+     * File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this
+     * value is 0.
      * </p>
      */
     private Long sizeOnDisk;
     /**
      * <p>
-     * Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.
+     * Operating system that the game server binaries are built to run on. This value determines the type of fleet
+     * resources that you can use for this build.
      * </p>
      */
     private String operatingSystem;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
@@ -118,8 +122,7 @@ public class Build implements Serializable, Cloneable {
      * 
      * @param buildId
      *        Unique identifier for a build.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Build withBuildId(String buildId) {
@@ -129,14 +132,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need
-     *        to be unique. It can be set using <a>CreateBuild</a> or
-     *        <a>UpdateBuild</a>.
+     *        Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public void setName(String name) {
@@ -145,13 +147,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Descriptive label associated with a build. Build names do not
-     *         need to be unique. It can be set using <a>CreateBuild</a> or
-     *         <a>UpdateBuild</a>.
+     * @return Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     *         <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public String getName() {
@@ -160,16 +161,14 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need
-     *        to be unique. It can be set using <a>CreateBuild</a> or
-     *        <a>UpdateBuild</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Build withName(String name) {
@@ -179,15 +178,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be
-     * unique to a build. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.
+     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
+     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to
-     *        be unique to a build. This value can be set using
-     *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     *        Version associated with this build. Version strings do not need to be unique to a build. This value can be
+     *        set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public void setVersion(String version) {
@@ -196,14 +193,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be
-     * unique to a build. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.
+     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
+     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Version associated with this build. Version strings do not need
-     *         to be unique to a build. This value can be set using
-     *         <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * @return Version associated with this build. Version strings do not need to be unique to a build. This value can
+     *         be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public String getVersion() {
@@ -212,17 +207,14 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be
-     * unique to a build. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.
+     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
+     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to
-     *        be unique to a build. This value can be set using
-     *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Version associated with this build. Version strings do not need to be unique to a build. This value can be
+     *        set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Build withVersion(String version) {
@@ -238,14 +230,22 @@ public class Build implements Serializable, Cloneable {
      * Possible build statuses include the following:
      * </p>
      * <ul>
-     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * status. When a build is successfully created, the build status is set to
-     * this value.</li>
-     * <li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li>
-     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
-     * fleets for this build.</li>
+     * <li>
+     * <p>
+     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * builds that are in this status. When a build is successfully created, the build status is set to this value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -254,14 +254,24 @@ public class Build implements Serializable, Cloneable {
      *        Possible build statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this status. When a build is successfully created, the
-     *        build status is set to this value.</li>
-     *        <li><b>READY</b> – The game build has been successfully uploaded.
-     *        You can now create new fleets for this build.</li>
-     *        <li><b>FAILED</b> – The game build upload failed. You cannot
-     *        create new fleets for this build.</li>
+     *        <li>
+     *        <p>
+     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        fleets for builds that are in this status. When a build is successfully created, the build status is set
+     *        to this value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        build.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        </p>
+     *        </li>
      * @see BuildStatus
      */
 
@@ -277,14 +287,22 @@ public class Build implements Serializable, Cloneable {
      * Possible build statuses include the following:
      * </p>
      * <ul>
-     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * status. When a build is successfully created, the build status is set to
-     * this value.</li>
-     * <li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li>
-     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
-     * fleets for this build.</li>
+     * <li>
+     * <p>
+     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * builds that are in this status. When a build is successfully created, the build status is set to this value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Current status of the build.</p>
@@ -292,14 +310,24 @@ public class Build implements Serializable, Cloneable {
      *         Possible build statuses include the following:
      *         </p>
      *         <ul>
-     *         <li><b>INITIALIZED</b> – A new build has been defined, but no
-     *         files have been uploaded. You cannot create fleets for builds
-     *         that are in this status. When a build is successfully created,
-     *         the build status is set to this value.</li>
-     *         <li><b>READY</b> – The game build has been successfully uploaded.
-     *         You can now create new fleets for this build.</li>
-     *         <li><b>FAILED</b> – The game build upload failed. You cannot
-     *         create new fleets for this build.</li>
+     *         <li>
+     *         <p>
+     *         <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *         fleets for builds that are in this status. When a build is successfully created, the build status is set
+     *         to this value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *         build.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *         </p>
+     *         </li>
      * @see BuildStatus
      */
 
@@ -315,14 +343,22 @@ public class Build implements Serializable, Cloneable {
      * Possible build statuses include the following:
      * </p>
      * <ul>
-     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * status. When a build is successfully created, the build status is set to
-     * this value.</li>
-     * <li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li>
-     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
-     * fleets for this build.</li>
+     * <li>
+     * <p>
+     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * builds that are in this status. When a build is successfully created, the build status is set to this value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -331,16 +367,25 @@ public class Build implements Serializable, Cloneable {
      *        Possible build statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this status. When a build is successfully created, the
-     *        build status is set to this value.</li>
-     *        <li><b>READY</b> – The game build has been successfully uploaded.
-     *        You can now create new fleets for this build.</li>
-     *        <li><b>FAILED</b> – The game build upload failed. You cannot
-     *        create new fleets for this build.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        fleets for builds that are in this status. When a build is successfully created, the build status is set
+     *        to this value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        build.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BuildStatus
      */
 
@@ -357,14 +402,22 @@ public class Build implements Serializable, Cloneable {
      * Possible build statuses include the following:
      * </p>
      * <ul>
-     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * status. When a build is successfully created, the build status is set to
-     * this value.</li>
-     * <li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li>
-     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
-     * fleets for this build.</li>
+     * <li>
+     * <p>
+     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * builds that are in this status. When a build is successfully created, the build status is set to this value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -373,14 +426,24 @@ public class Build implements Serializable, Cloneable {
      *        Possible build statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this status. When a build is successfully created, the
-     *        build status is set to this value.</li>
-     *        <li><b>READY</b> – The game build has been successfully uploaded.
-     *        You can now create new fleets for this build.</li>
-     *        <li><b>FAILED</b> – The game build upload failed. You cannot
-     *        create new fleets for this build.</li>
+     *        <li>
+     *        <p>
+     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        fleets for builds that are in this status. When a build is successfully created, the build status is set
+     *        to this value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        build.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        </p>
+     *        </li>
      * @see BuildStatus
      */
 
@@ -396,14 +459,22 @@ public class Build implements Serializable, Cloneable {
      * Possible build statuses include the following:
      * </p>
      * <ul>
-     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * status. When a build is successfully created, the build status is set to
-     * this value.</li>
-     * <li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li>
-     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
-     * fleets for this build.</li>
+     * <li>
+     * <p>
+     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * builds that are in this status. When a build is successfully created, the build status is set to this value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -412,16 +483,25 @@ public class Build implements Serializable, Cloneable {
      *        Possible build statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this status. When a build is successfully created, the
-     *        build status is set to this value.</li>
-     *        <li><b>READY</b> – The game build has been successfully uploaded.
-     *        You can now create new fleets for this build.</li>
-     *        <li><b>FAILED</b> – The game build upload failed. You cannot
-     *        create new fleets for this build.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        fleets for builds that are in this status. When a build is successfully created, the build status is set
+     *        to this value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        build.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BuildStatus
      */
 
@@ -432,13 +512,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.
+     * File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this
+     * value is 0.
      * </p>
      * 
      * @param sizeOnDisk
-     *        File size of the uploaded game build, expressed in bytes. When the
-     *        build status is <code>INITIALIZED</code>, this value is 0.
+     *        File size of the uploaded game build, expressed in bytes. When the build status is
+     *        <code>INITIALIZED</code>, this value is 0.
      */
 
     public void setSizeOnDisk(Long sizeOnDisk) {
@@ -447,12 +527,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.
+     * File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this
+     * value is 0.
      * </p>
      * 
-     * @return File size of the uploaded game build, expressed in bytes. When
-     *         the build status is <code>INITIALIZED</code>, this value is 0.
+     * @return File size of the uploaded game build, expressed in bytes. When the build status is
+     *         <code>INITIALIZED</code>, this value is 0.
      */
 
     public Long getSizeOnDisk() {
@@ -461,15 +541,14 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.
+     * File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this
+     * value is 0.
      * </p>
      * 
      * @param sizeOnDisk
-     *        File size of the uploaded game build, expressed in bytes. When the
-     *        build status is <code>INITIALIZED</code>, this value is 0.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        File size of the uploaded game build, expressed in bytes. When the build status is
+     *        <code>INITIALIZED</code>, this value is 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Build withSizeOnDisk(Long sizeOnDisk) {
@@ -479,15 +558,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.
+     * Operating system that the game server binaries are built to run on. This value determines the type of fleet
+     * resources that you can use for this build.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that the game server binaries are built to run
-     *        on. This value determines the type of fleet resources that you can
-     *        use for this build.
+     *        Operating system that the game server binaries are built to run on. This value determines the type of
+     *        fleet resources that you can use for this build.
      * @see OperatingSystem
      */
 
@@ -497,14 +574,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.
+     * Operating system that the game server binaries are built to run on. This value determines the type of fleet
+     * resources that you can use for this build.
      * </p>
      * 
-     * @return Operating system that the game server binaries are built to run
-     *         on. This value determines the type of fleet resources that you
-     *         can use for this build.
+     * @return Operating system that the game server binaries are built to run on. This value determines the type of
+     *         fleet resources that you can use for this build.
      * @see OperatingSystem
      */
 
@@ -514,17 +589,14 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.
+     * Operating system that the game server binaries are built to run on. This value determines the type of fleet
+     * resources that you can use for this build.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that the game server binaries are built to run
-     *        on. This value determines the type of fleet resources that you can
-     *        use for this build.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Operating system that the game server binaries are built to run on. This value determines the type of
+     *        fleet resources that you can use for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
 
@@ -535,15 +607,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.
+     * Operating system that the game server binaries are built to run on. This value determines the type of fleet
+     * resources that you can use for this build.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that the game server binaries are built to run
-     *        on. This value determines the type of fleet resources that you can
-     *        use for this build.
+     *        Operating system that the game server binaries are built to run on. This value determines the type of
+     *        fleet resources that you can use for this build.
      * @see OperatingSystem
      */
 
@@ -553,17 +623,14 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.
+     * Operating system that the game server binaries are built to run on. This value determines the type of fleet
+     * resources that you can use for this build.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that the game server binaries are built to run
-     *        on. This value determines the type of fleet resources that you can
-     *        use for this build.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Operating system that the game server binaries are built to run on. This value determines the type of
+     *        fleet resources that you can use for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
 
@@ -574,14 +641,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is
-     *        a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -590,13 +656,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format
-     *         is a number expressed in Unix time as milliseconds (ex:
-     *         "1469498468.057".
+     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -605,16 +670,14 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is
-     *        a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057").
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Build withCreationTime(java.util.Date creationTime) {
@@ -623,8 +686,7 @@ public class Build implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -664,39 +726,31 @@ public class Build implements Serializable, Cloneable {
         Build other = (Build) obj;
         if (other.getBuildId() == null ^ this.getBuildId() == null)
             return false;
-        if (other.getBuildId() != null
-                && other.getBuildId().equals(this.getBuildId()) == false)
+        if (other.getBuildId() != null && other.getBuildId().equals(this.getBuildId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getSizeOnDisk() == null ^ this.getSizeOnDisk() == null)
             return false;
-        if (other.getSizeOnDisk() != null
-                && other.getSizeOnDisk().equals(this.getSizeOnDisk()) == false)
+        if (other.getSizeOnDisk() != null && other.getSizeOnDisk().equals(this.getSizeOnDisk()) == false)
             return false;
-        if (other.getOperatingSystem() == null
-                ^ this.getOperatingSystem() == null)
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
             return false;
-        if (other.getOperatingSystem() != null
-                && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -706,24 +760,13 @@ public class Build implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getSizeOnDisk() == null) ? 0 : getSizeOnDisk().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOperatingSystem() == null) ? 0 : getOperatingSystem()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSizeOnDisk() == null) ? 0 : getSizeOnDisk().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 
@@ -732,9 +775,7 @@ public class Build implements Serializable, Cloneable {
         try {
             return (Build) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

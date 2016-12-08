@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -18,26 +16,39 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
-public class CreateClusterSnapshotRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the snapshot that you are requesting. This
-     * identifier must be unique for all snapshots within the AWS account.
+     * A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots
+     * within the AWS account.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -59,34 +70,65 @@ public class CreateClusterSnapshotRequest extends
 
     /**
      * <p>
-     * A unique identifier for the snapshot that you are requesting. This
-     * identifier must be unique for all snapshots within the AWS account.
+     * A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots
+     * within the AWS account.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
      * </p>
      * 
      * @param snapshotIdentifier
-     *        A unique identifier for the snapshot that you are requesting. This
-     *        identifier must be unique for all snapshots within the AWS
-     *        account. </p>
+     *        A unique identifier for the snapshot that you are requesting. This identifier must be unique for all
+     *        snapshots within the AWS account.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -98,34 +140,64 @@ public class CreateClusterSnapshotRequest extends
 
     /**
      * <p>
-     * A unique identifier for the snapshot that you are requesting. This
-     * identifier must be unique for all snapshots within the AWS account.
+     * A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots
+     * within the AWS account.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
      * </p>
      * 
-     * @return A unique identifier for the snapshot that you are requesting.
-     *         This identifier must be unique for all snapshots within the AWS
-     *         account. </p>
+     * @return A unique identifier for the snapshot that you are requesting. This identifier must be unique for all
+     *         snapshots within the AWS account.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be null, empty, or blank</li>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         <li>
+     *         <p>
+     *         Cannot be null, empty, or blank
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-snapshot-id</code>
@@ -137,43 +209,72 @@ public class CreateClusterSnapshotRequest extends
 
     /**
      * <p>
-     * A unique identifier for the snapshot that you are requesting. This
-     * identifier must be unique for all snapshots within the AWS account.
+     * A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots
+     * within the AWS account.
      * </p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
      * </p>
      * 
      * @param snapshotIdentifier
-     *        A unique identifier for the snapshot that you are requesting. This
-     *        identifier must be unique for all snapshots within the AWS
-     *        account. </p>
+     *        A unique identifier for the snapshot that you are requesting. This identifier must be unique for all
+     *        snapshots within the AWS account.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateClusterSnapshotRequest withSnapshotIdentifier(
-            String snapshotIdentifier) {
+    public CreateClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
         setSnapshotIdentifier(snapshotIdentifier);
         return this;
     }
@@ -210,12 +311,10 @@ public class CreateClusterSnapshotRequest extends
      * 
      * @param clusterIdentifier
      *        The cluster identifier for which you want a snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateClusterSnapshotRequest withClusterIdentifier(
-            String clusterIdentifier) {
+    public CreateClusterSnapshotRequest withClusterIdentifier(String clusterIdentifier) {
         setClusterIdentifier(clusterIdentifier);
         return this;
     }
@@ -258,16 +357,14 @@ public class CreateClusterSnapshotRequest extends
      * A list of tag instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateClusterSnapshotRequest withTags(Tag... tags) {
@@ -287,8 +384,7 @@ public class CreateClusterSnapshotRequest extends
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateClusterSnapshotRequest withTags(java.util.Collection<Tag> tags) {
@@ -297,8 +393,7 @@ public class CreateClusterSnapshotRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -328,24 +423,17 @@ public class CreateClusterSnapshotRequest extends
         if (obj instanceof CreateClusterSnapshotRequest == false)
             return false;
         CreateClusterSnapshotRequest other = (CreateClusterSnapshotRequest) obj;
-        if (other.getSnapshotIdentifier() == null
-                ^ this.getSnapshotIdentifier() == null)
+        if (other.getSnapshotIdentifier() == null ^ this.getSnapshotIdentifier() == null)
             return false;
-        if (other.getSnapshotIdentifier() != null
-                && other.getSnapshotIdentifier().equals(
-                        this.getSnapshotIdentifier()) == false)
+        if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false)
             return false;
-        if (other.getClusterIdentifier() == null
-                ^ this.getClusterIdentifier() == null)
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
-        if (other.getClusterIdentifier() != null
-                && other.getClusterIdentifier().equals(
-                        this.getClusterIdentifier()) == false)
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -355,16 +443,9 @@ public class CreateClusterSnapshotRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotIdentifier() == null) ? 0
-                        : getSnapshotIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterIdentifier() == null) ? 0
-                        : getClusterIdentifier().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

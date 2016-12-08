@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -18,18 +16,17 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a usage plan than can specify who can assess associated API stages
- * with specified request limits and quotas.
+ * Represents a usage plan than can specify who can assess associated API stages with specified request limits and
+ * quotas.
  * </p>
  * <div class="remarks">
  * <p>
- * In a usage plan, you associate an API by specifying the API's Id and a stage
- * name of the specified API. You add plan customers by adding API keys to the
- * plan.
+ * In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan
+ * customers by adding API keys to the plan.
  * </p>
- * </div> <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"
- * >Create and Use Usage Plans</a> </div>
+ * </div> <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
+ * Usage Plans</a> </div>
  */
 public class UsagePlan implements Serializable, Cloneable {
 
@@ -69,6 +66,12 @@ public class UsagePlan implements Serializable, Cloneable {
      * </p>
      */
     private QuotaSettings quota;
+    /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     */
+    private String productCode;
 
     /**
      * <p>
@@ -102,8 +105,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * 
      * @param id
      *        The identifier of a <a>UsagePlan</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withId(String id) {
@@ -143,8 +145,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withName(String name) {
@@ -184,8 +185,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withDescription(String description) {
@@ -228,16 +228,14 @@ public class UsagePlan implements Serializable, Cloneable {
      * The associated API stages of a usage plan.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setApiStages(java.util.Collection)} or
-     * {@link #withApiStages(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApiStages(java.util.Collection)} or {@link #withApiStages(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param apiStages
      *        The associated API stages of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withApiStages(ApiStage... apiStages) {
@@ -257,8 +255,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * 
      * @param apiStages
      *        The associated API stages of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withApiStages(java.util.Collection<ApiStage> apiStages) {
@@ -298,8 +295,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * 
      * @param throttle
      *        The request throttle limits of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withThrottle(ThrottleSettings throttle) {
@@ -313,8 +309,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * </p>
      * 
      * @param quota
-     *        The maximum number of permitted requests per a given unit time
-     *        interval.
+     *        The maximum number of permitted requests per a given unit time interval.
      */
 
     public void setQuota(QuotaSettings quota) {
@@ -326,8 +321,7 @@ public class UsagePlan implements Serializable, Cloneable {
      * The maximum number of permitted requests per a given unit time interval.
      * </p>
      * 
-     * @return The maximum number of permitted requests per a given unit time
-     *         interval.
+     * @return The maximum number of permitted requests per a given unit time interval.
      */
 
     public QuotaSettings getQuota() {
@@ -340,10 +334,8 @@ public class UsagePlan implements Serializable, Cloneable {
      * </p>
      * 
      * @param quota
-     *        The maximum number of permitted requests per a given unit time
-     *        interval.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of permitted requests per a given unit time interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UsagePlan withQuota(QuotaSettings quota) {
@@ -352,8 +344,50 @@ public class UsagePlan implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     * 
+     * @param productCode
+     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
+     *        Marketplace.
+     */
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
+    /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     * 
+     * @return The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
+     *         Marketplace.
+     */
+
+    public String getProductCode() {
+        return this.productCode;
+    }
+
+    /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     * 
+     * @param productCode
+     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
+     *        Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsagePlan withProductCode(String productCode) {
+        setProductCode(productCode);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -374,7 +408,9 @@ public class UsagePlan implements Serializable, Cloneable {
         if (getThrottle() != null)
             sb.append("Throttle: " + getThrottle() + ",");
         if (getQuota() != null)
-            sb.append("Quota: " + getQuota());
+            sb.append("Quota: " + getQuota() + ",");
+        if (getProductCode() != null)
+            sb.append("ProductCode: " + getProductCode());
         sb.append("}");
         return sb.toString();
     }
@@ -391,33 +427,31 @@ public class UsagePlan implements Serializable, Cloneable {
         UsagePlan other = (UsagePlan) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getApiStages() == null ^ this.getApiStages() == null)
             return false;
-        if (other.getApiStages() != null
-                && other.getApiStages().equals(this.getApiStages()) == false)
+        if (other.getApiStages() != null && other.getApiStages().equals(this.getApiStages()) == false)
             return false;
         if (other.getThrottle() == null ^ this.getThrottle() == null)
             return false;
-        if (other.getThrottle() != null
-                && other.getThrottle().equals(this.getThrottle()) == false)
+        if (other.getThrottle() != null && other.getThrottle().equals(this.getThrottle()) == false)
             return false;
         if (other.getQuota() == null ^ this.getQuota() == null)
             return false;
-        if (other.getQuota() != null
-                && other.getQuota().equals(this.getQuota()) == false)
+        if (other.getQuota() != null && other.getQuota().equals(this.getQuota()) == false)
+            return false;
+        if (other.getProductCode() == null ^ this.getProductCode() == null)
+            return false;
+        if (other.getProductCode() != null && other.getProductCode().equals(this.getProductCode()) == false)
             return false;
         return true;
     }
@@ -427,19 +461,13 @@ public class UsagePlan implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getApiStages() == null) ? 0 : getApiStages().hashCode());
-        hashCode = prime * hashCode
-                + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
-        hashCode = prime * hashCode
-                + ((getQuota() == null) ? 0 : getQuota().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getApiStages() == null) ? 0 : getApiStages().hashCode());
+        hashCode = prime * hashCode + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
+        hashCode = prime * hashCode + ((getQuota() == null) ? 0 : getQuota().hashCode());
+        hashCode = prime * hashCode + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
         return hashCode;
     }
 
@@ -448,9 +476,7 @@ public class UsagePlan implements Serializable, Cloneable {
         try {
             return (UsagePlan) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

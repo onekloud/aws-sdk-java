@@ -41,15 +41,16 @@ import com.amazonaws.services.dynamodbv2.pojos.UnannotatedSubClass;
 public class StandardModelFactoriesV1Test {
 
     protected static final DynamoDBMapperConfig CONFIG = new DynamoDBMapperConfig.Builder()
+        .withTypeConverterFactory(DynamoDBMapperConfig.DEFAULT.getTypeConverterFactory())
         .withConversionSchema(ConversionSchemas.V1)
         .build();
 
-    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
-    private static final DynamoDBMapperModelFactory models = factory.getModelFactory(CONFIG);
+    private static final DynamoDBMapperModelFactory factory = StandardModelFactories.of(S3Link.Factory.of(null));
+    private static final DynamoDBMapperModelFactory.TableFactory models = factory.getTableFactory(CONFIG);
 
     protected <T> AttributeValue convert(Class<T> clazz, Method getter, Object value) {
-        final StandardAnnotationMaps.FieldMap<T,Object> map = StandardAnnotationMaps.of(clazz, getter);
-        return models.getTableModel(clazz).field(map.attributeName()).convert(value);
+        final StandardAnnotationMaps.FieldMap<Object> map = StandardAnnotationMaps.of(getter, null);
+        return models.getTable(clazz).field(map.attributeName()).convert(value);
     }
 
     @Test

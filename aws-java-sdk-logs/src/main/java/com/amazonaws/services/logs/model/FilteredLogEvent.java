@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -18,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a matched event from a <code>FilterLogEvents</code> request.
+ * Represents a matched event.
  * </p>
  */
 public class FilteredLogEvent implements Serializable, Cloneable {
@@ -29,7 +27,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * </p>
      */
     private String logStreamName;
-
+    /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     */
     private Long timestamp;
     /**
      * <p>
@@ -37,11 +39,15 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * </p>
      */
     private String message;
-
+    /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     */
     private Long ingestionTime;
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      */
     private String eventId;
@@ -78,8 +84,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * 
      * @param logStreamName
      *        The name of the log stream this event belongs to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilteredLogEvent withLogStreamName(String logStreamName) {
@@ -88,7 +93,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -96,7 +106,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
+     * @return The time the event occurred.
      */
 
     public Long getTimestamp() {
@@ -104,9 +118,13 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time the event occurred.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilteredLogEvent withTimestamp(Long timestamp) {
@@ -146,8 +164,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * 
      * @param message
      *        The data contained in the log event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilteredLogEvent withMessage(String message) {
@@ -156,7 +173,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
      * @param ingestionTime
+     *        The time the event was ingested.
      */
 
     public void setIngestionTime(Long ingestionTime) {
@@ -164,7 +186,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
+     * @return The time the event was ingested.
      */
 
     public Long getIngestionTime() {
@@ -172,9 +198,13 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
      * @param ingestionTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time the event was ingested.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilteredLogEvent withIngestionTime(Long ingestionTime) {
@@ -184,11 +214,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      * 
      * @param eventId
-     *        A unique identifier for this event.
+     *        The ID of the event.
      */
 
     public void setEventId(String eventId) {
@@ -197,10 +227,10 @@ public class FilteredLogEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      * 
-     * @return A unique identifier for this event.
+     * @return The ID of the event.
      */
 
     public String getEventId() {
@@ -209,13 +239,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      * 
      * @param eventId
-     *        A unique identifier for this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilteredLogEvent withEventId(String eventId) {
@@ -224,8 +253,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -261,28 +289,23 @@ public class FilteredLogEvent implements Serializable, Cloneable {
         FilteredLogEvent other = (FilteredLogEvent) obj;
         if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
             return false;
-        if (other.getLogStreamName() != null
-                && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getIngestionTime() == null ^ this.getIngestionTime() == null)
             return false;
-        if (other.getIngestionTime() != null
-                && other.getIngestionTime().equals(this.getIngestionTime()) == false)
+        if (other.getIngestionTime() != null && other.getIngestionTime().equals(this.getIngestionTime()) == false)
             return false;
         if (other.getEventId() == null ^ this.getEventId() == null)
             return false;
-        if (other.getEventId() != null
-                && other.getEventId().equals(this.getEventId()) == false)
+        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
             return false;
         return true;
     }
@@ -292,20 +315,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogStreamName() == null) ? 0 : getLogStreamName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIngestionTime() == null) ? 0 : getIngestionTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getIngestionTime() == null) ? 0 : getIngestionTime().hashCode());
+        hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
         return hashCode;
     }
 
@@ -314,9 +328,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
         try {
             return (FilteredLogEvent) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.35</version>
+    <version>1.11.65</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.35</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.65</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.35</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.65</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -390,6 +390,58 @@
                     <group>
                       <title>AWS Service Catalog</title>
                       <packages>com.amazonaws.services.servicecatalog*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Budgets</title>
+                      <packages>com.amazonaws.services.budgets*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Server Migration</title>
+                      <packages>com.amazonaws.services.servermigration*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Rekognition</title>
+                      <packages>com.amazonaws.services.rekognition*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Polly</title>
+                      <packages>com.amazonaws.services.polly*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Lightsail</title>
+                      <packages>com.amazonaws.services.lightsail*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon AppStream</title>
+                      <packages>com.amazonaws.services.appstream*</packages>
+                    </group>
+                    <group>
+                      <title>AWS X-Ray</title>
+                      <packages>com.amazonaws.services.xray*</packages>
+                    </group>
+                    <group>
+                      <title>AWS OpsWorks for Chef Automate</title>
+                      <packages>com.amazonaws.services.opsworkscm*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Pinpoint</title>
+                      <packages>com.amazonaws.services.pinpoint*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Step Functions</title>
+                      <packages>com.amazonaws.services.stepfunctions*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Shield</title>
+                      <packages>com.amazonaws.services.shield*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Health APIs and Notifications</title>
+                      <packages>com.amazonaws.services.health*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Code Build</title>
+                      <packages>com.amazonaws.services.codebuild*</packages>
                     </group>
                     <group>
                       <title>Common</title>
@@ -528,10 +580,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.35</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.65</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.35</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.65</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -806,6 +858,58 @@
                       <packages>com.amazonaws.services.servicecatalog*</packages>
                     </group>
                     <group>
+                      <title>AWS Budgets</title>
+                      <packages>com.amazonaws.services.budgets*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Server Migration</title>
+                      <packages>com.amazonaws.services.servermigration*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Rekognition</title>
+                      <packages>com.amazonaws.services.rekognition*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Polly</title>
+                      <packages>com.amazonaws.services.polly*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Lightsail</title>
+                      <packages>com.amazonaws.services.lightsail*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon AppStream</title>
+                      <packages>com.amazonaws.services.appstream*</packages>
+                    </group>
+                    <group>
+                      <title>AWS X-Ray</title>
+                      <packages>com.amazonaws.services.xray*</packages>
+                    </group>
+                    <group>
+                      <title>AWS OpsWorks for Chef Automate</title>
+                      <packages>com.amazonaws.services.opsworkscm*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Pinpoint</title>
+                      <packages>com.amazonaws.services.pinpoint*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Step Functions</title>
+                      <packages>com.amazonaws.services.stepfunctions*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Shield</title>
+                      <packages>com.amazonaws.services.shield*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Health APIs and Notifications</title>
+                      <packages>com.amazonaws.services.health*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Code Build</title>
+                      <packages>com.amazonaws.services.codebuild*</packages>
+                    </group>
+                    <group>
                       <title>Common</title>
                       <packages>com.amazonaws*</packages>
                     </group>
@@ -938,10 +1042,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.35</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.65</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.35</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.65</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1214,6 +1318,58 @@
                 <group>
                   <title>AWS Service Catalog</title>
                   <packages>com.amazonaws.services.servicecatalog*</packages>
+                </group>
+                <group>
+                  <title>AWS Budgets</title>
+                  <packages>com.amazonaws.services.budgets*</packages>
+                </group>
+                <group>
+                  <title>AWS Server Migration</title>
+                  <packages>com.amazonaws.services.servermigration*</packages>
+                </group>
+                <group>
+                  <title>Amazon Rekognition</title>
+                  <packages>com.amazonaws.services.rekognition*</packages>
+                </group>
+                <group>
+                  <title>Amazon Polly</title>
+                  <packages>com.amazonaws.services.polly*</packages>
+                </group>
+                <group>
+                  <title>Amazon Lightsail</title>
+                  <packages>com.amazonaws.services.lightsail*</packages>
+                </group>
+                <group>
+                  <title>Amazon AppStream</title>
+                  <packages>com.amazonaws.services.appstream*</packages>
+                </group>
+                <group>
+                  <title>AWS X-Ray</title>
+                  <packages>com.amazonaws.services.xray*</packages>
+                </group>
+                <group>
+                  <title>AWS OpsWorks for Chef Automate</title>
+                  <packages>com.amazonaws.services.opsworkscm*</packages>
+                </group>
+                <group>
+                  <title>Amazon Pinpoint</title>
+                  <packages>com.amazonaws.services.pinpoint*</packages>
+                </group>
+                <group>
+                  <title>AWS Step Functions</title>
+                  <packages>com.amazonaws.services.stepfunctions*</packages>
+                </group>
+                <group>
+                  <title>AWS Shield</title>
+                  <packages>com.amazonaws.services.shield*</packages>
+                </group>
+                <group>
+                  <title>AWS Health APIs and Notifications</title>
+                  <packages>com.amazonaws.services.health*</packages>
+                </group>
+                <group>
+                  <title>AWS Code Build</title>
+                  <packages>com.amazonaws.services.codebuild*</packages>
                 </group>
                 <group>
                   <title>Common</title>
@@ -1545,7 +1701,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.35-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.65-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>
@@ -1584,7 +1740,7 @@
     <dependency>
       <groupId>software.amazon.ion</groupId>
       <artifactId>ion-java</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

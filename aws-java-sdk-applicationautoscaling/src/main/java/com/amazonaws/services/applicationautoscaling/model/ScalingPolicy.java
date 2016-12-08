@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
@@ -18,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An object representing a scaling policy.
+ * Represents a scaling policy.
  * </p>
  */
 public class ScalingPolicy implements Serializable, Cloneable {
@@ -37,35 +35,60 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String policyName;
     /**
      * <p>
-     * The namespace for the AWS service that the scaling policy is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * The namespace of the AWS service. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String serviceNamespace;
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scaling policy. For Amazon ECS services, the resource
-     * type is <code>services</code>, and the identifier is the cluster name and
-     * service name; for example, <code>service/default/sample-webapp</code>.
-     * For Amazon EC2 Spot fleet requests, the resource type is
-     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
-     * request ID; for example,
-     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
+     * unique identifier.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and
+     * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceId;
     /**
      * <p>
-     * The scalable dimension associated with the scaling policy. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     * capacity of an Amazon EC2 Spot fleet request.
+     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String scalableDimension;
     /**
@@ -82,7 +105,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private StepScalingPolicyConfiguration stepScalingPolicyConfiguration;
     /**
      * <p>
-     * The CloudWatch alarms that are associated with the scaling policy.
+     * The CloudWatch alarms associated with the scaling policy.
      * </p>
      */
     private java.util.List<Alarm> alarms;
@@ -125,8 +148,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param policyARN
      *        The Amazon Resource Name (ARN) of the scaling policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withPolicyARN(String policyARN) {
@@ -166,8 +188,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param policyName
      *        The name of the scaling policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withPolicyName(String policyName) {
@@ -177,18 +198,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scaling policy is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * The namespace of the AWS service. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scaling policy is
-     *        associated with. For more information, see <a href=
+     *        The namespace of the AWS service. For more information, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
+     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
 
@@ -198,17 +216,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scaling policy is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * The namespace of the AWS service. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The namespace for the AWS service that the scaling policy is
-     *         associated with. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *         >AWS Service Namespaces</a> in the Amazon Web Services General
-     *         Reference.
+     * @return The namespace of the AWS service. For more information, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
 
@@ -218,20 +233,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scaling policy is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * The namespace of the AWS service. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scaling policy is
-     *        associated with. For more information, see <a href=
+     *        The namespace of the AWS service. For more information, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
 
@@ -242,18 +253,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scaling policy is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * The namespace of the AWS service. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scaling policy is
-     *        associated with. For more information, see <a href=
+     *        The namespace of the AWS service. For more information, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
+     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
 
@@ -263,20 +271,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scaling policy is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * The namespace of the AWS service. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scaling policy is
-     *        associated with. For more information, see <a href=
+     *        The namespace of the AWS service. For more information, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
 
@@ -287,27 +291,52 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scaling policy. For Amazon ECS services, the resource
-     * type is <code>services</code>, and the identifier is the cluster name and
-     * service name; for example, <code>service/default/sample-webapp</code>.
-     * For Amazon EC2 Spot fleet requests, the resource type is
-     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
-     * request ID; for example,
-     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
+     * unique identifier.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and
+     * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The resource type and unique identifier string for the resource
-     *        associated with the scaling policy. For Amazon ECS services, the
-     *        resource type is <code>services</code>, and the identifier is the
-     *        cluster name and service name; for example,
-     *        <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     *        fleet requests, the resource type is
-     *        <code>spot-fleet-request</code>, and the identifier is the Spot
-     *        fleet request ID; for example,
-     *        <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
-     *        .
+     *        The identifier of the resource associated with the scaling policy. This string consists of the resource
+     *        type and unique identifier.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
+     *        service name. Example: <code>service/default/sample-webapp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
+     *        and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -316,26 +345,52 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scaling policy. For Amazon ECS services, the resource
-     * type is <code>services</code>, and the identifier is the cluster name and
-     * service name; for example, <code>service/default/sample-webapp</code>.
-     * For Amazon EC2 Spot fleet requests, the resource type is
-     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
-     * request ID; for example,
-     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
+     * unique identifier.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and
+     * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The resource type and unique identifier string for the resource
-     *         associated with the scaling policy. For Amazon ECS services, the
-     *         resource type is <code>services</code>, and the identifier is the
-     *         cluster name and service name; for example,
-     *         <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     *         fleet requests, the resource type is
-     *         <code>spot-fleet-request</code>, and the identifier is the Spot
-     *         fleet request ID; for example,
-     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
-     *         .
+     * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
+     *         type and unique identifier.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
+     *         service name. Example: <code>service/default/sample-webapp</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
+     *         the Spot fleet request ID. Example:
+     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
+     *         and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -344,29 +399,53 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scaling policy. For Amazon ECS services, the resource
-     * type is <code>services</code>, and the identifier is the cluster name and
-     * service name; for example, <code>service/default/sample-webapp</code>.
-     * For Amazon EC2 Spot fleet requests, the resource type is
-     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
-     * request ID; for example,
-     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
+     * unique identifier.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and
+     * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The resource type and unique identifier string for the resource
-     *        associated with the scaling policy. For Amazon ECS services, the
-     *        resource type is <code>services</code>, and the identifier is the
-     *        cluster name and service name; for example,
-     *        <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     *        fleet requests, the resource type is
-     *        <code>spot-fleet-request</code>, and the identifier is the Spot
-     *        fleet request ID; for example,
-     *        <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the resource associated with the scaling policy. This string consists of the resource
+     *        type and unique identifier.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
+     *        service name. Example: <code>service/default/sample-webapp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
+     *        and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withResourceId(String resourceId) {
@@ -376,22 +455,45 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scaling policy. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     * capacity of an Amazon EC2 Spot fleet request.
+     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scaling policy. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
+     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
+     *        property.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
      * @see ScalableDimension
      */
 
@@ -401,21 +503,44 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scaling policy. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     * capacity of an Amazon EC2 Spot fleet request.
+     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The scalable dimension associated with the scaling policy. The
-     *         scalable dimension contains the service namespace, resource type,
-     *         and scaling property, such as
-     *         <code>ecs:service:DesiredCount</code> for the desired task count
-     *         of an Amazon ECS service, or
-     *         <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *         capacity of an Amazon EC2 Spot fleet request.
+     * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
+     *         property.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *         </p>
+     *         </li>
      * @see ScalableDimension
      */
 
@@ -425,24 +550,46 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scaling policy. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     * capacity of an Amazon EC2 Spot fleet request.
+     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scaling policy. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
+     *        property.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
 
@@ -453,22 +600,45 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scaling policy. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     * capacity of an Amazon EC2 Spot fleet request.
+     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scaling policy. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
+     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
+     *        property.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
      * @see ScalableDimension
      */
 
@@ -478,29 +648,50 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scaling policy. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     * capacity of an Amazon EC2 Spot fleet request.
+     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scaling policy. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
+     *        property.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
 
-    public ScalingPolicy withScalableDimension(
-            ScalableDimension scalableDimension) {
+    public ScalingPolicy withScalableDimension(ScalableDimension scalableDimension) {
         setScalableDimension(scalableDimension);
         return this;
     }
@@ -539,8 +730,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param policyType
      *        The scaling policy type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
 
@@ -570,8 +760,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param policyType
      *        The scaling policy type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
 
@@ -589,8 +778,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        The configuration for the step scaling policy.
      */
 
-    public void setStepScalingPolicyConfiguration(
-            StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
+    public void setStepScalingPolicyConfiguration(StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
         this.stepScalingPolicyConfiguration = stepScalingPolicyConfiguration;
     }
 
@@ -613,23 +801,20 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param stepScalingPolicyConfiguration
      *        The configuration for the step scaling policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScalingPolicy withStepScalingPolicyConfiguration(
-            StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
+    public ScalingPolicy withStepScalingPolicyConfiguration(StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
         setStepScalingPolicyConfiguration(stepScalingPolicyConfiguration);
         return this;
     }
 
     /**
      * <p>
-     * The CloudWatch alarms that are associated with the scaling policy.
+     * The CloudWatch alarms associated with the scaling policy.
      * </p>
      * 
-     * @return The CloudWatch alarms that are associated with the scaling
-     *         policy.
+     * @return The CloudWatch alarms associated with the scaling policy.
      */
 
     public java.util.List<Alarm> getAlarms() {
@@ -638,11 +823,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch alarms that are associated with the scaling policy.
+     * The CloudWatch alarms associated with the scaling policy.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms that are associated with the scaling policy.
+     *        The CloudWatch alarms associated with the scaling policy.
      */
 
     public void setAlarms(java.util.Collection<Alarm> alarms) {
@@ -656,19 +841,17 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch alarms that are associated with the scaling policy.
+     * The CloudWatch alarms associated with the scaling policy.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAlarms(java.util.Collection)} or
-     * {@link #withAlarms(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlarms(java.util.Collection)} or {@link #withAlarms(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms that are associated with the scaling policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The CloudWatch alarms associated with the scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withAlarms(Alarm... alarms) {
@@ -683,13 +866,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch alarms that are associated with the scaling policy.
+     * The CloudWatch alarms associated with the scaling policy.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms that are associated with the scaling policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The CloudWatch alarms associated with the scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withAlarms(java.util.Collection<Alarm> alarms) {
@@ -729,8 +911,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param creationTime
      *        The Unix timestamp for when the scaling policy was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withCreationTime(java.util.Date creationTime) {
@@ -739,8 +920,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -763,8 +943,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (getPolicyType() != null)
             sb.append("PolicyType: " + getPolicyType() + ",");
         if (getStepScalingPolicyConfiguration() != null)
-            sb.append("StepScalingPolicyConfiguration: "
-                    + getStepScalingPolicyConfiguration() + ",");
+            sb.append("StepScalingPolicyConfiguration: " + getStepScalingPolicyConfiguration() + ",");
         if (getAlarms() != null)
             sb.append("Alarms: " + getAlarms() + ",");
         if (getCreationTime() != null)
@@ -785,54 +964,40 @@ public class ScalingPolicy implements Serializable, Cloneable {
         ScalingPolicy other = (ScalingPolicy) obj;
         if (other.getPolicyARN() == null ^ this.getPolicyARN() == null)
             return false;
-        if (other.getPolicyARN() != null
-                && other.getPolicyARN().equals(this.getPolicyARN()) == false)
+        if (other.getPolicyARN() != null && other.getPolicyARN().equals(this.getPolicyARN()) == false)
             return false;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
-        if (other.getServiceNamespace() == null
-                ^ this.getServiceNamespace() == null)
+        if (other.getServiceNamespace() == null ^ this.getServiceNamespace() == null)
             return false;
-        if (other.getServiceNamespace() != null
-                && other.getServiceNamespace().equals(
-                        this.getServiceNamespace()) == false)
+        if (other.getServiceNamespace() != null && other.getServiceNamespace().equals(this.getServiceNamespace()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
-        if (other.getScalableDimension() == null
-                ^ this.getScalableDimension() == null)
+        if (other.getScalableDimension() == null ^ this.getScalableDimension() == null)
             return false;
-        if (other.getScalableDimension() != null
-                && other.getScalableDimension().equals(
-                        this.getScalableDimension()) == false)
+        if (other.getScalableDimension() != null && other.getScalableDimension().equals(this.getScalableDimension()) == false)
             return false;
         if (other.getPolicyType() == null ^ this.getPolicyType() == null)
             return false;
-        if (other.getPolicyType() != null
-                && other.getPolicyType().equals(this.getPolicyType()) == false)
+        if (other.getPolicyType() != null && other.getPolicyType().equals(this.getPolicyType()) == false)
             return false;
-        if (other.getStepScalingPolicyConfiguration() == null
-                ^ this.getStepScalingPolicyConfiguration() == null)
+        if (other.getStepScalingPolicyConfiguration() == null ^ this.getStepScalingPolicyConfiguration() == null)
             return false;
         if (other.getStepScalingPolicyConfiguration() != null
-                && other.getStepScalingPolicyConfiguration().equals(
-                        this.getStepScalingPolicyConfiguration()) == false)
+                && other.getStepScalingPolicyConfiguration().equals(this.getStepScalingPolicyConfiguration()) == false)
             return false;
         if (other.getAlarms() == null ^ this.getAlarms() == null)
             return false;
-        if (other.getAlarms() != null
-                && other.getAlarms().equals(this.getAlarms()) == false)
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -842,32 +1007,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServiceNamespace() == null) ? 0 : getServiceNamespace()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScalableDimension() == null) ? 0
-                        : getScalableDimension().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStepScalingPolicyConfiguration() == null) ? 0
-                        : getStepScalingPolicyConfiguration().hashCode());
-        hashCode = prime * hashCode
-                + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getServiceNamespace() == null) ? 0 : getServiceNamespace().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
+        hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
+        hashCode = prime * hashCode + ((getStepScalingPolicyConfiguration() == null) ? 0 : getStepScalingPolicyConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 
@@ -876,9 +1024,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         try {
             return (ScalingPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

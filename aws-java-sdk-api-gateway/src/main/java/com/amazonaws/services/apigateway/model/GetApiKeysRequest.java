@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,13 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to get information about the current <a>ApiKeys</a> resource.
  * </p>
  */
-public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information
-     * about.
+     * The position of the current <a>ApiKeys</a> resource to get information about.
      * </p>
      */
     private String position;
@@ -46,21 +42,24 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nameQuery;
     /**
      * <p>
-     * A boolean flag to specify whether (<code>true</code>) or not (
-     * <code>false</code>) the result contains key values.
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     */
+    private String customerId;
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
      * </p>
      */
     private Boolean includeValues;
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information
-     * about.
+     * The position of the current <a>ApiKeys</a> resource to get information about.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>ApiKeys</a> resource to get
-     *        information about.
+     *        The position of the current <a>ApiKeys</a> resource to get information about.
      */
 
     public void setPosition(String position) {
@@ -69,12 +68,10 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information
-     * about.
+     * The position of the current <a>ApiKeys</a> resource to get information about.
      * </p>
      * 
-     * @return The position of the current <a>ApiKeys</a> resource to get
-     *         information about.
+     * @return The position of the current <a>ApiKeys</a> resource to get information about.
      */
 
     public String getPosition() {
@@ -83,15 +80,12 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information
-     * about.
+     * The position of the current <a>ApiKeys</a> resource to get information about.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>ApiKeys</a> resource to get
-     *        information about.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The position of the current <a>ApiKeys</a> resource to get information about.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetApiKeysRequest withPosition(String position) {
@@ -131,8 +125,7 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param limit
      *        The maximum number of <a>ApiKeys</a> to get information about.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetApiKeysRequest withLimit(Integer limit) {
@@ -172,8 +165,7 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nameQuery
      *        The name of queried API keys.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetApiKeysRequest withNameQuery(String nameQuery) {
@@ -183,13 +175,52 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean flag to specify whether (<code>true</code>) or not (
-     * <code>false</code>) the result contains key values.
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     * 
+     * @param customerId
+     *        The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     */
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     * 
+     * @return The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     */
+
+    public String getCustomerId() {
+        return this.customerId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     * 
+     * @param customerId
+     *        The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApiKeysRequest withCustomerId(String customerId) {
+        setCustomerId(customerId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
      * </p>
      * 
      * @param includeValues
-     *        A boolean flag to specify whether (<code>true</code>) or not (
-     *        <code>false</code>) the result contains key values.
+     *        A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key
+     *        values.
      */
 
     public void setIncludeValues(Boolean includeValues) {
@@ -198,12 +229,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean flag to specify whether (<code>true</code>) or not (
-     * <code>false</code>) the result contains key values.
+     * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
      * </p>
      * 
-     * @return A boolean flag to specify whether (<code>true</code>) or not (
-     *         <code>false</code>) the result contains key values.
+     * @return A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key
+     *         values.
      */
 
     public Boolean getIncludeValues() {
@@ -212,15 +242,13 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean flag to specify whether (<code>true</code>) or not (
-     * <code>false</code>) the result contains key values.
+     * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
      * </p>
      * 
      * @param includeValues
-     *        A boolean flag to specify whether (<code>true</code>) or not (
-     *        <code>false</code>) the result contains key values.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key
+     *        values.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetApiKeysRequest withIncludeValues(Boolean includeValues) {
@@ -230,12 +258,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean flag to specify whether (<code>true</code>) or not (
-     * <code>false</code>) the result contains key values.
+     * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
      * </p>
      * 
-     * @return A boolean flag to specify whether (<code>true</code>) or not (
-     *         <code>false</code>) the result contains key values.
+     * @return A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key
+     *         values.
      */
 
     public Boolean isIncludeValues() {
@@ -243,8 +270,7 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -260,6 +286,8 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Limit: " + getLimit() + ",");
         if (getNameQuery() != null)
             sb.append("NameQuery: " + getNameQuery() + ",");
+        if (getCustomerId() != null)
+            sb.append("CustomerId: " + getCustomerId() + ",");
         if (getIncludeValues() != null)
             sb.append("IncludeValues: " + getIncludeValues());
         sb.append("}");
@@ -278,23 +306,23 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
         GetApiKeysRequest other = (GetApiKeysRequest) obj;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNameQuery() == null ^ this.getNameQuery() == null)
             return false;
-        if (other.getNameQuery() != null
-                && other.getNameQuery().equals(this.getNameQuery()) == false)
+        if (other.getNameQuery() != null && other.getNameQuery().equals(this.getNameQuery()) == false)
+            return false;
+        if (other.getCustomerId() == null ^ this.getCustomerId() == null)
+            return false;
+        if (other.getCustomerId() != null && other.getCustomerId().equals(this.getCustomerId()) == false)
             return false;
         if (other.getIncludeValues() == null ^ this.getIncludeValues() == null)
             return false;
-        if (other.getIncludeValues() != null
-                && other.getIncludeValues().equals(this.getIncludeValues()) == false)
+        if (other.getIncludeValues() != null && other.getIncludeValues().equals(this.getIncludeValues()) == false)
             return false;
         return true;
     }
@@ -304,16 +332,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNameQuery() == null) ? 0 : getNameQuery().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIncludeValues() == null) ? 0 : getIncludeValues()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNameQuery() == null) ? 0 : getNameQuery().hashCode());
+        hashCode = prime * hashCode + ((getCustomerId() == null) ? 0 : getCustomerId().hashCode());
+        hashCode = prime * hashCode + ((getIncludeValues() == null) ? 0 : getIncludeValues().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,41 +18,36 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteLogStreamRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteLogStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the log group under which the log stream to delete belongs.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * The name of the log stream to delete.
+     * The name of the log stream.
      * </p>
      */
     private String logStreamName;
 
     /**
-     * Default constructor for DeleteLogStreamRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for DeleteLogStreamRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public DeleteLogStreamRequest() {
     }
 
     /**
-     * Constructs a new DeleteLogStreamRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new DeleteLogStreamRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group under which the log stream to delete
-     *        belongs.
+     *        The name of the log group.
      * @param logStreamName
-     *        The name of the log stream to delete.
+     *        The name of the log stream.
      */
     public DeleteLogStreamRequest(String logGroupName, String logStreamName) {
         setLogGroupName(logGroupName);
@@ -63,12 +56,11 @@ public class DeleteLogStreamRequest extends
 
     /**
      * <p>
-     * The name of the log group under which the log stream to delete belongs.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group under which the log stream to delete
-     *        belongs.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -77,11 +69,10 @@ public class DeleteLogStreamRequest extends
 
     /**
      * <p>
-     * The name of the log group under which the log stream to delete belongs.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group under which the log stream to delete
-     *         belongs.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -90,14 +81,12 @@ public class DeleteLogStreamRequest extends
 
     /**
      * <p>
-     * The name of the log group under which the log stream to delete belongs.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group under which the log stream to delete
-     *        belongs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteLogStreamRequest withLogGroupName(String logGroupName) {
@@ -107,11 +96,11 @@ public class DeleteLogStreamRequest extends
 
     /**
      * <p>
-     * The name of the log stream to delete.
+     * The name of the log stream.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the log stream to delete.
+     *        The name of the log stream.
      */
 
     public void setLogStreamName(String logStreamName) {
@@ -120,10 +109,10 @@ public class DeleteLogStreamRequest extends
 
     /**
      * <p>
-     * The name of the log stream to delete.
+     * The name of the log stream.
      * </p>
      * 
-     * @return The name of the log stream to delete.
+     * @return The name of the log stream.
      */
 
     public String getLogStreamName() {
@@ -132,13 +121,12 @@ public class DeleteLogStreamRequest extends
 
     /**
      * <p>
-     * The name of the log stream to delete.
+     * The name of the log stream.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the log stream to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteLogStreamRequest withLogStreamName(String logStreamName) {
@@ -147,8 +135,7 @@ public class DeleteLogStreamRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -178,13 +165,11 @@ public class DeleteLogStreamRequest extends
         DeleteLogStreamRequest other = (DeleteLogStreamRequest) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
         if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
             return false;
-        if (other.getLogStreamName() != null
-                && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
             return false;
         return true;
     }
@@ -194,14 +179,8 @@ public class DeleteLogStreamRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogStreamName() == null) ? 0 : getLogStreamName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
         return hashCode;
     }
 

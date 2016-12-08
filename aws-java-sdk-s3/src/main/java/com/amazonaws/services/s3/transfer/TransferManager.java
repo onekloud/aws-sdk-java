@@ -1035,14 +1035,30 @@ public class TransferManager {
         }
 
         final long origStartingByte = startingByte;
-        final boolean isDownloadParallel = TransferManagerUtils.isDownloadParallelizable(s3, getObjectRequest,
-                ServiceUtils.getPartCount(getObjectRequest, s3));
+        final boolean isDownloadParallel =
+                TransferManagerUtils.isDownloadParallelizable(s3, getObjectRequest, ServiceUtils.getPartCount(getObjectRequest, s3))
+                        && !configuration.isDisableParallelDownloads();
+
         // We still pass the unfiltered listener chain into DownloadImpl
         final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null,
                 stateListener, getObjectRequest, file, objectMetadata, isDownloadParallel);
 
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
+
+        // Range information is needed for auto retry of downloads so a retry
+        // request can start at the last downloaded location in the range.
+        //
+        // For obvious reasons, setting a Range header only makes sense if the
+        // object actually has content because it's inclusive, otherwise S3
+        // responds with 4xx
+        //
+        // In addition, we only set the range if the download was *NOT*
+        // determined to be parallelizable above. One of the conditions for
+        // parallel downloads is that getRange() returns null so preserve that.
+        if (totalBytesToDownload > 0 && !isDownloadParallel) {
+            getObjectRequest.withRange(startingByte, lastByte);
+        }
 
         long fileLength = -1;
 
@@ -1205,8 +1221,7 @@ public class TransferManager {
             // MultipleFileTransferStateChangeListener
             GetObjectRequest req = new GetObjectRequest(summary.getBucketName(), summary.getKey())
                     .<GetObjectRequest>withGeneralProgressListener(
-                                            listener)
-                    .withRange(0L);
+                                            listener);
             downloads.add((DownloadImpl) doDownload(
                             req,
                             f,
@@ -1596,11 +1611,11 @@ public class TransferManager {
      * <p>
      * Schedules a new transfer to copy data from one Amazon S3 location to
      * another Amazon S3 location. This method is non-blocking and returns
-     * immediately (i.e. before the copy has finished).
+     * immediately (before the copy has finished).
      * </p>
      * <p>
      * <code>TransferManager</code> doesn't support copying of encrypted objects
-     * whose encryption materials is stored in instruction file.
+     * whose encryption materials are stored in an instruction file.
      * </p>
      * <p>
      * Use the returned <code>Copy</code> object to check if the copy is
@@ -1626,11 +1641,11 @@ public class TransferManager {
      *         copy request being processed.
      *
      * @throws AmazonClientException
-     *             If any errors are encountered in the client while making the
-     *             request or handling the response.
+     *            If any errors are encountered in the client while making the
+     *            request or handling the response.
      * @throws AmazonServiceException
-     *             If any errors occurred in Amazon S3 while processing the
-     *             request.
+     *            If any errors occurred in Amazon S3 while processing the
+     *            request.
      */
 
     public Copy copy(String sourceBucketName, String sourceKey,
@@ -1647,8 +1662,8 @@ public class TransferManager {
      * immediately (i.e. before the copy has finished).
      * </p>
      * <p>
-     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
-     * encryption materials is stored i instruction file.
+     * <code>TransferManager</code> doesn't support copying of encrypted objects
+     * whose encryption materials are stored in an instruction file.
      * </p>
      * <p>
      * Use the returned <code>Copy</code> object to check if the copy is
@@ -1684,8 +1699,8 @@ public class TransferManager {
      * immediately (i.e. before the copy has finished).
      * </p>
      * <p>
-     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
-     * encryption materials is stored in instruction file.
+     * <code>TransferManager</code> doesn't support copying of encrypted objects
+     * whose encryption materials are stored in an instruction file.
      * </p>
      * <p>
      * Use the returned <code>Copy</code> object to check if the copy is
@@ -1725,8 +1740,8 @@ public class TransferManager {
      * immediately (i.e. before the copy has finished).
      * </p>
      * <p>
-     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
-     * encryption materials is stored in instruction file.
+     * <code>TransferManager</code> doesn't support copying of encrypted objects
+     * whose encryption materials are stored in an instruction file.
      * </p>
      * <p>
      * Use the returned <code>Copy</code> object to check if the copy is
@@ -1774,7 +1789,8 @@ public class TransferManager {
 
         GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                 copyObjectRequest.getSourceBucketName(), copyObjectRequest.getSourceKey())
-                .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey());
+                .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
+                .withRequesterPays(copyObjectRequest.isRequesterPays());
 
         ObjectMetadata metadata = srcS3.getObjectMetadata(getObjectMetadataRequest);
 

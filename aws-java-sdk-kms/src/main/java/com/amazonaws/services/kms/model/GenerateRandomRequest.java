@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model;
 
@@ -20,28 +18,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GenerateRandomRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      */
     private Integer numberOfBytes;
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common
-     *        values are 128, 256, 512, 1024 and so on. The current limit is
-     *        1024 bytes.
+     *        The length of the byte string.
      */
 
     public void setNumberOfBytes(Integer numberOfBytes) {
@@ -50,13 +42,10 @@ public class GenerateRandomRequest extends
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
-     * @return Integer that contains the number of bytes to generate. Common
-     *         values are 128, 256, 512, 1024 and so on. The current limit is
-     *         1024 bytes.
+     * @return The length of the byte string.
      */
 
     public Integer getNumberOfBytes() {
@@ -65,16 +54,12 @@ public class GenerateRandomRequest extends
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common
-     *        values are 128, 256, 512, 1024 and so on. The current limit is
-     *        1024 bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of the byte string.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateRandomRequest withNumberOfBytes(Integer numberOfBytes) {
@@ -83,8 +68,7 @@ public class GenerateRandomRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -112,8 +96,7 @@ public class GenerateRandomRequest extends
         GenerateRandomRequest other = (GenerateRandomRequest) obj;
         if (other.getNumberOfBytes() == null ^ this.getNumberOfBytes() == null)
             return false;
-        if (other.getNumberOfBytes() != null
-                && other.getNumberOfBytes().equals(this.getNumberOfBytes()) == false)
+        if (other.getNumberOfBytes() != null && other.getNumberOfBytes().equals(this.getNumberOfBytes()) == false)
             return false;
         return true;
     }
@@ -123,10 +106,7 @@ public class GenerateRandomRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes().hashCode());
         return hashCode;
     }
 

@@ -1,27 +1,24 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
-public class DescribeConfigRuleEvaluationStatusResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -29,6 +26,12 @@ public class DescribeConfigRuleEvaluationStatusResult extends
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus> configRulesEvaluationStatus;
+    /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -54,15 +57,13 @@ public class DescribeConfigRuleEvaluationStatusResult extends
      *        Status information about your AWS managed Config rules.
      */
 
-    public void setConfigRulesEvaluationStatus(
-            java.util.Collection<ConfigRuleEvaluationStatus> configRulesEvaluationStatus) {
+    public void setConfigRulesEvaluationStatus(java.util.Collection<ConfigRuleEvaluationStatus> configRulesEvaluationStatus) {
         if (configRulesEvaluationStatus == null) {
             this.configRulesEvaluationStatus = null;
             return;
         }
 
-        this.configRulesEvaluationStatus = new com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>(
-                configRulesEvaluationStatus);
+        this.configRulesEvaluationStatus = new com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>(configRulesEvaluationStatus);
     }
 
     /**
@@ -70,23 +71,19 @@ public class DescribeConfigRuleEvaluationStatusResult extends
      * Status information about your AWS managed Config rules.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigRulesEvaluationStatus(java.util.Collection)}
-     * or {@link #withConfigRulesEvaluationStatus(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigRulesEvaluationStatus(java.util.Collection)} or
+     * {@link #withConfigRulesEvaluationStatus(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param configRulesEvaluationStatus
      *        Status information about your AWS managed Config rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigRuleEvaluationStatusResult withConfigRulesEvaluationStatus(
-            ConfigRuleEvaluationStatus... configRulesEvaluationStatus) {
+    public DescribeConfigRuleEvaluationStatusResult withConfigRulesEvaluationStatus(ConfigRuleEvaluationStatus... configRulesEvaluationStatus) {
         if (this.configRulesEvaluationStatus == null) {
-            setConfigRulesEvaluationStatus(new com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>(
-                    configRulesEvaluationStatus.length));
+            setConfigRulesEvaluationStatus(new com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>(configRulesEvaluationStatus.length));
         }
         for (ConfigRuleEvaluationStatus ele : configRulesEvaluationStatus) {
             this.configRulesEvaluationStatus.add(ele);
@@ -101,19 +98,56 @@ public class DescribeConfigRuleEvaluationStatusResult extends
      * 
      * @param configRulesEvaluationStatus
      *        Status information about your AWS managed Config rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigRuleEvaluationStatusResult withConfigRulesEvaluationStatus(
-            java.util.Collection<ConfigRuleEvaluationStatus> configRulesEvaluationStatus) {
+    public DescribeConfigRuleEvaluationStatusResult withConfigRulesEvaluationStatus(java.util.Collection<ConfigRuleEvaluationStatus> configRulesEvaluationStatus) {
         setConfigRulesEvaluationStatus(configRulesEvaluationStatus);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     * 
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigRuleEvaluationStatusResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -124,8 +158,9 @@ public class DescribeConfigRuleEvaluationStatusResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRulesEvaluationStatus() != null)
-            sb.append("ConfigRulesEvaluationStatus: "
-                    + getConfigRulesEvaluationStatus());
+            sb.append("ConfigRulesEvaluationStatus: " + getConfigRulesEvaluationStatus() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -140,12 +175,13 @@ public class DescribeConfigRuleEvaluationStatusResult extends
         if (obj instanceof DescribeConfigRuleEvaluationStatusResult == false)
             return false;
         DescribeConfigRuleEvaluationStatusResult other = (DescribeConfigRuleEvaluationStatusResult) obj;
-        if (other.getConfigRulesEvaluationStatus() == null
-                ^ this.getConfigRulesEvaluationStatus() == null)
+        if (other.getConfigRulesEvaluationStatus() == null ^ this.getConfigRulesEvaluationStatus() == null)
             return false;
-        if (other.getConfigRulesEvaluationStatus() != null
-                && other.getConfigRulesEvaluationStatus().equals(
-                        this.getConfigRulesEvaluationStatus()) == false)
+        if (other.getConfigRulesEvaluationStatus() != null && other.getConfigRulesEvaluationStatus().equals(this.getConfigRulesEvaluationStatus()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -155,10 +191,8 @@ public class DescribeConfigRuleEvaluationStatusResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigRulesEvaluationStatus() == null) ? 0
-                        : getConfigRulesEvaluationStatus().hashCode());
+        hashCode = prime * hashCode + ((getConfigRulesEvaluationStatus() == null) ? 0 : getConfigRulesEvaluationStatus().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -167,9 +201,7 @@ public class DescribeConfigRuleEvaluationStatusResult extends
         try {
             return (DescribeConfigRuleEvaluationStatusResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -18,23 +16,21 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A source file for the input sidecar captions used during the transcoding
- * process.
+ * A source file for the input sidecar captions used during the transcoding process.
  * </p>
  */
 public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the sidecar caption file that you want Elastic Transcoder to
-     * include in the output file.
+     * The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one
-     * of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -49,16 +45,14 @@ public class CaptionSource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information on ISO language codes and language names, see the
-     * List of ISO 639-1 codes.
+     * For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      * </p>
      */
     private String language;
     /**
      * <p>
-     * For clip generation or captions that do not start at the same time as the
-     * associated video file, the <code>TimeOffset</code> tells Elastic
-     * Transcoder how much of the video to encode before including captions.
+     * For clip generation or captions that do not start at the same time as the associated video file, the
+     * <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.
      * </p>
      * <p>
      * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
@@ -67,29 +61,26 @@ public class CaptionSource implements Serializable, Cloneable {
     private String timeOffset;
     /**
      * <p>
-     * The label of the caption shown in the player when choosing a language. We
-     * recommend that you put the caption language name here, in the language of
-     * the captions.
+     * The label of the caption shown in the player when choosing a language. We recommend that you put the caption
+     * language name here, in the language of the captions.
      * </p>
      */
     private String label;
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      */
     private Encryption encryption;
 
     /**
      * <p>
-     * The name of the sidecar caption file that you want Elastic Transcoder to
-     * include in the output file.
+     * The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
      * </p>
      * 
      * @param key
-     *        The name of the sidecar caption file that you want Elastic
-     *        Transcoder to include in the output file.
+     *        The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
      */
 
     public void setKey(String key) {
@@ -98,12 +89,10 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the sidecar caption file that you want Elastic Transcoder to
-     * include in the output file.
+     * The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
      * </p>
      * 
-     * @return The name of the sidecar caption file that you want Elastic
-     *         Transcoder to include in the output file.
+     * @return The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
      */
 
     public String getKey() {
@@ -112,15 +101,12 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the sidecar caption file that you want Elastic Transcoder to
-     * include in the output file.
+     * The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
      * </p>
      * 
      * @param key
-     *        The name of the sidecar caption file that you want Elastic
-     *        Transcoder to include in the output file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CaptionSource withKey(String key) {
@@ -130,8 +116,8 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one
-     * of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -146,13 +132,12 @@ public class CaptionSource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information on ISO language codes and language names, see the
-     * List of ISO 639-1 codes.
+     * For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      * </p>
      * 
      * @param language
-     *        A string that specifies the language of the caption. Specify this
-     *        as one of:</p>
+     *        A string that specifies the language of the caption. If you specified multiple inputs with captions, the
+     *        caption language must match in order to be included in the output. Specify this as one of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -166,8 +151,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on ISO language codes and language names, see
-     *        the List of ISO 639-1 codes.
+     *        For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      */
 
     public void setLanguage(String language) {
@@ -176,8 +160,8 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one
-     * of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -192,12 +176,11 @@ public class CaptionSource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information on ISO language codes and language names, see the
-     * List of ISO 639-1 codes.
+     * For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      * </p>
      * 
-     * @return A string that specifies the language of the caption. Specify this
-     *         as one of:</p>
+     * @return A string that specifies the language of the caption. If you specified multiple inputs with captions, the
+     *         caption language must match in order to be included in the output. Specify this as one of:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -211,8 +194,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on ISO language codes and language names,
-     *         see the List of ISO 639-1 codes.
+     *         For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      */
 
     public String getLanguage() {
@@ -221,8 +203,8 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one
-     * of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -237,13 +219,12 @@ public class CaptionSource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information on ISO language codes and language names, see the
-     * List of ISO 639-1 codes.
+     * For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      * </p>
      * 
      * @param language
-     *        A string that specifies the language of the caption. Specify this
-     *        as one of:</p>
+     *        A string that specifies the language of the caption. If you specified multiple inputs with captions, the
+     *        caption language must match in order to be included in the output. Specify this as one of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -257,10 +238,8 @@ public class CaptionSource implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on ISO language codes and language names, see
-     *        the List of ISO 639-1 codes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CaptionSource withLanguage(String language) {
@@ -270,19 +249,17 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For clip generation or captions that do not start at the same time as the
-     * associated video file, the <code>TimeOffset</code> tells Elastic
-     * Transcoder how much of the video to encode before including captions.
+     * For clip generation or captions that do not start at the same time as the associated video file, the
+     * <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.
      * </p>
      * <p>
      * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      * </p>
      * 
      * @param timeOffset
-     *        For clip generation or captions that do not start at the same time
-     *        as the associated video file, the <code>TimeOffset</code> tells
-     *        Elastic Transcoder how much of the video to encode before
-     *        including captions.</p>
+     *        For clip generation or captions that do not start at the same time as the associated video file, the
+     *        <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including
+     *        captions.</p>
      *        <p>
      *        Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      */
@@ -293,18 +270,16 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For clip generation or captions that do not start at the same time as the
-     * associated video file, the <code>TimeOffset</code> tells Elastic
-     * Transcoder how much of the video to encode before including captions.
+     * For clip generation or captions that do not start at the same time as the associated video file, the
+     * <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.
      * </p>
      * <p>
      * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      * </p>
      * 
-     * @return For clip generation or captions that do not start at the same
-     *         time as the associated video file, the <code>TimeOffset</code>
-     *         tells Elastic Transcoder how much of the video to encode before
-     *         including captions.</p>
+     * @return For clip generation or captions that do not start at the same time as the associated video file, the
+     *         <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including
+     *         captions.</p>
      *         <p>
      *         Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      */
@@ -315,23 +290,20 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For clip generation or captions that do not start at the same time as the
-     * associated video file, the <code>TimeOffset</code> tells Elastic
-     * Transcoder how much of the video to encode before including captions.
+     * For clip generation or captions that do not start at the same time as the associated video file, the
+     * <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.
      * </p>
      * <p>
      * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      * </p>
      * 
      * @param timeOffset
-     *        For clip generation or captions that do not start at the same time
-     *        as the associated video file, the <code>TimeOffset</code> tells
-     *        Elastic Transcoder how much of the video to encode before
-     *        including captions.</p>
+     *        For clip generation or captions that do not start at the same time as the associated video file, the
+     *        <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including
+     *        captions.</p>
      *        <p>
      *        Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CaptionSource withTimeOffset(String timeOffset) {
@@ -341,15 +313,13 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The label of the caption shown in the player when choosing a language. We
-     * recommend that you put the caption language name here, in the language of
-     * the captions.
+     * The label of the caption shown in the player when choosing a language. We recommend that you put the caption
+     * language name here, in the language of the captions.
      * </p>
      * 
      * @param label
-     *        The label of the caption shown in the player when choosing a
-     *        language. We recommend that you put the caption language name
-     *        here, in the language of the captions.
+     *        The label of the caption shown in the player when choosing a language. We recommend that you put the
+     *        caption language name here, in the language of the captions.
      */
 
     public void setLabel(String label) {
@@ -358,14 +328,12 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The label of the caption shown in the player when choosing a language. We
-     * recommend that you put the caption language name here, in the language of
-     * the captions.
+     * The label of the caption shown in the player when choosing a language. We recommend that you put the caption
+     * language name here, in the language of the captions.
      * </p>
      * 
-     * @return The label of the caption shown in the player when choosing a
-     *         language. We recommend that you put the caption language name
-     *         here, in the language of the captions.
+     * @return The label of the caption shown in the player when choosing a language. We recommend that you put the
+     *         caption language name here, in the language of the captions.
      */
 
     public String getLabel() {
@@ -374,17 +342,14 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The label of the caption shown in the player when choosing a language. We
-     * recommend that you put the caption language name here, in the language of
-     * the captions.
+     * The label of the caption shown in the player when choosing a language. We recommend that you put the caption
+     * language name here, in the language of the captions.
      * </p>
      * 
      * @param label
-     *        The label of the caption shown in the player when choosing a
-     *        language. We recommend that you put the caption language name
-     *        here, in the language of the captions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The label of the caption shown in the player when choosing a language. We recommend that you put the
+     *        caption language name here, in the language of the captions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CaptionSource withLabel(String label) {
@@ -394,13 +359,13 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      * 
      * @param encryption
-     *        The encryption settings, if any, that you want Elastic Transcoder
-     *        to apply to your caption sources.
+     *        The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that
+     *        you want Elastic Transcoder to apply to your caption sources.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -409,12 +374,12 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      * 
-     * @return The encryption settings, if any, that you want Elastic Transcoder
-     *         to apply to your caption sources.
+     * @return The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that
+     *         you want Elastic Transcoder to apply to your caption sources.
      */
 
     public Encryption getEncryption() {
@@ -423,15 +388,14 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      * 
      * @param encryption
-     *        The encryption settings, if any, that you want Elastic Transcoder
-     *        to apply to your caption sources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that
+     *        you want Elastic Transcoder to apply to your caption sources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CaptionSource withEncryption(Encryption encryption) {
@@ -440,8 +404,7 @@ public class CaptionSource implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -477,28 +440,23 @@ public class CaptionSource implements Serializable, Cloneable {
         CaptionSource other = (CaptionSource) obj;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
-        if (other.getKey() != null
-                && other.getKey().equals(this.getKey()) == false)
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getLanguage() == null ^ this.getLanguage() == null)
             return false;
-        if (other.getLanguage() != null
-                && other.getLanguage().equals(this.getLanguage()) == false)
+        if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
             return false;
         if (other.getTimeOffset() == null ^ this.getTimeOffset() == null)
             return false;
-        if (other.getTimeOffset() != null
-                && other.getTimeOffset().equals(this.getTimeOffset()) == false)
+        if (other.getTimeOffset() != null && other.getTimeOffset().equals(this.getTimeOffset()) == false)
             return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
-        if (other.getLabel() != null
-                && other.getLabel().equals(this.getLabel()) == false)
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
         if (other.getEncryption() == null ^ this.getEncryption() == null)
             return false;
-        if (other.getEncryption() != null
-                && other.getEncryption().equals(this.getEncryption()) == false)
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
             return false;
         return true;
     }
@@ -508,16 +466,11 @@ public class CaptionSource implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKey() == null) ? 0 : getKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimeOffset() == null) ? 0 : getTimeOffset().hashCode());
-        hashCode = prime * hashCode
-                + ((getLabel() == null) ? 0 : getLabel().hashCode());
-        hashCode = prime * hashCode
-                + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
+        hashCode = prime * hashCode + ((getTimeOffset() == null) ? 0 : getTimeOffset().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         return hashCode;
     }
 
@@ -526,9 +479,7 @@ public class CaptionSource implements Serializable, Cloneable {
         try {
             return (CaptionSource) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

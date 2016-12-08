@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -37,22 +35,21 @@ public class FleetAttributes implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date terminationTime;
@@ -64,16 +61,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is
-     * set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -85,58 +103,64 @@ public class FleetAttributes implements Serializable, Cloneable {
     private String buildId;
     /**
      * <p>
-     * Path to a game server executable in the fleet's build, specified for
-     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
-     * paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
+     * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      */
     private String serverLaunchPath;
     /**
      * <p>
-     * Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
-     * created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
+     * launch parameters for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      */
     private String serverLaunchParameters;
     /**
      * <p>
-     * Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs
-     * are in addition to game session logs; see more on game session logs in
-     * the <a href=
+     * Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any log
+     * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
+     * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet
-     * is specified, GameLift will automatically upload logs stored on each
-     * instance at <code>C:\game\logs</code>. Use the GameLift console to access
-     * stored logs.
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      */
     private java.util.List<String> logPaths;
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in
-     * the fleet.
+     * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      */
     private String newGameSessionProtectionPolicy;
     /**
      * <p>
-     * Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.
+     * Operating system of the fleet's computing resources. A fleet's operating system depends on the OS specified for
+     * the build that is deployed on this fleet.
      * </p>
      */
     private String operatingSystem;
+    /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     */
+    private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
 
     /**
      * <p>
@@ -170,8 +194,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * 
      * @param fleetId
      *        Unique identifier for a fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withFleetId(String fleetId) {
@@ -211,8 +234,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * 
      * @param description
      *        Human-readable description of the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withDescription(String description) {
@@ -222,13 +244,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need
-     *        to be unique.
+     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -237,12 +257,10 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a fleet. Fleet names do not
-     *         need to be unique.
+     * @return Descriptive label associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -251,15 +269,12 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need
-     *        to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withName(String name) {
@@ -269,14 +284,13 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is
-     *        a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -285,13 +299,12 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format
-     *         is a number expressed in Unix time as milliseconds (ex:
-     *         "1469498468.057".
+     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -300,16 +313,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is
-     *        a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057").
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withCreationTime(java.util.Date creationTime) {
@@ -319,14 +330,13 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this data object was terminated. Format
-     *        is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057").
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -335,13 +345,12 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this data object was terminated.
-     *         Format is a number expressed in Unix time as milliseconds (ex:
-     *         "1469498468.057".
+     * @return Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getTerminationTime() {
@@ -350,16 +359,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this data object was terminated. Format
-     *        is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057").
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withTerminationTime(java.util.Date terminationTime) {
@@ -375,16 +382,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is
-     * set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -393,17 +421,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired
-     *        instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift
-     *        is setting up the new fleet, creating new instances with the game
-     *        build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating,
-     *        building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
-     *        request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
      * @see FleetStatus
      */
 
@@ -419,16 +467,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is
-     * set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Current status of the fleet.</p>
@@ -436,17 +505,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         Possible fleet statuses include the following:
      *         </p>
      *         <ul>
-     *         <li><b>NEW</b> – A new fleet has been defined and desired
-     *         instances is set to 1.</li>
-     *         <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift
-     *         is setting up the new fleet, creating new instances with the game
-     *         build and starting server processes.</li>
-     *         <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *         <li><b>ERROR</b> – An error occurred when downloading,
-     *         validating, building, or activating the fleet.</li>
-     *         <li><b>DELETING</b> – Hosts are responding to a delete fleet
-     *         request.</li>
-     *         <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *         <li>
+     *         <p>
+     *         <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *         instances with the game build and starting server processes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>TERMINATED</b> – The fleet no longer exists.
+     *         </p>
+     *         </li>
      * @see FleetStatus
      */
 
@@ -462,16 +551,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is
-     * set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -480,19 +590,38 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired
-     *        instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift
-     *        is setting up the new fleet, creating new instances with the game
-     *        build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating,
-     *        building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
-     *        request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetStatus
      */
 
@@ -509,16 +638,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is
-     * set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -527,17 +677,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired
-     *        instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift
-     *        is setting up the new fleet, creating new instances with the game
-     *        build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating,
-     *        building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
-     *        request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
      * @see FleetStatus
      */
 
@@ -553,16 +723,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is
-     * set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -571,19 +762,38 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired
-     *        instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift
-     *        is setting up the new fleet, creating new instances with the game
-     *        build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating,
-     *        building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
-     *        request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetStatus
      */
 
@@ -624,8 +834,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * 
      * @param buildId
      *        Unique identifier for a build.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withBuildId(String buildId) {
@@ -635,17 +844,15 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Path to a game server executable in the fleet's build, specified for
-     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
-     * paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
+     * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchPath
-     *        Path to a game server executable in the fleet's build, specified
-     *        for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
-     *        Server launch paths for fleets created after this date are
-     *        specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
+     *        Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
+     *        (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
+     *        fleet's <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -654,17 +861,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Path to a game server executable in the fleet's build, specified for
-     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
-     * paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
+     * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
-     * @return Path to a game server executable in the fleet's build, specified
-     *         for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
-     *         Server launch paths for fleets created after this date are
-     *         specified in the fleet's <code><a>RuntimeConfiguration</a></code>
-     *         .
+     * @return Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
+     *         (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
+     *         fleet's <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public String getServerLaunchPath() {
@@ -673,19 +877,16 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Path to a game server executable in the fleet's build, specified for
-     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
-     * paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
+     * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchPath
-     *        Path to a game server executable in the fleet's build, specified
-     *        for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
-     *        Server launch paths for fleets created after this date are
-     *        specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
+     *        (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
+     *        fleet's <code> <a>RuntimeConfiguration</a> </code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withServerLaunchPath(String serverLaunchPath) {
@@ -695,17 +896,15 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
-     * created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
+     * launch parameters for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchParameters
-     *        Game server launch parameters specified for fleets created prior
-     *        to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters
-     *        for fleets created after this date are specified in the fleet's
-     *        <code><a>RuntimeConfiguration</a></code>.
+     *        Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
+     *        Server launch parameters for fleets created after this date are specified in the fleet's
+     *        <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -714,16 +913,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
-     * created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
+     * launch parameters for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
-     * @return Game server launch parameters specified for fleets created prior
-     *         to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters
-     *         for fleets created after this date are specified in the fleet's
-     *         <code><a>RuntimeConfiguration</a></code>.
+     * @return Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
+     *         Server launch parameters for fleets created after this date are specified in the fleet's
+     *         <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public String getServerLaunchParameters() {
@@ -732,49 +929,41 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
-     * created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
+     * launch parameters for fleets created after this date are specified in the fleet's
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchParameters
-     *        Game server launch parameters specified for fleets created prior
-     *        to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters
-     *        for fleets created after this date are specified in the fleet's
-     *        <code><a>RuntimeConfiguration</a></code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
+     *        Server launch parameters for fleets created after this date are specified in the fleet's
+     *        <code> <a>RuntimeConfiguration</a> </code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FleetAttributes withServerLaunchParameters(
-            String serverLaunchParameters) {
+    public FleetAttributes withServerLaunchParameters(String serverLaunchParameters) {
         setServerLaunchParameters(serverLaunchParameters);
         return this;
     }
 
     /**
      * <p>
-     * Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs
-     * are in addition to game session logs; see more on game session logs in
-     * the <a href=
+     * Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any log
+     * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
+     * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet
-     * is specified, GameLift will automatically upload logs stored on each
-     * instance at <code>C:\game\logs</code>. Use the GameLift console to access
-     * stored logs.
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
-     * @return Location of default log files. When a server process is shut
-     *         down, Amazon GameLift captures and stores any log files in this
-     *         location. These logs are in addition to game session logs; see
-     *         more on game session logs in the <a href=
+     * @return Location of default log files. When a server process is shut down, Amazon GameLift captures and stores
+     *         any log files in this location. These logs are in addition to game session logs; see more on game session
+     *         logs in the <a href=
      *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *         >Amazon GameLift Developer Guide</a>. If no default log path for
-     *         a fleet is specified, GameLift will automatically upload logs
-     *         stored on each instance at <code>C:\game\logs</code>. Use the
-     *         GameLift console to access stored logs.
+     *         >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     *         automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *         <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      */
 
     public java.util.List<String> getLogPaths() {
@@ -783,27 +972,23 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs
-     * are in addition to game session logs; see more on game session logs in
-     * the <a href=
+     * Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any log
+     * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
+     * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet
-     * is specified, GameLift will automatically upload logs stored on each
-     * instance at <code>C:\game\logs</code>. Use the GameLift console to access
-     * stored logs.
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
-     *        Location of default log files. When a server process is shut down,
-     *        Amazon GameLift captures and stores any log files in this
-     *        location. These logs are in addition to game session logs; see
-     *        more on game session logs in the <a href=
+     *        Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any
+     *        log files in this location. These logs are in addition to game session logs; see more on game session logs
+     *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *        >Amazon GameLift Developer Guide</a>. If no default log path for a
-     *        fleet is specified, GameLift will automatically upload logs stored
-     *        on each instance at <code>C:\game\logs</code>. Use the GameLift
-     *        console to access stored logs.
+     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      */
 
     public void setLogPaths(java.util.Collection<String> logPaths) {
@@ -817,35 +1002,29 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs
-     * are in addition to game session logs; see more on game session logs in
-     * the <a href=
+     * Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any log
+     * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
+     * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet
-     * is specified, GameLift will automatically upload logs stored on each
-     * instance at <code>C:\game\logs</code>. Use the GameLift console to access
-     * stored logs.
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLogPaths(java.util.Collection)} or
-     * {@link #withLogPaths(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogPaths(java.util.Collection)} or {@link #withLogPaths(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param logPaths
-     *        Location of default log files. When a server process is shut down,
-     *        Amazon GameLift captures and stores any log files in this
-     *        location. These logs are in addition to game session logs; see
-     *        more on game session logs in the <a href=
+     *        Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any
+     *        log files in this location. These logs are in addition to game session logs; see more on game session logs
+     *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *        >Amazon GameLift Developer Guide</a>. If no default log path for a
-     *        fleet is specified, GameLift will automatically upload logs stored
-     *        on each instance at <code>C:\game\logs</code>. Use the GameLift
-     *        console to access stored logs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withLogPaths(String... logPaths) {
@@ -860,29 +1039,24 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs
-     * are in addition to game session logs; see more on game session logs in
-     * the <a href=
+     * Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any log
+     * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
+     * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet
-     * is specified, GameLift will automatically upload logs stored on each
-     * instance at <code>C:\game\logs</code>. Use the GameLift console to access
-     * stored logs.
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
-     *        Location of default log files. When a server process is shut down,
-     *        Amazon GameLift captures and stores any log files in this
-     *        location. These logs are in addition to game session logs; see
-     *        more on game session logs in the <a href=
+     *        Location of default log files. When a server process is shut down, Amazon GameLift captures and stores any
+     *        log files in this location. These logs are in addition to game session logs; see more on game session logs
+     *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *        >Amazon GameLift Developer Guide</a>. If no default log path for a
-     *        fleet is specified, GameLift will automatically upload logs stored
-     *        on each instance at <code>C:\game\logs</code>. Use the GameLift
-     *        console to access stored logs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withLogPaths(java.util.Collection<String> logPaths) {
@@ -892,55 +1066,74 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in
-     * the fleet.
+     * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances
-     *        started in the fleet.</p>
+     *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
-    public void setNewGameSessionProtectionPolicy(
-            String newGameSessionProtectionPolicy) {
+    public void setNewGameSessionProtectionPolicy(String newGameSessionProtectionPolicy) {
         this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy;
     }
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in
-     * the fleet.
+     * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return Type of game session protection to set for all new instances
-     *         started in the fleet.</p>
+     * @return Type of game session protection to set for all new instances started in the fleet.</p>
      *         <ul>
-     *         <li><b>NoProtection</b> – The game session can be terminated
-     *         during a scale-down event.</li>
-     *         <li><b>FullProtection</b> – If the game session is in an
-     *         <code>ACTIVE</code> status, it cannot be terminated during a
-     *         scale-down event.</li>
+     *         <li>
+     *         <p>
+     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         during a scale-down event.
+     *         </p>
+     *         </li>
      * @see ProtectionPolicy
      */
 
@@ -950,112 +1143,134 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in
-     * the fleet.
+     * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances
-     *        started in the fleet.</p>
+     *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
-    public FleetAttributes withNewGameSessionProtectionPolicy(
-            String newGameSessionProtectionPolicy) {
+    public FleetAttributes withNewGameSessionProtectionPolicy(String newGameSessionProtectionPolicy) {
         setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
         return this;
     }
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in
-     * the fleet.
+     * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances
-     *        started in the fleet.</p>
+     *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
-    public void setNewGameSessionProtectionPolicy(
-            ProtectionPolicy newGameSessionProtectionPolicy) {
-        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy
-                .toString();
+    public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
+        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
     }
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in
-     * the fleet.
+     * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances
-     *        started in the fleet.</p>
+     *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
-    public FleetAttributes withNewGameSessionProtectionPolicy(
-            ProtectionPolicy newGameSessionProtectionPolicy) {
+    public FleetAttributes withNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
         return this;
     }
 
     /**
      * <p>
-     * Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.
+     * Operating system of the fleet's computing resources. A fleet's operating system depends on the OS specified for
+     * the build that is deployed on this fleet.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system of the fleet's computing resources. A fleet's
-     *        operating system depends on the OS specified for the build that is
-     *        deployed on this fleet.
+     *        Operating system of the fleet's computing resources. A fleet's operating system depends on the OS
+     *        specified for the build that is deployed on this fleet.
      * @see OperatingSystem
      */
 
@@ -1065,14 +1280,12 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.
+     * Operating system of the fleet's computing resources. A fleet's operating system depends on the OS specified for
+     * the build that is deployed on this fleet.
      * </p>
      * 
-     * @return Operating system of the fleet's computing resources. A fleet's
-     *         operating system depends on the OS specified for the build that
-     *         is deployed on this fleet.
+     * @return Operating system of the fleet's computing resources. A fleet's operating system depends on the OS
+     *         specified for the build that is deployed on this fleet.
      * @see OperatingSystem
      */
 
@@ -1082,17 +1295,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.
+     * Operating system of the fleet's computing resources. A fleet's operating system depends on the OS specified for
+     * the build that is deployed on this fleet.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system of the fleet's computing resources. A fleet's
-     *        operating system depends on the OS specified for the build that is
-     *        deployed on this fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Operating system of the fleet's computing resources. A fleet's operating system depends on the OS
+     *        specified for the build that is deployed on this fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
 
@@ -1103,15 +1313,13 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.
+     * Operating system of the fleet's computing resources. A fleet's operating system depends on the OS specified for
+     * the build that is deployed on this fleet.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system of the fleet's computing resources. A fleet's
-     *        operating system depends on the OS specified for the build that is
-     *        deployed on this fleet.
+     *        Operating system of the fleet's computing resources. A fleet's operating system depends on the OS
+     *        specified for the build that is deployed on this fleet.
      * @see OperatingSystem
      */
 
@@ -1121,17 +1329,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.
+     * Operating system of the fleet's computing resources. A fleet's operating system depends on the OS specified for
+     * the build that is deployed on this fleet.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system of the fleet's computing resources. A fleet's
-     *        operating system depends on the OS specified for the build that is
-     *        deployed on this fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Operating system of the fleet's computing resources. A fleet's operating system depends on the OS
+     *        specified for the build that is deployed on this fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
 
@@ -1141,8 +1346,47 @@ public class FleetAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     * 
+     * @param resourceCreationLimitPolicy
+     *        Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     */
+
+    public void setResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
+        this.resourceCreationLimitPolicy = resourceCreationLimitPolicy;
+    }
+
+    /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     * 
+     * @return Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     */
+
+    public ResourceCreationLimitPolicy getResourceCreationLimitPolicy() {
+        return this.resourceCreationLimitPolicy;
+    }
+
+    /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     * 
+     * @param resourceCreationLimitPolicy
+     *        Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
+        setResourceCreationLimitPolicy(resourceCreationLimitPolicy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1169,15 +1413,15 @@ public class FleetAttributes implements Serializable, Cloneable {
         if (getServerLaunchPath() != null)
             sb.append("ServerLaunchPath: " + getServerLaunchPath() + ",");
         if (getServerLaunchParameters() != null)
-            sb.append("ServerLaunchParameters: " + getServerLaunchParameters()
-                    + ",");
+            sb.append("ServerLaunchParameters: " + getServerLaunchParameters() + ",");
         if (getLogPaths() != null)
             sb.append("LogPaths: " + getLogPaths() + ",");
         if (getNewGameSessionProtectionPolicy() != null)
-            sb.append("NewGameSessionProtectionPolicy: "
-                    + getNewGameSessionProtectionPolicy() + ",");
+            sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy() + ",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem());
+            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
+        if (getResourceCreationLimitPolicy() != null)
+            sb.append("ResourceCreationLimitPolicy: " + getResourceCreationLimitPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1194,71 +1438,56 @@ public class FleetAttributes implements Serializable, Cloneable {
         FleetAttributes other = (FleetAttributes) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
-        if (other.getTerminationTime() == null
-                ^ this.getTerminationTime() == null)
+        if (other.getTerminationTime() == null ^ this.getTerminationTime() == null)
             return false;
-        if (other.getTerminationTime() != null
-                && other.getTerminationTime().equals(this.getTerminationTime()) == false)
+        if (other.getTerminationTime() != null && other.getTerminationTime().equals(this.getTerminationTime()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getBuildId() == null ^ this.getBuildId() == null)
             return false;
-        if (other.getBuildId() != null
-                && other.getBuildId().equals(this.getBuildId()) == false)
+        if (other.getBuildId() != null && other.getBuildId().equals(this.getBuildId()) == false)
             return false;
-        if (other.getServerLaunchPath() == null
-                ^ this.getServerLaunchPath() == null)
+        if (other.getServerLaunchPath() == null ^ this.getServerLaunchPath() == null)
             return false;
-        if (other.getServerLaunchPath() != null
-                && other.getServerLaunchPath().equals(
-                        this.getServerLaunchPath()) == false)
+        if (other.getServerLaunchPath() != null && other.getServerLaunchPath().equals(this.getServerLaunchPath()) == false)
             return false;
-        if (other.getServerLaunchParameters() == null
-                ^ this.getServerLaunchParameters() == null)
+        if (other.getServerLaunchParameters() == null ^ this.getServerLaunchParameters() == null)
             return false;
-        if (other.getServerLaunchParameters() != null
-                && other.getServerLaunchParameters().equals(
-                        this.getServerLaunchParameters()) == false)
+        if (other.getServerLaunchParameters() != null && other.getServerLaunchParameters().equals(this.getServerLaunchParameters()) == false)
             return false;
         if (other.getLogPaths() == null ^ this.getLogPaths() == null)
             return false;
-        if (other.getLogPaths() != null
-                && other.getLogPaths().equals(this.getLogPaths()) == false)
+        if (other.getLogPaths() != null && other.getLogPaths().equals(this.getLogPaths()) == false)
             return false;
-        if (other.getNewGameSessionProtectionPolicy() == null
-                ^ this.getNewGameSessionProtectionPolicy() == null)
+        if (other.getNewGameSessionProtectionPolicy() == null ^ this.getNewGameSessionProtectionPolicy() == null)
             return false;
         if (other.getNewGameSessionProtectionPolicy() != null
-                && other.getNewGameSessionProtectionPolicy().equals(
-                        this.getNewGameSessionProtectionPolicy()) == false)
+                && other.getNewGameSessionProtectionPolicy().equals(this.getNewGameSessionProtectionPolicy()) == false)
             return false;
-        if (other.getOperatingSystem() == null
-                ^ this.getOperatingSystem() == null)
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
             return false;
-        if (other.getOperatingSystem() != null
-                && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
+        if (other.getResourceCreationLimitPolicy() == null ^ this.getResourceCreationLimitPolicy() == null)
+            return false;
+        if (other.getResourceCreationLimitPolicy() != null && other.getResourceCreationLimitPolicy().equals(this.getResourceCreationLimitPolicy()) == false)
             return false;
         return true;
     }
@@ -1268,43 +1497,19 @@ public class FleetAttributes implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTerminationTime() == null) ? 0 : getTerminationTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServerLaunchPath() == null) ? 0 : getServerLaunchPath()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServerLaunchParameters() == null) ? 0
-                        : getServerLaunchParameters().hashCode());
-        hashCode = prime * hashCode
-                + ((getLogPaths() == null) ? 0 : getLogPaths().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewGameSessionProtectionPolicy() == null) ? 0
-                        : getNewGameSessionProtectionPolicy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOperatingSystem() == null) ? 0 : getOperatingSystem()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getTerminationTime() == null) ? 0 : getTerminationTime().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
+        hashCode = prime * hashCode + ((getServerLaunchPath() == null) ? 0 : getServerLaunchPath().hashCode());
+        hashCode = prime * hashCode + ((getServerLaunchParameters() == null) ? 0 : getServerLaunchParameters().hashCode());
+        hashCode = prime * hashCode + ((getLogPaths() == null) ? 0 : getLogPaths().hashCode());
+        hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
+        hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
         return hashCode;
     }
 
@@ -1313,9 +1518,7 @@ public class FleetAttributes implements Serializable, Cloneable {
         try {
             return (FleetAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -31,7 +29,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * Market type of the EC2 instances used to create a cluster node.
      * </p>
      */
     private String market;
@@ -43,14 +41,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
     private String instanceRole;
     /**
      * <p>
-     * Bid price for each Amazon EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
+     * Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
      * </p>
      */
     private String bidPrice;
     /**
      * <p>
-     * The Amazon EC2 instance type for all instances in the instance group.
+     * The EC2 instance type for all instances in the instance group.
      * </p>
      */
     private String instanceType;
@@ -67,63 +64,62 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group.
-     * You can specify a separate configuration for each instance group (master,
-     * core, and task).
+     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
+     * for each instance group (master, core, and task).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
     /**
      * <p>
-     * EBS configurations that will be attached to each Amazon EC2 instance in
-     * the instance group.
+     * EBS configurations that will be attached to each EC2 instance in the instance group.
      * </p>
      */
     private EbsConfiguration ebsConfiguration;
+    /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * </p>
+     */
+    private AutoScalingPolicy autoScalingPolicy;
 
     /**
-     * Default constructor for InstanceGroupConfig object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for InstanceGroupConfig object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public InstanceGroupConfig() {
     }
 
     /**
-     * Constructs a new InstanceGroupConfig object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new InstanceGroupConfig object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param instanceRole
      *        The role of the instance group in the cluster.
      * @param instanceType
-     *        The Amazon EC2 instance type for all instances in the instance
-     *        group.
+     *        The EC2 instance type for all instances in the instance group.
      * @param instanceCount
      *        Target number of instances for the instance group.
      */
-    public InstanceGroupConfig(String instanceRole, String instanceType,
-            Integer instanceCount) {
+    public InstanceGroupConfig(String instanceRole, String instanceType, Integer instanceCount) {
         setInstanceRole(instanceRole);
         setInstanceType(instanceType);
         setInstanceCount(instanceCount);
     }
 
     /**
-     * Constructs a new InstanceGroupConfig object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new InstanceGroupConfig object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param instanceRole
      *        The role of the instance group in the cluster.
      * @param instanceType
-     *        The Amazon EC2 instance type for all instances in the instance
-     *        group.
+     *        The EC2 instance type for all instances in the instance group.
      * @param instanceCount
      *        Target number of instances for the instance group.
      */
-    public InstanceGroupConfig(InstanceRoleType instanceRole,
-            String instanceType, Integer instanceCount) {
+    public InstanceGroupConfig(InstanceRoleType instanceRole, String instanceType, Integer instanceCount) {
         setInstanceRole(instanceRole.toString());
         setInstanceType(instanceType);
         setInstanceCount(instanceCount);
@@ -161,8 +157,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * 
      * @param name
      *        Friendly name given to the instance group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceGroupConfig withName(String name) {
@@ -172,12 +167,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * Market type of the EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the Amazon EC2 instances used to create a cluster
-     *        node.
+     *        Market type of the EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -187,11 +181,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * Market type of the EC2 instances used to create a cluster node.
      * </p>
      * 
-     * @return Market type of the Amazon EC2 instances used to create a cluster
-     *         node.
+     * @return Market type of the EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -201,14 +194,12 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * Market type of the EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the Amazon EC2 instances used to create a cluster
-     *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Market type of the EC2 instances used to create a cluster node.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketType
      */
 
@@ -219,12 +210,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * Market type of the EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the Amazon EC2 instances used to create a cluster
-     *        node.
+     *        Market type of the EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -234,14 +224,12 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * Market type of the EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the Amazon EC2 instances used to create a cluster
-     *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Market type of the EC2 instances used to create a cluster node.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketType
      */
 
@@ -284,8 +272,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * 
      * @param instanceRole
      *        The role of the instance group in the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceRoleType
      */
 
@@ -315,8 +302,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * 
      * @param instanceRole
      *        The role of the instance group in the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceRoleType
      */
 
@@ -327,13 +313,12 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Bid price for each Amazon EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
+     * Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
      * </p>
      * 
      * @param bidPrice
-     *        Bid price for each Amazon EC2 instance in the instance group when
-     *        launching nodes as Spot Instances, expressed in USD.
+     *        Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in
+     *        USD.
      */
 
     public void setBidPrice(String bidPrice) {
@@ -342,12 +327,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Bid price for each Amazon EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
+     * Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
      * </p>
      * 
-     * @return Bid price for each Amazon EC2 instance in the instance group when
-     *         launching nodes as Spot Instances, expressed in USD.
+     * @return Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed
+     *         in USD.
      */
 
     public String getBidPrice() {
@@ -356,15 +340,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Bid price for each Amazon EC2 instance in the instance group when
-     * launching nodes as Spot Instances, expressed in USD.
+     * Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
      * </p>
      * 
      * @param bidPrice
-     *        Bid price for each Amazon EC2 instance in the instance group when
-     *        launching nodes as Spot Instances, expressed in USD.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in
+     *        USD.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceGroupConfig withBidPrice(String bidPrice) {
@@ -374,12 +356,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 instance type for all instances in the instance group.
+     * The EC2 instance type for all instances in the instance group.
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type for all instances in the instance
-     *        group.
+     *        The EC2 instance type for all instances in the instance group.
      */
 
     public void setInstanceType(String instanceType) {
@@ -388,11 +369,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 instance type for all instances in the instance group.
+     * The EC2 instance type for all instances in the instance group.
      * </p>
      * 
-     * @return The Amazon EC2 instance type for all instances in the instance
-     *         group.
+     * @return The EC2 instance type for all instances in the instance group.
      */
 
     public String getInstanceType() {
@@ -401,14 +381,12 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 instance type for all instances in the instance group.
+     * The EC2 instance type for all instances in the instance group.
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type for all instances in the instance
-     *        group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The EC2 instance type for all instances in the instance group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceGroupConfig withInstanceType(String instanceType) {
@@ -448,8 +426,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * 
      * @param instanceCount
      *        Target number of instances for the instance group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceGroupConfig withInstanceCount(Integer instanceCount) {
@@ -464,9 +441,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group.
-     * You can specify a separate configuration for each instance group (master,
-     * core, and task).
+     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
+     * for each instance group (master, core, and task).
      * </p>
      * 
      * @return <p>
@@ -474,9 +450,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      *         </p>
      *         </note>
      *         <p>
-     *         The list of configurations supplied for an EMR cluster instance
-     *         group. You can specify a separate configuration for each instance
-     *         group (master, core, and task).
+     *         The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *         configuration for each instance group (master, core, and task).
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -493,9 +468,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group.
-     * You can specify a separate configuration for each instance group (master,
-     * core, and task).
+     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
+     * for each instance group (master, core, and task).
      * </p>
      * 
      * @param configurations
@@ -504,20 +478,17 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        The list of configurations supplied for an EMR cluster instance
-     *        group. You can specify a separate configuration for each instance
-     *        group (master, core, and task).
+     *        The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *        configuration for each instance group (master, core, and task).
      */
 
-    public void setConfigurations(
-            java.util.Collection<Configuration> configurations) {
+    public void setConfigurations(java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
             this.configurations = null;
             return;
         }
 
-        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(
-                configurations);
+        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(configurations);
     }
 
     /**
@@ -527,15 +498,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group.
-     * You can specify a separate configuration for each instance group (master,
-     * core, and task).
+     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
+     * for each instance group (master, core, and task).
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurations(java.util.Collection)} or
-     * {@link #withConfigurations(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param configurations
@@ -544,18 +513,14 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        The list of configurations supplied for an EMR cluster instance
-     *        group. You can specify a separate configuration for each instance
-     *        group (master, core, and task).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *        configuration for each instance group (master, core, and task).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceGroupConfig withConfigurations(
-            Configuration... configurations) {
+    public InstanceGroupConfig withConfigurations(Configuration... configurations) {
         if (this.configurations == null) {
-            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
-                    configurations.length));
+            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(configurations.length));
         }
         for (Configuration ele : configurations) {
             this.configurations.add(ele);
@@ -570,9 +535,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group.
-     * You can specify a separate configuration for each instance group (master,
-     * core, and task).
+     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
+     * for each instance group (master, core, and task).
      * </p>
      * 
      * @param configurations
@@ -581,28 +545,23 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        The list of configurations supplied for an EMR cluster instance
-     *        group. You can specify a separate configuration for each instance
-     *        group (master, core, and task).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *        configuration for each instance group (master, core, and task).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceGroupConfig withConfigurations(
-            java.util.Collection<Configuration> configurations) {
+    public InstanceGroupConfig withConfigurations(java.util.Collection<Configuration> configurations) {
         setConfigurations(configurations);
         return this;
     }
 
     /**
      * <p>
-     * EBS configurations that will be attached to each Amazon EC2 instance in
-     * the instance group.
+     * EBS configurations that will be attached to each EC2 instance in the instance group.
      * </p>
      * 
      * @param ebsConfiguration
-     *        EBS configurations that will be attached to each Amazon EC2
-     *        instance in the instance group.
+     *        EBS configurations that will be attached to each EC2 instance in the instance group.
      */
 
     public void setEbsConfiguration(EbsConfiguration ebsConfiguration) {
@@ -611,12 +570,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS configurations that will be attached to each Amazon EC2 instance in
-     * the instance group.
+     * EBS configurations that will be attached to each EC2 instance in the instance group.
      * </p>
      * 
-     * @return EBS configurations that will be attached to each Amazon EC2
-     *         instance in the instance group.
+     * @return EBS configurations that will be attached to each EC2 instance in the instance group.
      */
 
     public EbsConfiguration getEbsConfiguration() {
@@ -625,26 +582,73 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS configurations that will be attached to each Amazon EC2 instance in
-     * the instance group.
+     * EBS configurations that will be attached to each EC2 instance in the instance group.
      * </p>
      * 
      * @param ebsConfiguration
-     *        EBS configurations that will be attached to each Amazon EC2
-     *        instance in the instance group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        EBS configurations that will be attached to each EC2 instance in the instance group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceGroupConfig withEbsConfiguration(
-            EbsConfiguration ebsConfiguration) {
+    public InstanceGroupConfig withEbsConfiguration(EbsConfiguration ebsConfiguration) {
         setEbsConfiguration(ebsConfiguration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * </p>
+     * 
+     * @param autoScalingPolicy
+     *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
+     *        response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     */
+
+    public void setAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
+        this.autoScalingPolicy = autoScalingPolicy;
+    }
+
+    /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * </p>
+     * 
+     * @return An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster.
+     *         The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances
+     *         in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     */
+
+    public AutoScalingPolicy getAutoScalingPolicy() {
+        return this.autoScalingPolicy;
+    }
+
+    /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * </p>
+     * 
+     * @param autoScalingPolicy
+     *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
+     *        response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroupConfig withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
+        setAutoScalingPolicy(autoScalingPolicy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -669,7 +673,9 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         if (getConfigurations() != null)
             sb.append("Configurations: " + getConfigurations() + ",");
         if (getEbsConfiguration() != null)
-            sb.append("EbsConfiguration: " + getEbsConfiguration());
+            sb.append("EbsConfiguration: " + getEbsConfiguration() + ",");
+        if (getAutoScalingPolicy() != null)
+            sb.append("AutoScalingPolicy: " + getAutoScalingPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -686,46 +692,39 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         InstanceGroupConfig other = (InstanceGroupConfig) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getMarket() == null ^ this.getMarket() == null)
             return false;
-        if (other.getMarket() != null
-                && other.getMarket().equals(this.getMarket()) == false)
+        if (other.getMarket() != null && other.getMarket().equals(this.getMarket()) == false)
             return false;
         if (other.getInstanceRole() == null ^ this.getInstanceRole() == null)
             return false;
-        if (other.getInstanceRole() != null
-                && other.getInstanceRole().equals(this.getInstanceRole()) == false)
+        if (other.getInstanceRole() != null && other.getInstanceRole().equals(this.getInstanceRole()) == false)
             return false;
         if (other.getBidPrice() == null ^ this.getBidPrice() == null)
             return false;
-        if (other.getBidPrice() != null
-                && other.getBidPrice().equals(this.getBidPrice()) == false)
+        if (other.getBidPrice() != null && other.getBidPrice().equals(this.getBidPrice()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
-        if (other.getConfigurations() == null
-                ^ this.getConfigurations() == null)
+        if (other.getConfigurations() == null ^ this.getConfigurations() == null)
             return false;
-        if (other.getConfigurations() != null
-                && other.getConfigurations().equals(this.getConfigurations()) == false)
+        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
-        if (other.getEbsConfiguration() == null
-                ^ this.getEbsConfiguration() == null)
+        if (other.getEbsConfiguration() == null ^ this.getEbsConfiguration() == null)
             return false;
-        if (other.getEbsConfiguration() != null
-                && other.getEbsConfiguration().equals(
-                        this.getEbsConfiguration()) == false)
+        if (other.getEbsConfiguration() != null && other.getEbsConfiguration().equals(this.getEbsConfiguration()) == false)
+            return false;
+        if (other.getAutoScalingPolicy() == null ^ this.getAutoScalingPolicy() == null)
+            return false;
+        if (other.getAutoScalingPolicy() != null && other.getAutoScalingPolicy().equals(this.getAutoScalingPolicy()) == false)
             return false;
         return true;
     }
@@ -735,32 +734,15 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarket() == null) ? 0 : getMarket().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceRole() == null) ? 0 : getInstanceRole()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getBidPrice() == null) ? 0 : getBidPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfigurations() == null) ? 0 : getConfigurations()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsConfiguration() == null) ? 0 : getEbsConfiguration()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMarket() == null) ? 0 : getMarket().hashCode());
+        hashCode = prime * hashCode + ((getInstanceRole() == null) ? 0 : getInstanceRole().hashCode());
+        hashCode = prime * hashCode + ((getBidPrice() == null) ? 0 : getBidPrice().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getEbsConfiguration() == null) ? 0 : getEbsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingPolicy() == null) ? 0 : getAutoScalingPolicy().hashCode());
         return hashCode;
     }
 
@@ -769,9 +751,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         try {
             return (InstanceGroupConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

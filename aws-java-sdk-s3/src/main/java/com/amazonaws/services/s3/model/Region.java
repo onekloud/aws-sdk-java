@@ -14,13 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.services.s3.AmazonS3Client;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import com.amazonaws.regions.RegionUtils;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.internal.Constants;
 
 
 /**
@@ -56,6 +55,18 @@ public enum Region {
      * </p>
      */
     US_Standard((String[])null),
+
+    /**
+     * The US-East-2 (Ohio) Region. This region
+     * uses Amazon S3 servers located in Ohio.
+     * <p>
+     * When using buckets in this region, set the client
+     * endpoint to <code>s3.us-east-2.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
+    US_East_2("us-east-2"),
 
     /**
      * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
@@ -244,9 +255,8 @@ public enum Region {
 
     /**
      * Returns the Amazon S3 Region enumeration value representing the specified Amazon
-     * S3 Region ID string. If specified string is 'null', 'us-east-1', or 'US',
-     * then {@link #US_Standard} is returned, and if specified string doesn't map
-     * to a known Amazon S3 Region, then an <code>IllegalArgumentException</code> is thrown.
+     * S3 Region ID string. If specified string doesn't map to a known Amazon S3
+     * Region, then an <code>IllegalArgumentException</code> is thrown.
      *
      * @param s3RegionId
      *            The Amazon S3 region ID string.
@@ -258,9 +268,11 @@ public enum Region {
      *             If the specified value does not map to one of the known
      *             Amazon S3 regions.
      */
-    public static Region fromValue(final String s3RegionId) throws IllegalArgumentException {
-        if (null == s3RegionId || "US".equals(s3RegionId) || "us-east-1".equals(s3RegionId))
+    public static Region fromValue(final String s3RegionId) throws IllegalArgumentException
+    {
+        if (s3RegionId == null || s3RegionId.equals("US") || s3RegionId.equals("us-east-1")) {
             return Region.US_Standard;
+        }
         for (Region region : Region.values()) {
             List<String> regionIds = region.regionIds;
             if (regionIds != null && regionIds.contains(s3RegionId))

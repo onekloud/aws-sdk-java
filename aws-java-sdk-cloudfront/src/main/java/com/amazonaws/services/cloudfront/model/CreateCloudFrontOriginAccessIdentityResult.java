@@ -1,54 +1,64 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
-public class CreateCloudFrontOriginAccessIdentityResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
-    /** The origin access identity's information. */
+    /**
+     * <p>
+     * The origin access identity's information.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
     /**
-     * The fully qualified URI of the new origin access identity just created.
-     * For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
-     * /cloudfront/E74FTE3AJFJ256A.
+     * <p>
+     * The fully qualified URI of the new origin access identity just created. For example:
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      */
     private String location;
-    /** The current version of the origin access identity created. */
+    /**
+     * <p>
+     * The current version of the origin access identity created.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
      */
 
-    public void setCloudFrontOriginAccessIdentity(
-            CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
+    public void setCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
     }
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @return The origin access identity's information.
      */
@@ -58,31 +68,30 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
     }
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(
-            CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
+    public CreateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         setCloudFrontOriginAccessIdentity(cloudFrontOriginAccessIdentity);
         return this;
     }
 
     /**
-     * The fully qualified URI of the new origin access identity just created.
-     * For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
-     * /cloudfront/E74FTE3AJFJ256A.
+     * <p>
+     * The fully qualified URI of the new origin access identity just created. For example:
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new origin access identity just
-     *        created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/origin
-     *        -access-identity/cloudfront/E74FTE3AJFJ256A.
+     *        The fully qualified URI of the new origin access identity just created. For example:
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
+     *        .
      */
 
     public void setLocation(String location) {
@@ -90,15 +99,14 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
     }
 
     /**
-     * The fully qualified URI of the new origin access identity just created.
-     * For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
-     * /cloudfront/E74FTE3AJFJ256A.
+     * <p>
+     * The fully qualified URI of the new origin access identity just created. For example:
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      * 
-     * @return The fully qualified URI of the new origin access identity just
-     *         created. For example:
-     *         https://cloudfront.amazonaws.com/2010-11-01/
-     *         origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * @return The fully qualified URI of the new origin access identity just created. For example:
+     *         <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
+     *         .
      */
 
     public String getLocation() {
@@ -106,28 +114,27 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
     }
 
     /**
-     * The fully qualified URI of the new origin access identity just created.
-     * For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
-     * /cloudfront/E74FTE3AJFJ256A.
+     * <p>
+     * The fully qualified URI of the new origin access identity just created. For example:
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new origin access identity just
-     *        created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/origin
-     *        -access-identity/cloudfront/E74FTE3AJFJ256A.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified URI of the new origin access identity just created. For example:
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCloudFrontOriginAccessIdentityResult withLocation(
-            String location) {
+    public CreateCloudFrontOriginAccessIdentityResult withLocation(String location) {
         setLocation(location);
         return this;
     }
 
     /**
+     * <p>
      * The current version of the origin access identity created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the origin access identity created.
@@ -138,7 +145,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
     }
 
     /**
+     * <p>
      * The current version of the origin access identity created.
+     * </p>
      * 
      * @return The current version of the origin access identity created.
      */
@@ -148,12 +157,13 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
     }
 
     /**
+     * <p>
      * The current version of the origin access identity created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the origin access identity created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCloudFrontOriginAccessIdentityResult withETag(String eTag) {
@@ -162,8 +172,7 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -174,8 +183,7 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontOriginAccessIdentity() != null)
-            sb.append("CloudFrontOriginAccessIdentity: "
-                    + getCloudFrontOriginAccessIdentity() + ",");
+            sb.append("CloudFrontOriginAccessIdentity: " + getCloudFrontOriginAccessIdentity() + ",");
         if (getLocation() != null)
             sb.append("Location: " + getLocation() + ",");
         if (getETag() != null)
@@ -194,22 +202,18 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
         if (obj instanceof CreateCloudFrontOriginAccessIdentityResult == false)
             return false;
         CreateCloudFrontOriginAccessIdentityResult other = (CreateCloudFrontOriginAccessIdentityResult) obj;
-        if (other.getCloudFrontOriginAccessIdentity() == null
-                ^ this.getCloudFrontOriginAccessIdentity() == null)
+        if (other.getCloudFrontOriginAccessIdentity() == null ^ this.getCloudFrontOriginAccessIdentity() == null)
             return false;
         if (other.getCloudFrontOriginAccessIdentity() != null
-                && other.getCloudFrontOriginAccessIdentity().equals(
-                        this.getCloudFrontOriginAccessIdentity()) == false)
+                && other.getCloudFrontOriginAccessIdentity().equals(this.getCloudFrontOriginAccessIdentity()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getETag() == null ^ this.getETag() == null)
             return false;
-        if (other.getETag() != null
-                && other.getETag().equals(this.getETag()) == false)
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
             return false;
         return true;
     }
@@ -219,14 +223,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCloudFrontOriginAccessIdentity() == null) ? 0
-                        : getCloudFrontOriginAccessIdentity().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode
-                + ((getETag() == null) ? 0 : getETag().hashCode());
+        hashCode = prime * hashCode + ((getCloudFrontOriginAccessIdentity() == null) ? 0 : getCloudFrontOriginAccessIdentity().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         return hashCode;
     }
 
@@ -235,9 +234,7 @@ public class CreateCloudFrontOriginAccessIdentityResult extends
         try {
             return (CreateCloudFrontOriginAccessIdentityResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

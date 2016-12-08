@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -18,33 +16,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a private IP address for a Scheduled Instance.
+ * Describes a private IPv4 address for a Scheduled Instance.
  * </p>
  */
-public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
-        Cloneable {
+public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      */
     private String privateIpAddress;
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      */
     private Boolean primary;
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The IP address.
+     *        The IPv4 address.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -53,10 +49,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      * 
-     * @return The IP address.
+     * @return The IPv4 address.
      */
 
     public String getPrivateIpAddress() {
@@ -65,30 +61,26 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IPv4 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesPrivateIpAddressConfig withPrivateIpAddress(
-            String privateIpAddress) {
+    public ScheduledInstancesPrivateIpAddressConfig withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this is a primary IP address. Otherwise, this is
-     *        a secondary IP address.
+     *        Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      */
 
     public void setPrimary(Boolean primary) {
@@ -97,12 +89,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
-     * @return Indicates whether this is a primary IP address. Otherwise, this
-     *         is a secondary IP address.
+     * @return Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      */
 
     public Boolean getPrimary() {
@@ -111,15 +101,12 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this is a primary IP address. Otherwise, this is
-     *        a secondary IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesPrivateIpAddressConfig withPrimary(Boolean primary) {
@@ -129,12 +116,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
-     * @return Indicates whether this is a primary IP address. Otherwise, this
-     *         is a secondary IP address.
+     * @return Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      */
 
     public Boolean isPrimary() {
@@ -142,8 +127,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -171,17 +155,13 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
         if (obj instanceof ScheduledInstancesPrivateIpAddressConfig == false)
             return false;
         ScheduledInstancesPrivateIpAddressConfig other = (ScheduledInstancesPrivateIpAddressConfig) obj;
-        if (other.getPrivateIpAddress() == null
-                ^ this.getPrivateIpAddress() == null)
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
             return false;
-        if (other.getPrivateIpAddress() != null
-                && other.getPrivateIpAddress().equals(
-                        this.getPrivateIpAddress()) == false)
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         if (other.getPrimary() == null ^ this.getPrimary() == null)
             return false;
-        if (other.getPrimary() != null
-                && other.getPrimary().equals(this.getPrimary()) == false)
+        if (other.getPrimary() != null && other.getPrimary().equals(this.getPrimary()) == false)
             return false;
         return true;
     }
@@ -191,12 +171,8 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPrimary() == null) ? 0 : getPrimary().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getPrimary() == null) ? 0 : getPrimary().hashCode());
         return hashCode;
     }
 
@@ -205,9 +181,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
         try {
             return (ScheduledInstancesPrivateIpAddressConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

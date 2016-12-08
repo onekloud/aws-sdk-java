@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.auth.policy.actions;
 
@@ -65,6 +63,8 @@ public enum GameliftActions implements Action {
     DescribeGameSessionDetails("gamelift:DescribeGameSessionDetails"),
     /** Action for the DescribeGameSessions operation. */
     DescribeGameSessions("gamelift:DescribeGameSessions"),
+    /** Action for the DescribeInstances operation. */
+    DescribeInstances("gamelift:DescribeInstances"),
     /** Action for the DescribePlayerSessions operation. */
     DescribePlayerSessions("gamelift:DescribePlayerSessions"),
     /** Action for the DescribeRuntimeConfiguration operation. */
@@ -73,6 +73,8 @@ public enum GameliftActions implements Action {
     DescribeScalingPolicies("gamelift:DescribeScalingPolicies"),
     /** Action for the GetGameSessionLogUrl operation. */
     GetGameSessionLogUrl("gamelift:GetGameSessionLogUrl"),
+    /** Action for the GetInstanceAccess operation. */
+    GetInstanceAccess("gamelift:GetInstanceAccess"),
     /** Action for the ListAliases operation. */
     ListAliases("gamelift:ListAliases"),
     /** Action for the ListBuilds operation. */

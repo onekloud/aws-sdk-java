@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -18,13 +16,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A virtual interface (VLAN) transmits the traffic between the AWS Direct
- * Connect location and the customer.
+ * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
  * </p>
  */
-public class AllocatePrivateVirtualInterfaceResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -53,6 +49,8 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     private String customerAddress;
 
+    private String addressFamily;
+
     private String virtualInterfaceState;
     /**
      * <p>
@@ -64,6 +62,8 @@ public class AllocatePrivateVirtualInterfaceResult extends
     private String virtualGatewayId;
 
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
+
+    private com.amazonaws.internal.SdkInternalList<BGPPeer> bgpPeers;
 
     /**
      * <p>
@@ -97,12 +97,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
      * 
      * @param ownerAccount
      *        The AWS account that will own the new virtual interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withOwnerAccount(
-            String ownerAccount) {
+    public AllocatePrivateVirtualInterfaceResult withOwnerAccount(String ownerAccount) {
         setOwnerAccount(ownerAccount);
         return this;
     }
@@ -125,12 +123,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param virtualInterfaceId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceId(
-            String virtualInterfaceId) {
+    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceId(String virtualInterfaceId) {
         setVirtualInterfaceId(virtualInterfaceId);
         return this;
     }
@@ -153,8 +149,7 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param location
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocatePrivateVirtualInterfaceResult withLocation(String location) {
@@ -180,12 +175,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param connectionId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withConnectionId(
-            String connectionId) {
+    public AllocatePrivateVirtualInterfaceResult withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
     }
@@ -208,12 +201,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param virtualInterfaceType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceType(
-            String virtualInterfaceType) {
+    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceType(String virtualInterfaceType) {
         setVirtualInterfaceType(virtualInterfaceType);
         return this;
     }
@@ -236,12 +227,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param virtualInterfaceName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceName(
-            String virtualInterfaceName) {
+    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceName(String virtualInterfaceName) {
         setVirtualInterfaceName(virtualInterfaceName);
         return this;
     }
@@ -264,8 +253,7 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param vlan
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocatePrivateVirtualInterfaceResult withVlan(Integer vlan) {
@@ -291,8 +279,7 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param asn
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocatePrivateVirtualInterfaceResult withAsn(Integer asn) {
@@ -318,8 +305,7 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param authKey
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocatePrivateVirtualInterfaceResult withAuthKey(String authKey) {
@@ -345,12 +331,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param amazonAddress
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withAmazonAddress(
-            String amazonAddress) {
+    public AllocatePrivateVirtualInterfaceResult withAmazonAddress(String amazonAddress) {
         setAmazonAddress(amazonAddress);
         return this;
     }
@@ -373,13 +357,60 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param customerAddress
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withCustomerAddress(
-            String customerAddress) {
+    public AllocatePrivateVirtualInterfaceResult withCustomerAddress(String customerAddress) {
         setCustomerAddress(customerAddress);
+        return this;
+    }
+
+    /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+    }
+
+    /**
+     * @return
+     * @see AddressFamily
+     */
+
+    public String getAddressFamily() {
+        return this.addressFamily;
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public AllocatePrivateVirtualInterfaceResult withAddressFamily(String addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(AddressFamily addressFamily) {
+        this.addressFamily = addressFamily.toString();
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public AllocatePrivateVirtualInterfaceResult withAddressFamily(AddressFamily addressFamily) {
+        setAddressFamily(addressFamily);
         return this;
     }
 
@@ -403,13 +434,11 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param virtualInterfaceState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VirtualInterfaceState
      */
 
-    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceState(
-            String virtualInterfaceState) {
+    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceState(String virtualInterfaceState) {
         setVirtualInterfaceState(virtualInterfaceState);
         return this;
     }
@@ -419,20 +448,17 @@ public class AllocatePrivateVirtualInterfaceResult extends
      * @see VirtualInterfaceState
      */
 
-    public void setVirtualInterfaceState(
-            VirtualInterfaceState virtualInterfaceState) {
+    public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState.toString();
     }
 
     /**
      * @param virtualInterfaceState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VirtualInterfaceState
      */
 
-    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceState(
-            VirtualInterfaceState virtualInterfaceState) {
+    public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         setVirtualInterfaceState(virtualInterfaceState);
         return this;
     }
@@ -469,12 +495,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
      * 
      * @param customerRouterConfig
      *        Information for generating the customer router configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withCustomerRouterConfig(
-            String customerRouterConfig) {
+    public AllocatePrivateVirtualInterfaceResult withCustomerRouterConfig(String customerRouterConfig) {
         setCustomerRouterConfig(customerRouterConfig);
         return this;
     }
@@ -497,12 +521,10 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param virtualGatewayId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withVirtualGatewayId(
-            String virtualGatewayId) {
+    public AllocatePrivateVirtualInterfaceResult withVirtualGatewayId(String virtualGatewayId) {
         setVirtualGatewayId(virtualGatewayId);
         return this;
     }
@@ -522,35 +544,29 @@ public class AllocatePrivateVirtualInterfaceResult extends
      * @param routeFilterPrefixes
      */
 
-    public void setRouteFilterPrefixes(
-            java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
+    public void setRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         if (routeFilterPrefixes == null) {
             this.routeFilterPrefixes = null;
             return;
         }
 
-        this.routeFilterPrefixes = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(
-                routeFilterPrefixes);
+        this.routeFilterPrefixes = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(routeFilterPrefixes);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRouteFilterPrefixes(java.util.Collection)} or
-     * {@link #withRouteFilterPrefixes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRouteFilterPrefixes(java.util.Collection)} or {@link #withRouteFilterPrefixes(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param routeFilterPrefixes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withRouteFilterPrefixes(
-            RouteFilterPrefix... routeFilterPrefixes) {
+    public AllocatePrivateVirtualInterfaceResult withRouteFilterPrefixes(RouteFilterPrefix... routeFilterPrefixes) {
         if (this.routeFilterPrefixes == null) {
-            setRouteFilterPrefixes(new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(
-                    routeFilterPrefixes.length));
+            setRouteFilterPrefixes(new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(routeFilterPrefixes.length));
         }
         for (RouteFilterPrefix ele : routeFilterPrefixes) {
             this.routeFilterPrefixes.add(ele);
@@ -560,19 +576,71 @@ public class AllocatePrivateVirtualInterfaceResult extends
 
     /**
      * @param routeFilterPrefixes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceResult withRouteFilterPrefixes(
-            java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
+    public AllocatePrivateVirtualInterfaceResult withRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         setRouteFilterPrefixes(routeFilterPrefixes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * @return
+     */
+
+    public java.util.List<BGPPeer> getBgpPeers() {
+        if (bgpPeers == null) {
+            bgpPeers = new com.amazonaws.internal.SdkInternalList<BGPPeer>();
+        }
+        return bgpPeers;
+    }
+
+    /**
+     * @param bgpPeers
+     */
+
+    public void setBgpPeers(java.util.Collection<BGPPeer> bgpPeers) {
+        if (bgpPeers == null) {
+            this.bgpPeers = null;
+            return;
+        }
+
+        this.bgpPeers = new com.amazonaws.internal.SdkInternalList<BGPPeer>(bgpPeers);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBgpPeers(java.util.Collection)} or {@link #withBgpPeers(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param bgpPeers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocatePrivateVirtualInterfaceResult withBgpPeers(BGPPeer... bgpPeers) {
+        if (this.bgpPeers == null) {
+            setBgpPeers(new com.amazonaws.internal.SdkInternalList<BGPPeer>(bgpPeers.length));
+        }
+        for (BGPPeer ele : bgpPeers) {
+            this.bgpPeers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param bgpPeers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocatePrivateVirtualInterfaceResult withBgpPeers(java.util.Collection<BGPPeer> bgpPeers) {
+        setBgpPeers(bgpPeers);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -591,11 +659,9 @@ public class AllocatePrivateVirtualInterfaceResult extends
         if (getConnectionId() != null)
             sb.append("ConnectionId: " + getConnectionId() + ",");
         if (getVirtualInterfaceType() != null)
-            sb.append("VirtualInterfaceType: " + getVirtualInterfaceType()
-                    + ",");
+            sb.append("VirtualInterfaceType: " + getVirtualInterfaceType() + ",");
         if (getVirtualInterfaceName() != null)
-            sb.append("VirtualInterfaceName: " + getVirtualInterfaceName()
-                    + ",");
+            sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");
         if (getVlan() != null)
             sb.append("Vlan: " + getVlan() + ",");
         if (getAsn() != null)
@@ -606,16 +672,18 @@ public class AllocatePrivateVirtualInterfaceResult extends
             sb.append("AmazonAddress: " + getAmazonAddress() + ",");
         if (getCustomerAddress() != null)
             sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+        if (getAddressFamily() != null)
+            sb.append("AddressFamily: " + getAddressFamily() + ",");
         if (getVirtualInterfaceState() != null)
-            sb.append("VirtualInterfaceState: " + getVirtualInterfaceState()
-                    + ",");
+            sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ",");
         if (getCustomerRouterConfig() != null)
-            sb.append("CustomerRouterConfig: " + getCustomerRouterConfig()
-                    + ",");
+            sb.append("CustomerRouterConfig: " + getCustomerRouterConfig() + ",");
         if (getVirtualGatewayId() != null)
             sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");
         if (getRouteFilterPrefixes() != null)
-            sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes());
+            sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() + ",");
+        if (getBgpPeers() != null)
+            sb.append("BgpPeers: " + getBgpPeers());
         sb.append("}");
         return sb.toString();
     }
@@ -632,93 +700,71 @@ public class AllocatePrivateVirtualInterfaceResult extends
         AllocatePrivateVirtualInterfaceResult other = (AllocatePrivateVirtualInterfaceResult) obj;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
-        if (other.getOwnerAccount() != null
-                && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
-        if (other.getVirtualInterfaceId() == null
-                ^ this.getVirtualInterfaceId() == null)
+        if (other.getVirtualInterfaceId() == null ^ this.getVirtualInterfaceId() == null)
             return false;
-        if (other.getVirtualInterfaceId() != null
-                && other.getVirtualInterfaceId().equals(
-                        this.getVirtualInterfaceId()) == false)
+        if (other.getVirtualInterfaceId() != null && other.getVirtualInterfaceId().equals(this.getVirtualInterfaceId()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getConnectionId() == null ^ this.getConnectionId() == null)
             return false;
-        if (other.getConnectionId() != null
-                && other.getConnectionId().equals(this.getConnectionId()) == false)
+        if (other.getConnectionId() != null && other.getConnectionId().equals(this.getConnectionId()) == false)
             return false;
-        if (other.getVirtualInterfaceType() == null
-                ^ this.getVirtualInterfaceType() == null)
+        if (other.getVirtualInterfaceType() == null ^ this.getVirtualInterfaceType() == null)
             return false;
-        if (other.getVirtualInterfaceType() != null
-                && other.getVirtualInterfaceType().equals(
-                        this.getVirtualInterfaceType()) == false)
+        if (other.getVirtualInterfaceType() != null && other.getVirtualInterfaceType().equals(this.getVirtualInterfaceType()) == false)
             return false;
-        if (other.getVirtualInterfaceName() == null
-                ^ this.getVirtualInterfaceName() == null)
+        if (other.getVirtualInterfaceName() == null ^ this.getVirtualInterfaceName() == null)
             return false;
-        if (other.getVirtualInterfaceName() != null
-                && other.getVirtualInterfaceName().equals(
-                        this.getVirtualInterfaceName()) == false)
+        if (other.getVirtualInterfaceName() != null && other.getVirtualInterfaceName().equals(this.getVirtualInterfaceName()) == false)
             return false;
         if (other.getVlan() == null ^ this.getVlan() == null)
             return false;
-        if (other.getVlan() != null
-                && other.getVlan().equals(this.getVlan()) == false)
+        if (other.getVlan() != null && other.getVlan().equals(this.getVlan()) == false)
             return false;
         if (other.getAsn() == null ^ this.getAsn() == null)
             return false;
-        if (other.getAsn() != null
-                && other.getAsn().equals(this.getAsn()) == false)
+        if (other.getAsn() != null && other.getAsn().equals(this.getAsn()) == false)
             return false;
         if (other.getAuthKey() == null ^ this.getAuthKey() == null)
             return false;
-        if (other.getAuthKey() != null
-                && other.getAuthKey().equals(this.getAuthKey()) == false)
+        if (other.getAuthKey() != null && other.getAuthKey().equals(this.getAuthKey()) == false)
             return false;
         if (other.getAmazonAddress() == null ^ this.getAmazonAddress() == null)
             return false;
-        if (other.getAmazonAddress() != null
-                && other.getAmazonAddress().equals(this.getAmazonAddress()) == false)
+        if (other.getAmazonAddress() != null && other.getAmazonAddress().equals(this.getAmazonAddress()) == false)
             return false;
-        if (other.getCustomerAddress() == null
-                ^ this.getCustomerAddress() == null)
+        if (other.getCustomerAddress() == null ^ this.getCustomerAddress() == null)
             return false;
-        if (other.getCustomerAddress() != null
-                && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
+        if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
-        if (other.getVirtualInterfaceState() == null
-                ^ this.getVirtualInterfaceState() == null)
+        if (other.getAddressFamily() == null ^ this.getAddressFamily() == null)
             return false;
-        if (other.getVirtualInterfaceState() != null
-                && other.getVirtualInterfaceState().equals(
-                        this.getVirtualInterfaceState()) == false)
+        if (other.getAddressFamily() != null && other.getAddressFamily().equals(this.getAddressFamily()) == false)
             return false;
-        if (other.getCustomerRouterConfig() == null
-                ^ this.getCustomerRouterConfig() == null)
+        if (other.getVirtualInterfaceState() == null ^ this.getVirtualInterfaceState() == null)
             return false;
-        if (other.getCustomerRouterConfig() != null
-                && other.getCustomerRouterConfig().equals(
-                        this.getCustomerRouterConfig()) == false)
+        if (other.getVirtualInterfaceState() != null && other.getVirtualInterfaceState().equals(this.getVirtualInterfaceState()) == false)
             return false;
-        if (other.getVirtualGatewayId() == null
-                ^ this.getVirtualGatewayId() == null)
+        if (other.getCustomerRouterConfig() == null ^ this.getCustomerRouterConfig() == null)
             return false;
-        if (other.getVirtualGatewayId() != null
-                && other.getVirtualGatewayId().equals(
-                        this.getVirtualGatewayId()) == false)
+        if (other.getCustomerRouterConfig() != null && other.getCustomerRouterConfig().equals(this.getCustomerRouterConfig()) == false)
             return false;
-        if (other.getRouteFilterPrefixes() == null
-                ^ this.getRouteFilterPrefixes() == null)
+        if (other.getVirtualGatewayId() == null ^ this.getVirtualGatewayId() == null)
             return false;
-        if (other.getRouteFilterPrefixes() != null
-                && other.getRouteFilterPrefixes().equals(
-                        this.getRouteFilterPrefixes()) == false)
+        if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
+            return false;
+        if (other.getRouteFilterPrefixes() == null ^ this.getRouteFilterPrefixes() == null)
+            return false;
+        if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
+            return false;
+        if (other.getBgpPeers() == null ^ this.getBgpPeers() == null)
+            return false;
+        if (other.getBgpPeers() != null && other.getBgpPeers().equals(this.getBgpPeers()) == false)
             return false;
         return true;
     }
@@ -728,58 +774,23 @@ public class AllocatePrivateVirtualInterfaceResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOwnerAccount() == null) ? 0 : getOwnerAccount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualInterfaceId() == null) ? 0
-                        : getVirtualInterfaceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionId() == null) ? 0 : getConnectionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualInterfaceType() == null) ? 0
-                        : getVirtualInterfaceType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualInterfaceName() == null) ? 0
-                        : getVirtualInterfaceName().hashCode());
-        hashCode = prime * hashCode
-                + ((getVlan() == null) ? 0 : getVlan().hashCode());
-        hashCode = prime * hashCode
-                + ((getAsn() == null) ? 0 : getAsn().hashCode());
-        hashCode = prime * hashCode
-                + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAmazonAddress() == null) ? 0 : getAmazonAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerAddress() == null) ? 0 : getCustomerAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualInterfaceState() == null) ? 0
-                        : getVirtualInterfaceState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerRouterConfig() == null) ? 0
-                        : getCustomerRouterConfig().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRouteFilterPrefixes() == null) ? 0
-                        : getRouteFilterPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getVirtualInterfaceId() == null) ? 0 : getVirtualInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getVirtualInterfaceType() == null) ? 0 : getVirtualInterfaceType().hashCode());
+        hashCode = prime * hashCode + ((getVirtualInterfaceName() == null) ? 0 : getVirtualInterfaceName().hashCode());
+        hashCode = prime * hashCode + ((getVlan() == null) ? 0 : getVlan().hashCode());
+        hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
+        hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
+        hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
+        hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
+        hashCode = prime * hashCode + ((getVirtualInterfaceState() == null) ? 0 : getVirtualInterfaceState().hashCode());
+        hashCode = prime * hashCode + ((getCustomerRouterConfig() == null) ? 0 : getCustomerRouterConfig().hashCode());
+        hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getBgpPeers() == null) ? 0 : getBgpPeers().hashCode());
         return hashCode;
     }
 
@@ -788,9 +799,7 @@ public class AllocatePrivateVirtualInterfaceResult extends
         try {
             return (AllocatePrivateVirtualInterfaceResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

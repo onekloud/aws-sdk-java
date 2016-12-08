@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateDocumentRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -36,6 +32,12 @@ public class CreateDocumentRequest extends
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     */
+    private String documentType;
 
     /**
      * <p>
@@ -69,8 +71,7 @@ public class CreateDocumentRequest extends
      * 
      * @param content
      *        A valid JSON string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDocumentRequest withContent(String content) {
@@ -110,8 +111,7 @@ public class CreateDocumentRequest extends
      * 
      * @param name
      *        A name for the SSM document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDocumentRequest withName(String name) {
@@ -120,8 +120,80 @@ public class CreateDocumentRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @see DocumentType
+     */
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @return The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @see DocumentType
+     */
+
+    public String getDocumentType() {
+        return this.documentType;
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentType
+     */
+
+    public CreateDocumentRequest withDocumentType(String documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @see DocumentType
+     */
+
+    public void setDocumentType(DocumentType documentType) {
+        this.documentType = documentType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentType
+     */
+
+    public CreateDocumentRequest withDocumentType(DocumentType documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -134,7 +206,9 @@ public class CreateDocumentRequest extends
         if (getContent() != null)
             sb.append("Content: " + getContent() + ",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: " + getName() + ",");
+        if (getDocumentType() != null)
+            sb.append("DocumentType: " + getDocumentType());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +225,15 @@ public class CreateDocumentRequest extends
         CreateDocumentRequest other = (CreateDocumentRequest) obj;
         if (other.getContent() == null ^ this.getContent() == null)
             return false;
-        if (other.getContent() != null
-                && other.getContent().equals(this.getContent()) == false)
+        if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDocumentType() == null ^ this.getDocumentType() == null)
+            return false;
+        if (other.getDocumentType() != null && other.getDocumentType().equals(this.getDocumentType()) == false)
             return false;
         return true;
     }
@@ -167,10 +243,9 @@ public class CreateDocumentRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getContent() == null) ? 0 : getContent().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         return hashCode;
     }
 

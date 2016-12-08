@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -18,37 +16,43 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A route filter prefix that the customer can advertise through Border Gateway
- * Protocol (BGP) over a public virtual interface.
+ * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual
+ * interface.
  * </p>
  */
 public class RouteFilterPrefix implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.
+     * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      */
     private String cidr;
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.
+     * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      * 
      * @param cidr
-     *        CIDR notation for the advertised route. Multiple routes are
-     *        separated by commas.</p>
+     *        CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
      *        <p>
-     *        Example: 10.10.10.0/24,10.10.11.0/24
+     *        IPv6 CIDRs must be at least a /64 or shorter
+     *        </p>
+     *        <p>
+     *        Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      */
 
     public void setCidr(String cidr) {
@@ -57,17 +61,21 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.
+     * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      * 
-     * @return CIDR notation for the advertised route. Multiple routes are
-     *         separated by commas.</p>
+     * @return CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
      *         <p>
-     *         Example: 10.10.10.0/24,10.10.11.0/24
+     *         IPv6 CIDRs must be at least a /64 or shorter
+     *         </p>
+     *         <p>
+     *         Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      */
 
     public String getCidr() {
@@ -76,20 +84,23 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.
+     * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      * 
      * @param cidr
-     *        CIDR notation for the advertised route. Multiple routes are
-     *        separated by commas.</p>
+     *        CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
      *        <p>
-     *        Example: 10.10.10.0/24,10.10.11.0/24
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        IPv6 CIDRs must be at least a /64 or shorter
+     *        </p>
+     *        <p>
+     *        Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteFilterPrefix withCidr(String cidr) {
@@ -98,8 +109,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -127,8 +137,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
         RouteFilterPrefix other = (RouteFilterPrefix) obj;
         if (other.getCidr() == null ^ this.getCidr() == null)
             return false;
-        if (other.getCidr() != null
-                && other.getCidr().equals(this.getCidr()) == false)
+        if (other.getCidr() != null && other.getCidr().equals(this.getCidr()) == false)
             return false;
         return true;
     }
@@ -138,8 +147,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCidr() == null) ? 0 : getCidr().hashCode());
+        hashCode = prime * hashCode + ((getCidr() == null) ? 0 : getCidr().hashCode());
         return hashCode;
     }
 
@@ -148,9 +156,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
         try {
             return (RouteFilterPrefix) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

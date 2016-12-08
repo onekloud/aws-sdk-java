@@ -21,10 +21,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import com.amazonaws.AmazonClientException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.EC2MetadataUtils;
@@ -43,6 +44,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      */
     private static final int ASYNC_REFRESH_INTERVAL_TIME_MINUTES = 1;
 
+    /**
+     * The default InstanceProfileCredentialsProvider that can be shared by
+     * multiple CredentialsProvider instance threads to shrink the amount of
+     * requests to EC2 metadata service.
+     */
+    private static final InstanceProfileCredentialsProvider INSTANCE
+        = new InstanceProfileCredentialsProvider();
+
     private final EC2CredentialsFetcher credentialsFetcher;
 
     /**
@@ -51,6 +60,10 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      */
     private volatile ScheduledExecutorService executor;
 
+    /**
+     * @deprecated for the singleton method {@link #getInstance()}.
+     */
+    @Deprecated
     public InstanceProfileCredentialsProvider() {
         this(false);
     }
@@ -86,6 +99,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
         }
     }
 
+    /**
+     * Returns a singleton {@link InstanceProfileCredentialsProvider} that does not refresh credentials
+     * asynchronously. Use {@link #InstanceProfileCredentialsProvider(boolean)} for the feature.
+     */
+    public static InstanceProfileCredentialsProvider getInstance() {
+        return INSTANCE;
+    }
+
     private void handleError(Throwable t) {
         refresh();
         LOG.error(t.getMessage(), t);
@@ -117,7 +138,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
             String securityCredentialsList = EC2CredentialsUtils.getInstance().readResource(new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE));
             String[] securityCredentials = securityCredentialsList.trim().split("\n");
             if (securityCredentials.length == 0) {
-                throw new AmazonClientException("Unable to load credentials path");
+                throw new SdkClientException("Unable to load credentials path");
             }
 
             return new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE + securityCredentials[0]);
