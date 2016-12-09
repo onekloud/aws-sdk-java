@@ -128,7 +128,7 @@
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
   <properties>
-      <awsjavasdk.version>1.11.65</awsjavasdk.version>
+      <awsjavasdk.version>1.11.66-X</awsjavasdk.version>
       <jackson.version>2.6.6</jackson.version>
       <ion.java.version>1.0.1</ion.java.version>
       <junit.version>4.12</junit.version>
