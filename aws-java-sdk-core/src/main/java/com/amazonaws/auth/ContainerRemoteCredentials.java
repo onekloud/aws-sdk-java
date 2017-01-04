@@ -8,7 +8,7 @@ package com.amazonaws.auth;
 public class ContainerRemoteCredentials implements AWSCredentials, AWSRemoteSigner {
 	String AWSAccessKeyId;
 	AWSRemoteSigner remote;
-	
+
 	/**
 	 * build the AWSCredentialsRemote with a real AWSAccessKeyId and a delegate
 	 * AWS signer caller
@@ -22,8 +22,13 @@ public class ContainerRemoteCredentials implements AWSCredentials, AWSRemoteSign
 	 * delegate signature to a delegate Signer
 	 */
 	@Override
-	public byte[] makeSigne(String singingString, String... data) {
-		return remote.makeSigne(singingString, data);
+	public byte[] makeSigneV4(String singingString, String... data) {
+		return remote.makeSigneV4(singingString, data);
+	}
+
+	@Override
+	public byte[] makeSigneV2(String method, String domain, String path, String[] payload) {
+		return remote.makeSigneV2(method, domain, path, payload);
 	}
 
 	/**

@@ -21,5 +21,12 @@ public interface AWSRemoteSigner {
 	 *            like ["20160919", "us-east-1", "ec2", "aws4_request"]
 	 * @return data a byte[32] signature block
 	 */
-	byte[] makeSigne(String stringToSign, String... data);
+	byte[] makeSigneV4(String stringToSign, String... data);
+
+	/**
+	 * This interface allow a remote signature usage.
+	 * 
+	 * In this case the secret signing usage is delegate to a remote AWS vault server 
+	 */
+	byte[] makeSigneV2(String method, String domain, String path, String[] payload);
 }

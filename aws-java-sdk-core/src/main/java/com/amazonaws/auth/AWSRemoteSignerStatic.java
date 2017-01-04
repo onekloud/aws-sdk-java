@@ -20,6 +20,7 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	 * the secret is store in the object to make this sample works.
 	 */
 	private String secret;
+
 	/**
 	 * provide the secret key to sign incoming request
 	 * @param secret
@@ -41,11 +42,11 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 	 *            like ["20160919", "us-east-1", "ec2", "aws4_request"]
 	 * @return data a byte[32] signature block
 	 */
-	public byte[] makeSigne(String singingString, String... datas) {
+	public byte[] makeSigneV4(String singingString, String... datas) {
 		if (datas.length < 4) {
 			throw new AmazonClientException("Invalid makeSigne usage, should take at least 3 parameters");
 		}
-		if (!"aws4_request".equals(datas[datas.length-1])) {
+		if (!"aws4_request".equals(datas[datas.length - 1])) {
 			throw new AmazonClientException("Invalid makeSigne usage, parameters should end with aws4_request");
 		}
 		if (!singingString.startsWith("AWS4-HMAC-SHA256")) {
@@ -57,6 +58,7 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 		}
 		return sign(singingString, kSecret, SigningAlgorithm.HmacSHA256);
 	}
+
 	/**
 	 * can not access to AbstractAWSSigner method, so this code is duplicated from AbstractAWSSigner
 	 * 
@@ -81,5 +83,11 @@ public class AWSRemoteSignerStatic implements AWSRemoteSigner {
 		} catch (Exception e) {
 			throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
 		}
+	}
+
+	@Override
+	public byte[] makeSigneV2(String method, String domain, String path, String[] payload) {
+		// TODO implement Me
+		return null;
 	}
 }

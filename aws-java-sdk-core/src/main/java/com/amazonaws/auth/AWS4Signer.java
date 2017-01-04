@@ -225,7 +225,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         byte[] signingKey = null;
         byte[] signature;
         if (sanitizedCredentials instanceof AWSRemoteSigner) {
-        	  signature = ((AWSRemoteSigner)sanitizedCredentials).makeSigne(
+        	  signature = ((AWSRemoteSigner)sanitizedCredentials).makeSigneV4(
         			stringToSign,
         			signerParams.getFormattedSigningDate(),
         			signerParams.getRegionName(),
