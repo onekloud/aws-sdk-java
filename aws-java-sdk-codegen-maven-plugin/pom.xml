@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.amazonaws</groupId>
-    <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.110-SNAPSHOT</version>
-  </parent>
+    <parent>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-pom</artifactId>
+        <version>1.11.110-Z1</version>
+    </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-codegen-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
