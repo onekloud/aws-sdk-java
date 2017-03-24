@@ -22,7 +22,7 @@
 	    <artifactId>aws-java-sdk-core</artifactId>
 	    <groupId>com.amazonaws</groupId>
 	    <optional>false</optional>
-	   <version>1.11.110-SNAPSHOT</version>
+	   <version>1.11.110-Z1</version>
 	</dependency>
     </dependencies>
     <build>
